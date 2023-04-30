@@ -43,5 +43,15 @@ namespace SIVAA
                 dataGridView1.Rows.Add(x.IDVehiculo, x.Nombre);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspVehiculo(mainForm, 0));
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspVehiculo(mainForm, 1));
+        }
     }
 }

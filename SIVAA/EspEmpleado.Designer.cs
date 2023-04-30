@@ -1,6 +1,6 @@
 ﻿namespace SIVAA
 {
-    partial class EspVehiculo
+    partial class EspEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +31,7 @@
             panel1 = new Panel();
             label2 = new Label();
             label1 = new Label();
-            tbxId = new TextBox();
-            tbxNombre = new TextBox();
             button1 = new Button();
-            label3 = new Label();
-            label4 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,14 +44,13 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(920, 60);
-            panel1.TabIndex = 11;
-            panel1.Paint += panel1_Paint;
+            panel1.TabIndex = 13;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(93, 20);
+            label2.Location = new Point(103, 20);
             label2.Name = "label2";
             label2.Size = new Size(61, 20);
             label2.TabIndex = 1;
@@ -67,26 +62,9 @@
             label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(20, 20);
             label1.Name = "label1";
-            label1.Size = new Size(79, 20);
+            label1.Size = new Size(88, 20);
             label1.TabIndex = 0;
-            label1.Text = "Vehiculo /";
-            label1.Click += label1_Click;
-            // 
-            // tbxId
-            // 
-            tbxId.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxId.Location = new Point(33, 118);
-            tbxId.Name = "tbxId";
-            tbxId.Size = new Size(199, 32);
-            tbxId.TabIndex = 12;
-            // 
-            // tbxNombre
-            // 
-            tbxNombre.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxNombre.Location = new Point(33, 190);
-            tbxNombre.Name = "tbxNombre";
-            tbxNombre.Size = new Size(199, 32);
-            tbxNombre.TabIndex = 13;
+            label1.Text = "Empleado /";
             // 
             // button1
             // 
@@ -95,59 +73,30 @@
             button1.Location = new Point(693, 413);
             button1.Name = "button1";
             button1.Size = new Size(195, 37);
-            button1.TabIndex = 14;
+            button1.TabIndex = 15;
             button1.Text = "Listo";
             button1.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(33, 95);
-            label3.Name = "label3";
-            label3.Size = new Size(87, 20);
-            label3.TabIndex = 15;
-            label3.Text = "ID Vehiculo";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(33, 167);
-            label4.Name = "label4";
-            label4.Size = new Size(63, 20);
-            label4.TabIndex = 16;
-            label4.Text = "Nombre";
-            // 
-            // EspVehiculo
+            // EspEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 481);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(button1);
-            Controls.Add(tbxNombre);
-            Controls.Add(tbxId);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "EspVehiculo";
-            Text = "EspVehiculo";
+            Name = "EspEmpleado";
+            Text = "EspEmpleado";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel panel1;
-        private Label label1;
         private Label label2;
-        private TextBox tbxId;
-        private TextBox tbxNombre;
+        private Label label1;
         private Button button1;
-        private Label label3;
-        private Label label4;
     }
 }
