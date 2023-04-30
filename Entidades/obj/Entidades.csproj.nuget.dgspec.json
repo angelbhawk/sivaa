@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repositorio\\SIVAA\\Entidades\\Entidades.csproj": {}
+    "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Repositorio\\SIVAA\\Entidades\\Entidades.csproj": {
+    "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositorio\\SIVAA\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Repositorio\\SIVAA\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Repositorio\\SIVAA\\Entidades\\obj\\",
+        "projectPath": "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\obad_\\.nuget\\packages\\",
+        "outputPath": "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\obad_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
