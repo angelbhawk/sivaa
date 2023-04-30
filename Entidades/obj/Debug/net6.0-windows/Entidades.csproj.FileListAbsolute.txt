@@ -13,3 +13,18 @@ C:\Repositorio\SIVAA\Entidades\obj\Debug\net6.0-windows\refint\Entidades.dll
 C:\Repositorio\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.pdb
 C:\Repositorio\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.genruntimeconfig.cache
 C:\Repositorio\SIVAA\Entidades\obj\Debug\net6.0-windows\ref\Entidades.dll
+C:\Universidad\Ing. Software\SIVAA\Entidades\bin\Debug\net6.0-windows\Entidades.exe
+C:\Universidad\Ing. Software\SIVAA\Entidades\bin\Debug\net6.0-windows\Entidades.deps.json
+C:\Universidad\Ing. Software\SIVAA\Entidades\bin\Debug\net6.0-windows\Entidades.runtimeconfig.json
+C:\Universidad\Ing. Software\SIVAA\Entidades\bin\Debug\net6.0-windows\Entidades.dll
+C:\Universidad\Ing. Software\SIVAA\Entidades\bin\Debug\net6.0-windows\Entidades.pdb
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.csproj.AssemblyReference.cache
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfoInputs.cache
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfo.cs
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.csproj.CoreCompileInputs.cache
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.dll
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\refint\Entidades.dll
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.pdb
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\Entidades.genruntimeconfig.cache
+C:\Universidad\Ing. Software\SIVAA\Entidades\obj\Debug\net6.0-windows\ref\Entidades.dll
