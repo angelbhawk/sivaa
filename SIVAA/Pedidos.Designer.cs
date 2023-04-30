@@ -35,19 +35,19 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
-            panel3 = new Panel();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
             label1 = new Label();
+            panel3 = new Panel();
+            btnEditar = new Button();
+            btnEliminar = new Button();
+            btnAgregar = new Button();
+            btnImprimir = new Button();
+            comboBox1 = new ComboBox();
+            btnBuscar = new Button();
+            panel1 = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel1.SuspendLayout();
             panel3.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -75,7 +75,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(900, 401);
+            dataGridView1.Size = new Size(900, 399);
             dataGridView1.TabIndex = 0;
             // 
             // Column5
@@ -112,26 +112,24 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // panel1
+            // label1
             // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(920, 60);
-            panel1.TabIndex = 4;
-            panel1.Paint += panel1_Paint;
+            label1.AutoSize = true;
+            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(20, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(65, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Pedidos";
             // 
             // panel3
             // 
-            panel3.Controls.Add(button5);
-            panel3.Controls.Add(button4);
-            panel3.Controls.Add(button3);
-            panel3.Controls.Add(button2);
+            panel3.Controls.Add(btnEditar);
+            panel3.Controls.Add(btnEliminar);
+            panel3.Controls.Add(btnAgregar);
+            panel3.Controls.Add(btnImprimir);
             panel3.Controls.Add(comboBox1);
-            panel3.Controls.Add(button1);
+            panel3.Controls.Add(btnBuscar);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(312, 0);
             panel3.Name = "panel3";
@@ -139,49 +137,50 @@
             panel3.TabIndex = 1;
             panel3.Paint += panel1_Paint;
             // 
-            // button5
+            // btnEditar
             // 
-            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button5.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(190, 19);
-            button5.Name = "button5";
-            button5.Size = new Size(82, 23);
-            button5.TabIndex = 7;
-            button5.Text = "Editar";
-            button5.UseVisualStyleBackColor = true;
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.Location = new Point(102, 20);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(82, 23);
+            btnEditar.TabIndex = 7;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnEliminar
             // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(102, 20);
-            button4.Name = "button4";
-            button4.Size = new Size(82, 23);
-            button4.TabIndex = 6;
-            button4.Text = "Eliminar";
-            button4.UseVisualStyleBackColor = true;
+            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEliminar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminar.Location = new Point(190, 20);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(82, 23);
+            btnEliminar.TabIndex = 6;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAgregar
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(14, 20);
-            button3.Name = "button3";
-            button3.Size = new Size(82, 23);
-            button3.TabIndex = 5;
-            button3.Text = "Agregar";
-            button3.UseVisualStyleBackColor = true;
+            btnAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAgregar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.Location = new Point(14, 20);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(82, 23);
+            btnAgregar.TabIndex = 5;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // button2
+            // btnImprimir
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(277, 19);
-            button2.Name = "button2";
-            button2.Size = new Size(82, 23);
-            button2.TabIndex = 4;
-            button2.Text = "Imprimir";
-            button2.UseVisualStyleBackColor = true;
+            btnImprimir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnImprimir.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnImprimir.Location = new Point(277, 20);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(82, 23);
+            btnImprimir.TabIndex = 4;
+            btnImprimir.Text = "Imprimir";
+            btnImprimir.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -195,26 +194,28 @@
             comboBox1.Size = new Size(121, 24);
             comboBox1.TabIndex = 2;
             // 
-            // button1
+            // btnBuscar
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(511, 19);
-            button1.Name = "button1";
-            button1.Size = new Size(77, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBuscar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(511, 19);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(77, 23);
+            btnBuscar.TabIndex = 3;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // panel1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(20, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Pedidos";
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(920, 60);
+            panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
             // 
             // Pedidos
             // 
@@ -226,11 +227,12 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Pedidos";
             Text = "Pedidos";
+            Load += Pedidos_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -238,19 +240,19 @@
 
         private Panel panel2;
         private DataGridView dataGridView1;
-        private Panel panel1;
-        private Panel panel3;
-        private Label label1;
-        private Button button2;
-        private ComboBox comboBox1;
-        private Button button1;
-        private Button button5;
-        private Button button4;
-        private Button button3;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private Label label1;
+        private Panel panel3;
+        private Button btnEditar;
+        private Button btnEliminar;
+        private Button btnAgregar;
+        private Button btnImprimir;
+        private ComboBox comboBox1;
+        private Button btnBuscar;
+        private Panel panel1;
     }
 }
