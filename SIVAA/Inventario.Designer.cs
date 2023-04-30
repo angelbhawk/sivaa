@@ -30,18 +30,18 @@
         {
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            panel3 = new Panel();
+            button2 = new Button();
+            comboBox1 = new ComboBox();
+            button1 = new Button();
+            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
-            panel3 = new Panel();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            label1 = new Label();
-            button2 = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -75,6 +75,74 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(900, 401);
             dataGridView1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(920, 60);
+            panel1.TabIndex = 2;
+            panel1.Paint += panel1_Paint;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(comboBox1);
+            panel3.Controls.Add(button1);
+            panel3.Dock = DockStyle.Right;
+            panel3.Location = new Point(569, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(351, 60);
+            panel3.TabIndex = 1;
+            panel3.Paint += panel1_Paint;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(18, 19);
+            button2.Name = "button2";
+            button2.Size = new Size(82, 23);
+            button2.TabIndex = 1;
+            button2.Text = "Imprimir";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Todos", "Disponibles", "Vendidos" });
+            comboBox1.Location = new Point(125, 18);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 24);
+            comboBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(252, 19);
+            button1.Name = "button1";
+            button1.Size = new Size(77, 23);
+            button1.TabIndex = 0;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(20, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(76, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Inventario";
             // 
             // Column1
             // 
@@ -117,74 +185,6 @@
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(920, 60);
-            panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(button2);
-            panel3.Controls.Add(comboBox1);
-            panel3.Controls.Add(button1);
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(569, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(351, 60);
-            panel3.TabIndex = 1;
-            panel3.Paint += panel1_Paint;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Todos", "Disponibles", "Vendidos" });
-            comboBox1.Location = new Point(125, 18);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 24);
-            comboBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(252, 19);
-            button1.Name = "button1";
-            button1.Size = new Size(77, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(20, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(76, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Inventario";
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(18, 19);
-            button2.Name = "button2";
-            button2.Size = new Size(82, 23);
-            button2.TabIndex = 1;
-            button2.Text = "Imprimir";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // Inventario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -212,12 +212,12 @@
         private ComboBox comboBox1;
         private Button button1;
         private DataGridView dataGridView1;
+        private Button button2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
-        private Button button2;
     }
 }
