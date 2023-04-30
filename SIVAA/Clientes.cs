@@ -17,7 +17,6 @@ namespace SIVAA
     {
         private SIVAA mainForm;
         readonly ClienteLog cliente = new ClienteLog();
-        string id;
 
         public Clientes(SIVAA mainForm)
         {
@@ -40,92 +39,7 @@ namespace SIVAA
             listas = pro;
             foreach (Cliente x in pro)
             {
-                dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Colonia.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Estado.Trim());
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            mainForm.cambiarPantalla(new EspCliente(mainForm, 0, ""));
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (id != null)
-            {
-                mainForm.cambiarPantalla(new EspEmpleado(mainForm, 1, id));
-            }
-            else
-            {
-                MessageBox.Show("Selecciona un Empleado");
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de clientes"));
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cliente.Eliminar(id);
-                Mostrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No es posible eliminar la tabla", "ERROR");
-            }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (cbFiltro.SelectedIndex == 0)
-            {
-                Mostrar();
-            }
-            else if (cbFiltro.SelectedIndex == 3)
-            {
-                MostrarEsp(txtBuscar.Text, "ApellidoPaterno");
-            }
-            else if (cbFiltro.SelectedIndex == 4)
-            {
-                MostrarEsp(txtBuscar.Text, "ApellidoMaterno");
-            }
-            else
-            {
-                MostrarEsp(txtBuscar.Text, cbFiltro.Text);
-            }
-        }
-
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.CurrentCell.RowIndex >= 0)
-            {
-                int i = dataGridView1.CurrentCell.RowIndex;
-                id = dataGridView1[0, i].Value.ToString();
-            }
-        }
-
-        private void MostrarEsp(string busqueda, string filtro)
-        {
-            dataGridView1.Rows.Clear();
-            List<Cliente> pro = cliente.ListadoEsp(busqueda, filtro);
-            foreach (Cliente x in pro)
-            {
-                dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Colonia.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Estado.Trim());
-            }
-        }
-
-        private void Mostrar()
-        {
-            dataGridView1.ClearSelection();
-            List<Cliente> pro = cliente.ListadoAll();
-            foreach (Cliente x in pro)
-            {
-                dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Colonia.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Estado.Trim());
+                dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim()+" "+x.ApellidoPat.Trim()+" "+x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Estado.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Colonia.Trim());
             }
         }
     }

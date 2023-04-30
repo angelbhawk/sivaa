@@ -48,13 +48,6 @@ namespace Logicas
             return Pdto.ListadoTotal();
         }
 
-
-        public List<Cliente> ListadoEsp(string busqueda, string filtro)
-        {
-            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
-            return Pdto.ListadoEspecifico(busqueda, filtro);
-        }
-
         public Cliente LeerPorClave(string ClPdto)
         {
             Cliente Pd = null;

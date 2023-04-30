@@ -38,25 +38,8 @@ namespace SIVAA
             listas = pro;
             foreach (CotizacionUsar x in pro)
             {
-                dataGridView1.Rows.Add(x.IDCotizacion.Trim(), x.IDCliente.Trim(), x.IDVersion.Trim(), x.IDEmpleado.Trim(), x.PrecioInicial, x.TipoPago.Trim());
+                dataGridView1.Rows.Add(x.IDCotizacion.Trim(), x.IDCliente.Trim(), x.IDVersion.Trim(),x.IDEmpleado.Trim(), x.PrecioInicial, x.TipoPago.Trim());
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            mainForm.cambiarPantalla(new EspCotizacion(mainForm, 1));
-        }
-
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            mainForm.cambiarPantalla(new EspCotizacion(mainForm, 1));
-        }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de cotizaciones"));
         }
     }
 }

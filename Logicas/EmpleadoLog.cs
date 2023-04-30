@@ -36,13 +36,6 @@ namespace Logicas
             //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
             return Pdto.ListadoCajeros();
         }
-
-        public List<Empleado> ListadoEsp(string busqueda, string filtro)
-        {
-            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
-            return Pdto.ListadoEspecifico(busqueda, filtro);
-        }
-
         public Empleado LeerPorClave(string ClPdto, string Con)
         {
             Empleado Pd = null;

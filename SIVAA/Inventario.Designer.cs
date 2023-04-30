@@ -38,10 +38,10 @@
             Column6 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel3 = new Panel();
-            btnImprimir = new Button();
-            cbFiltro = new ComboBox();
+            comboBox1 = new ComboBox();
             button1 = new Button();
             label1 = new Label();
+            button2 = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -131,8 +131,8 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(btnImprimir);
-            panel3.Controls.Add(cbFiltro);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(comboBox1);
             panel3.Controls.Add(button1);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(569, 0);
@@ -141,28 +141,17 @@
             panel3.TabIndex = 1;
             panel3.Paint += panel1_Paint;
             // 
-            // btnImprimir
+            // comboBox1
             // 
-            btnImprimir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnImprimir.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnImprimir.Location = new Point(18, 19);
-            btnImprimir.Name = "btnImprimir";
-            btnImprimir.Size = new Size(82, 23);
-            btnImprimir.TabIndex = 1;
-            btnImprimir.Text = "Imprimir";
-            btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // cbFiltro
-            // 
-            cbFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "Disponibles", "Vendidos" });
-            cbFiltro.Location = new Point(125, 18);
-            cbFiltro.Name = "cbFiltro";
-            cbFiltro.Size = new Size(121, 24);
-            cbFiltro.TabIndex = 0;
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Todos", "Disponibles", "Vendidos" });
+            comboBox1.Location = new Point(125, 18);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 24);
+            comboBox1.TabIndex = 0;
             // 
             // button1
             // 
@@ -174,7 +163,6 @@
             button1.TabIndex = 0;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += btnBuscar_Click;
             // 
             // label1
             // 
@@ -186,6 +174,17 @@
             label1.TabIndex = 0;
             label1.Text = "Inventario";
             // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(18, 19);
+            button2.Name = "button2";
+            button2.Size = new Size(82, 23);
+            button2.TabIndex = 1;
+            button2.Text = "Imprimir";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Inventario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -196,7 +195,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Inventario";
             Text = "Inventario";
-            Load += Inventario_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
@@ -211,15 +209,15 @@
         private Panel panel1;
         private Label label1;
         private Panel panel3;
-        private ComboBox cbFiltro;
+        private ComboBox comboBox1;
         private Button button1;
         private DataGridView dataGridView1;
-        private Button btnImprimir;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
+        private Button button2;
     }
 }

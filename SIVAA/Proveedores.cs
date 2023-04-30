@@ -16,9 +16,7 @@ namespace SIVAA
     public partial class Proveedores : Form
     {
         private SIVAA mainForm;
-        private string id;
         readonly ProveedorLog proveedor = new ProveedorLog();
-
 
         public Proveedores(SIVAA mainForm)
         {
@@ -40,90 +38,8 @@ namespace SIVAA
             listas = pro;
             foreach (Proveedor x in pro)
             {
-                dataGridView1.Rows.Add(x.IDProveedor.Trim(), x.Nombre.Trim(), x.RFC.Trim(), x.Estado.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Colonia.Trim());
+                dataGridView1.Rows.Add(x.IDProveedor.Trim(), x.Nombre.Trim(), x.RFC.Trim(), x.Estado.Trim()+", "+ x.Ciudad.Trim() + ", "+x.Colonia.Trim());
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            mainForm.cambiarPantalla(new EspProveedor(mainForm, 0, ""));
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (id != null)
-            {
-                mainForm.cambiarPantalla(new EspProveedor(mainForm, 1, id));
-            }
-            else
-            {
-                MessageBox.Show("Selecciona un Proveedor");
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de proveedores"));
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                proveedor.Eliminar(id);
-                Mostrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No es posible eliminar la tabla", "ERROR");
-            }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (cbFiltro.SelectedIndex == 0)
-            {
-                Mostrar();
-            }
-            else if (cbFiltro.SelectedIndex == 1)
-            {
-                MostrarEsp(txtBuscar.Text, "IDProovedor");
-            }
-            else
-            {
-                MostrarEsp(txtBuscar.Text, cbFiltro.Text);
-            }
-        }
-
-
-        private void MostrarEsp(string busqueda, string filtro)
-        {
-            dataGridView1.Rows.Clear();
-            List<Proveedor> pro = proveedor.ListadoEspecifico(busqueda, filtro);
-            foreach (Proveedor x in pro)
-            {
-                dataGridView1.Rows.Add(x.IDProveedor.Trim(), x.Nombre.Trim(), x.RFC.Trim(), x.Estado.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Colonia.Trim());
-            }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.CurrentCell.RowIndex >= 0)
-            {
-                int i = dataGridView1.CurrentCell.RowIndex;
-                id = dataGridView1[0, i].Value.ToString();
-            }
-        }
-
-        private void Mostrar()
-        {
-            dataGridView1.Rows.Clear();
-            List<Proveedor> pro = proveedor.ListadoAll();
-            foreach (Proveedor x in pro)
-            {
-                dataGridView1.Rows.Add(x.IDProveedor.Trim(), x.Nombre.Trim(), x.RFC.Trim(), x.Estado.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Colonia.Trim());
-            }
-        }
-
     }
 }
