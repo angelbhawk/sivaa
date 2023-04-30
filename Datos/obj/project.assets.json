@@ -489,19 +489,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\obad_\\.nuget\\packages\\": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Universidad\\Ing. Software\\SIVAA\\Datos\\Datos.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Datos\\Datos.csproj",
       "projectName": "Datos",
-      "projectPath": "C:\\Universidad\\Ing. Software\\SIVAA\\Datos\\Datos.csproj",
-      "packagesPath": "C:\\Users\\obad_\\.nuget\\packages\\",
-      "outputPath": "C:\\Universidad\\Ing. Software\\SIVAA\\Datos\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Datos\\Datos.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Datos\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\obad_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -509,14 +514,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Entidades\\Entidades.csproj"
             }
           }
         }
