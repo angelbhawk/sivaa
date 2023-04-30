@@ -68,3 +68,38 @@ C:\Universidad\Ing. Software\SIVAA\Logicas\obj\Debug\net6.0-windows\refint\Logic
 C:\Universidad\Ing. Software\SIVAA\Logicas\obj\Debug\net6.0-windows\Logicas.pdb
 C:\Universidad\Ing. Software\SIVAA\Logicas\obj\Debug\net6.0-windows\Logicas.genruntimeconfig.cache
 C:\Universidad\Ing. Software\SIVAA\Logicas\obj\Debug\net6.0-windows\ref\Logicas.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Datos.deps.json
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Datos.runtimeconfig.json
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Entidades.deps.json
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Entidades.runtimeconfig.json
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Entidades.exe
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Datos.exe
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Logicas.exe
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Logicas.deps.json
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Logicas.runtimeconfig.json
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Logicas.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Logicas.pdb
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\itextsharp.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\itextsharp.xmlworker.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Datos.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Entidades.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Datos.pdb
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\bin\Debug\net6.0-windows\Entidades.pdb
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.csproj.AssemblyReference.cache
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.AssemblyInfoInputs.cache
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.AssemblyInfo.cs
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.csproj.CopyComplete
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\refint\Logicas.dll
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.pdb
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\Logicas.genruntimeconfig.cache
+C:\Users\Usuario\Source\Repos\sivaa\Logicas\obj\Debug\net6.0-windows\ref\Logicas.dll
