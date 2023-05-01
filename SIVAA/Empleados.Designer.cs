@@ -39,9 +39,9 @@
             panel1 = new Panel();
             panel3 = new Panel();
             textBox1 = new TextBox();
-            button5 = new Button();
+            btnEditar = new Button();
             button4 = new Button();
-            button3 = new Button();
+            btnAgregar = new Button();
             button2 = new Button();
             button1 = new Button();
             label1 = new Label();
@@ -135,9 +135,9 @@
             // panel3
             // 
             panel3.Controls.Add(textBox1);
-            panel3.Controls.Add(button5);
+            panel3.Controls.Add(btnEditar);
             panel3.Controls.Add(button4);
-            panel3.Controls.Add(button3);
+            panel3.Controls.Add(btnAgregar);
             panel3.Controls.Add(button2);
             panel3.Controls.Add(button1);
             panel3.Dock = DockStyle.Right;
@@ -155,16 +155,17 @@
             textBox1.Size = new Size(128, 27);
             textBox1.TabIndex = 12;
             // 
-            // button5
+            // btnEditar
             // 
-            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button5.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(193, 19);
-            button5.Name = "button5";
-            button5.Size = new Size(82, 23);
-            button5.TabIndex = 11;
-            button5.Text = "Editar";
-            button5.UseVisualStyleBackColor = true;
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.Location = new Point(193, 19);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(82, 23);
+            btnEditar.TabIndex = 11;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // button4
             // 
@@ -177,16 +178,17 @@
             button4.Text = "Eliminar";
             button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAgregar
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(19, 19);
-            button3.Name = "button3";
-            button3.Size = new Size(82, 23);
-            button3.TabIndex = 9;
-            button3.Text = "Agregar";
-            button3.UseVisualStyleBackColor = true;
+            btnAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAgregar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.Location = new Point(19, 19);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(82, 23);
+            btnAgregar.TabIndex = 9;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // button2
             // 
@@ -198,6 +200,7 @@
             button2.TabIndex = 8;
             button2.Text = "Imprimir";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -247,9 +250,9 @@
         private Label label1;
         private Panel panel3;
         private TextBox textBox1;
-        private Button button5;
+        private Button btnEditar;
         private Button button4;
-        private Button button3;
+        private Button btnAgregar;
         private Button button2;
         private Button button1;
         private DataGridView dataGridView1;

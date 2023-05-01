@@ -1,5 +1,4 @@
-﻿using Logicas;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,29 +12,14 @@ namespace SIVAA
 {
     public partial class Previsualizador : Form
     {
-        private string reporte, nombre;
-
         public Previsualizador(string nombre)
         {
             InitializeComponent();
-            cargar(nombre);
-        }
-
-        private void cargar(string nombre)
-        {
             WebBrowser webBrowser1 = new WebBrowser();
-            string rutaArchivo = Path.Combine(Directory.GetCurrentDirectory(), "reporte.html");
-            webBrowser1.Navigate(@"file:///" + rutaArchivo);
+            webBrowser1.Navigate("C:\\Users\\Usuario\\Desktop\\sivaa-master\\SIVAA\\bin\\Debug\\net6.0-windows\\reporte.html");
             panel3.Controls.Add(webBrowser1);
             webBrowser1.Dock = DockStyle.Fill;
-            label1.Text = "Previsualizador de " + nombre;
-            this.nombre = nombre;
-            reporte = File.ReadAllText(rutaArchivo);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ImpresorPdf.Imprimir(nombre, reporte);
+            label1.Text = nombre;
         }
     }
 }
