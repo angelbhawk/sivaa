@@ -164,6 +164,7 @@
             button5.TabIndex = 11;
             button5.Text = "Editar";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -186,6 +187,7 @@
             button3.TabIndex = 9;
             button3.Text = "Agregar";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -197,6 +199,7 @@
             button2.TabIndex = 8;
             button2.Text = "Imprimir";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
