@@ -39,8 +39,23 @@ namespace SIVAA
             listas = pro;
             foreach (Cliente x in pro)
             {
-                dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim()+" "+x.ApellidoPat.Trim()+" "+x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Estado.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Colonia.Trim());
+                dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Estado.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Colonia.Trim());
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspCliente(mainForm, 0));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspCliente(mainForm, 1));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de clientes"));
         }
     }
 }

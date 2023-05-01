@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SIVAA));
             pnlSuperior = new Panel();
             panel7 = new Panel();
+            panel8 = new Panel();
+            label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             pictureBox8 = new PictureBox();
@@ -61,6 +63,7 @@
             pictureBox2 = new PictureBox();
             pnlSuperior.SuspendLayout();
             panel7.SuspendLayout();
+            panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             pnlBoton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -94,6 +97,7 @@
             // 
             // panel7
             // 
+            panel7.Controls.Add(panel8);
             panel7.Controls.Add(label8);
             panel7.Controls.Add(label7);
             panel7.Controls.Add(pictureBox8);
@@ -102,6 +106,29 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(162, 80);
             panel7.TabIndex = 3;
+            // 
+            // panel8
+            // 
+            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel8.BackColor = Color.FromArgb(51, 58, 86);
+            panel8.Controls.Add(label9);
+            panel8.Location = new Point(52, 25);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(103, 33);
+            panel8.TabIndex = 0;
+            panel8.Visible = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(11, 8);
+            label9.Name = "label9";
+            label9.Size = new Size(80, 16);
+            label9.TabIndex = 4;
+            label9.Text = "Cerrar sesion";
+            label9.Click += label9_Click;
             // 
             // label8
             // 
@@ -120,7 +147,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(66, 22);
+            label7.Location = new Point(62, 22);
             label7.Name = "label7";
             label7.Size = new Size(68, 16);
             label7.TabIndex = 4;
@@ -129,11 +156,12 @@
             // pictureBox8
             // 
             pictureBox8.Image = Properties.Resources.usuario;
-            pictureBox8.Location = new Point(19, 24);
+            pictureBox8.Location = new Point(19, 25);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(32, 32);
             pictureBox8.TabIndex = 1;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
             // 
             // pnlBoton
             // 
@@ -408,11 +436,15 @@
             Controls.Add(pnlSuperior);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SIVAA";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SIVAA";
+            Load += SIVAA_Load;
             pnlSuperior.ResumeLayout(false);
             pnlSuperior.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             pnlBoton.ResumeLayout(false);
             pnlBoton.PerformLayout();
@@ -472,5 +504,7 @@
         private Label label7;
         private PictureBox pictureBox8;
         public Panel pnlDerecho;
+        private Panel panel8;
+        private Label label9;
     }
 }

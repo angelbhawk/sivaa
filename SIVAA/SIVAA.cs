@@ -4,10 +4,14 @@ namespace SIVAA
 {
     public partial class SIVAA : Form
     {
-        public SIVAA()
+        public Entidades.Empleado empleado;
+
+        public SIVAA(Entidades.Empleado empleado)
         {
             InitializeComponent();
             cambiarPantalla(new Principal(this));
+            this.empleado = empleado;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -54,6 +58,30 @@ namespace SIVAA
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             cambiarPantalla(new Reportes());
+        }
+
+        private void SIVAA_Load(object sender, EventArgs e)
+        {
+            if (empleado != null)
+            {
+                label7.Text = empleado.Nombre.Trim() + " " + empleado.ApellidoPat.Trim();
+                label8.Text = empleado.Tipo.Trim();
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            if (panel8.Visible == true)
+                panel8.Visible = false;
+            else
+                panel8.Visible = true;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Autenticacion auth = new Autenticacion();
+            auth.Show();
         }
     }
 }
