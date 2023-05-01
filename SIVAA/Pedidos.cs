@@ -3,7 +3,9 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,13 +16,17 @@ namespace SIVAA
 {
     public partial class Pedidos : Form
     {
-        List<PedidoEs> pedido = new List<PedidoEs>();
+        private SIVAA form;
+        List<PedidoEs> pedidoEs = new List<PedidoEs>();
         PedidoD PedidoD = new PedidoD();
+        string ID = null;
 
-        public Pedidos()
+        public Pedidos(SIVAA form)
         {
             InitializeComponent();
-            comboBox1.SelectedIndex = 0;
+            cbFiltro.SelectedIndex = 0;
+            this.form = form;
+            Mostrar();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -30,25 +36,120 @@ namespace SIVAA
             e.Graphics.DrawLine(new Pen(miColor), 0, panel1.Height - 1, panel1.Width, panel1.Height - 1);
         }
 
-        private void Pedidos_Load(object sender, EventArgs e)
-        {
-            Mostrar();
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            form.cambiarPantalla(new EspPedido(form, 0, ""));
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (ID != null)
+            {
+                form.cambiarPantalla(new EspPedido(form, 1, ID));
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un pedido");
+            }
 
         }
 
-        private void Mostrar()
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            pedido.Clear();
-            pedido = PedidoD.ListaPedidos();
-            foreach (PedidoEs x in pedido)
+            try
+            {
+                PedidoD.Eliminar(ID);
+                Mostrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No es posible eliminar la tabla", "ERROR");
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (cbFiltro.Text == "Todos")
+            {
+                Mostrar();
+            }
+            else if (cbFiltro.SelectedIndex == 1)
+            {
+                MostrarEsp(txtBuscar.Text, "p.IDPedido");
+            }
+            else if (cbFiltro.SelectedIndex == 2)
+            {
+                MostrarEsp(txtBuscar.Text, "e.Nombre");
+            }
+            else if(cbFiltro.SelectedIndex == 3)
+            {
+                MostrarEsp(txtBuscar.Text, "e.ApellidoPaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 4)
+            {
+                MostrarEsp(txtBuscar.Text, "e.ApellidoMaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 5)
+            {
+                MostrarEsp(txtBuscar.Text, "po.Nombre");
+            }
+            else if (cbFiltro.SelectedIndex == 6)
+            {
+                MostrarEsp(txtBuscar.Text, "p.Dia");
+            }
+            else if (cbFiltro.SelectedIndex == 7)
+            {
+                MostrarEsp(txtBuscar.Text, "p.Mes");
+            }
+            else if (cbFiltro.SelectedIndex == 8)
+            {
+                MostrarEsp(txtBuscar.Text, "p.Año");
+            }
+            else
+            {
+                MostrarEsp(txtBuscar.Text, "p.Importe");
+            }
+        }
+
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                int i = dataGridView1.CurrentCell.RowIndex;
+                ID = dataGridView1[0, i].Value.ToString();
+            }
+        }
+
+        private void MostrarEsp(string busqueda, string filtro)
+        {
+            dataGridView1.Rows.Clear();
+            List<PedidoEs> list = PedidoD.ListadoEspecifico(busqueda, filtro);
+            foreach (PedidoEs x in list)
             {
                 string fecha = x.Dia.ToString() + "/" + x.Mes.ToString() + "/" + x.Año.ToString();
                 dataGridView1.Rows.Add(x.IDPedido, x.Empleado, x.Proveedor, fecha, x.Importe);
             }
         }
+
+        private void Mostrar()
+        {
+            dataGridView1.Rows.Clear();
+            pedidoEs.Clear();
+            pedidoEs = PedidoD.ListaPedidos();
+            foreach (PedidoEs x in pedidoEs)
+            {
+                string fecha = x.Dia.ToString() + "/" + x.Mes.ToString() + "/" + x.Año.ToString();
+                dataGridView1.Rows.Add(x.IDPedido, x.Empleado, x.Proveedor, fecha, x.Importe);
+            }
+        }
+
     }
 }

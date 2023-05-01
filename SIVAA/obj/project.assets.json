@@ -611,24 +611,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\obad_\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\SIVAA\\SIVAA.csproj",
+      "projectUniqueName": "C:\\Universidad\\Ing. Software\\SIVAA\\SIVAA\\SIVAA.csproj",
       "projectName": "SIVAA",
-      "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\SIVAA\\SIVAA.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\SIVAA\\obj\\",
+      "projectPath": "C:\\Universidad\\Ing. Software\\SIVAA\\SIVAA\\SIVAA.csproj",
+      "packagesPath": "C:\\Users\\obad_\\.nuget\\packages\\",
+      "outputPath": "C:\\Universidad\\Ing. Software\\SIVAA\\SIVAA\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\obad_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -636,18 +631,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Entidades\\Entidades.csproj"
+            "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Universidad\\Ing. Software\\SIVAA\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Logicas\\Logicas.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\sivaa\\Logicas\\Logicas.csproj"
+            "C:\\Universidad\\Ing. Software\\SIVAA\\Logicas\\Logicas.csproj": {
+              "projectPath": "C:\\Universidad\\Ing. Software\\SIVAA\\Logicas\\Logicas.csproj"
             }
           }
         }

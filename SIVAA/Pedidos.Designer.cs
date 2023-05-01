@@ -37,11 +37,12 @@
             Column4 = new DataGridViewTextBoxColumn();
             label1 = new Label();
             panel3 = new Panel();
-            btnEditar = new Button();
+            txtBuscar = new TextBox();
             btnEliminar = new Button();
+            btnEditar = new Button();
             btnAgregar = new Button();
             btnImprimir = new Button();
-            comboBox1 = new ComboBox();
+            cbFiltro = new ComboBox();
             btnBuscar = new Button();
             panel1 = new Panel();
             panel2.SuspendLayout();
@@ -77,6 +78,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(900, 399);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column5
             // 
@@ -124,46 +126,57 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(btnEditar);
+            panel3.Controls.Add(txtBuscar);
             panel3.Controls.Add(btnEliminar);
+            panel3.Controls.Add(btnEditar);
             panel3.Controls.Add(btnAgregar);
             panel3.Controls.Add(btnImprimir);
-            panel3.Controls.Add(comboBox1);
+            panel3.Controls.Add(cbFiltro);
             panel3.Controls.Add(btnBuscar);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(312, 0);
+            panel3.Location = new Point(215, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(608, 60);
+            panel3.Size = new Size(705, 60);
             panel3.TabIndex = 1;
             panel3.Paint += panel1_Paint;
             // 
-            // btnEditar
+            // txtBuscar
             // 
-            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEditar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.Location = new Point(102, 20);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(82, 23);
-            btnEditar.TabIndex = 7;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
+            txtBuscar.Location = new Point(492, 21);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar";
+            txtBuscar.Size = new Size(109, 23);
+            txtBuscar.TabIndex = 9;
             // 
             // btnEliminar
             // 
             btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(190, 20);
+            btnEliminar.Location = new Point(101, 20);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(82, 23);
-            btnEliminar.TabIndex = 6;
+            btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.Location = new Point(189, 20);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(82, 23);
+            btnEditar.TabIndex = 7;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAgregar
             // 
             btnAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnAgregar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAgregar.Location = new Point(14, 20);
+            btnAgregar.Location = new Point(13, 20);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(82, 23);
             btnAgregar.TabIndex = 5;
@@ -181,29 +194,31 @@
             btnImprimir.TabIndex = 4;
             btnImprimir.Text = "Imprimir";
             btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
             // 
-            // comboBox1
+            // cbFiltro
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Todos" });
-            comboBox1.Location = new Point(384, 18);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 24);
-            comboBox1.TabIndex = 2;
+            cbFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbFiltro.FormattingEnabled = true;
+            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
+            cbFiltro.Location = new Point(365, 21);
+            cbFiltro.Name = "cbFiltro";
+            cbFiltro.Size = new Size(121, 24);
+            cbFiltro.TabIndex = 2;
             // 
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnBuscar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(511, 19);
+            btnBuscar.Location = new Point(607, 20);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(77, 23);
+            btnBuscar.Size = new Size(85, 23);
             btnBuscar.TabIndex = 3;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // panel1
             // 
@@ -227,10 +242,10 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Pedidos";
             Text = "Pedidos";
-            Load += Pedidos_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -248,11 +263,12 @@
         private Label label1;
         private Panel panel3;
         private Button btnEditar;
-        private Button btnEliminar;
         private Button btnAgregar;
         private Button btnImprimir;
-        private ComboBox comboBox1;
+        private ComboBox cbFiltro;
         private Button btnBuscar;
         private Panel panel1;
+        private Button btnEliminar;
+        private TextBox txtBuscar;
     }
 }

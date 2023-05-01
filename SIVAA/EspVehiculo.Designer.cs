@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,16 +45,6 @@
             panel1.Size = new Size(920, 60);
             panel1.TabIndex = 11;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(20, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(79, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Vehiculo /";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -64,6 +54,16 @@
             label2.Size = new Size(61, 20);
             label2.TabIndex = 1;
             label2.Text = "Agregar";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(20, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Vehiculo /";
             // 
             // EspVehiculo
             // 
