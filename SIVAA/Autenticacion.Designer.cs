@@ -32,23 +32,21 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel6 = new Panel();
-            panel7 = new Panel();
-            label1 = new Label();
-            panel5 = new Panel();
-            label13 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            label1 = new Label();
             textBox6 = new TextBox();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            label13 = new Label();
             panel3 = new Panel();
             panel4 = new Panel();
             lblSIVAA = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            panel5 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
-            panel7.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -79,57 +77,18 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(panel7);
+            panel6.Controls.Add(panel5);
+            panel6.Controls.Add(label3);
+            panel6.Controls.Add(label1);
+            panel6.Controls.Add(textBox6);
+            panel6.Controls.Add(button1);
+            panel6.Controls.Add(textBox1);
+            panel6.Controls.Add(label13);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(0, 94);
             panel6.Name = "panel6";
             panel6.Size = new Size(404, 427);
             panel6.TabIndex = 100;
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(label1);
-            panel7.Controls.Add(panel5);
-            panel7.Controls.Add(label13);
-            panel7.Controls.Add(label3);
-            panel7.Controls.Add(textBox1);
-            panel7.Controls.Add(button1);
-            panel7.Controls.Add(textBox6);
-            panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(0, 0);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(404, 427);
-            panel7.TabIndex = 99;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(103, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(132, 20);
-            label1.TabIndex = 96;
-            label1.Text = "Correo electronico";
-            // 
-            // panel5
-            // 
-            panel5.Location = new Point(46, 265);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(326, 40);
-            panel5.TabIndex = 98;
-            panel5.Paint += panel5_Paint;
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.None;
-            label13.AutoSize = true;
-            label13.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(103, 133);
-            label13.Name = "label13";
-            label13.Size = new Size(87, 20);
-            label13.TabIndex = 93;
-            label13.Text = "Contraseña";
             // 
             // label3
             // 
@@ -137,28 +96,38 @@
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(40, 44, 70);
-            label3.Location = new Point(126, 344);
+            label3.Location = new Point(126, 354);
             label3.Name = "label3";
             label3.Size = new Size(153, 20);
             label3.TabIndex = 97;
             label3.Text = "Olvide mi contraseña";
-            label3.Click += label3_Click;
             // 
-            // textBox1
+            // label1
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(103, 156);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(198, 32);
-            textBox1.TabIndex = 95;
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(103, 91);
+            label1.Name = "label1";
+            label1.Size = new Size(132, 20);
+            label1.TabIndex = 96;
+            label1.Text = "Correo electronico";
+            // 
+            // textBox6
+            // 
+            textBox6.Anchor = AnchorStyles.None;
+            textBox6.BackColor = Color.White;
+            textBox6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox6.Location = new Point(103, 114);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(198, 32);
+            textBox6.TabIndex = 92;
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.None;
             button1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(103, 215);
+            button1.Location = new Point(103, 238);
             button1.Name = "button1";
             button1.Size = new Size(198, 33);
             button1.TabIndex = 94;
@@ -166,15 +135,26 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // textBox6
+            // textBox1
             // 
-            textBox6.Anchor = AnchorStyles.None;
-            textBox6.BackColor = Color.White;
-            textBox6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.Location = new Point(103, 91);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(198, 32);
-            textBox6.TabIndex = 92;
+            textBox1.Anchor = AnchorStyles.None;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(103, 179);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(198, 32);
+            textBox1.TabIndex = 95;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(103, 156);
+            label13.Name = "label13";
+            label13.Size = new Size(87, 20);
+            label13.TabIndex = 93;
+            label13.Text = "Contraseña";
             // 
             // panel3
             // 
@@ -229,6 +209,14 @@
             pictureBox1.TabIndex = 97;
             pictureBox1.TabStop = false;
             // 
+            // panel5
+            // 
+            panel5.Location = new Point(3, 308);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(398, 19);
+            panel5.TabIndex = 98;
+            panel5.Paint += panel5_Paint;
+            // 
             // Autenticacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -244,8 +232,7 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panel6.PerformLayout();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -270,6 +257,5 @@
         private TextBox textBox1;
         private Label label3;
         private Panel panel5;
-        private Panel panel7;
     }
 }
