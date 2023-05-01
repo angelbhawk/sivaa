@@ -30,6 +30,11 @@
         {
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel3 = new Panel();
             txtBuscar = new TextBox();
@@ -37,14 +42,9 @@
             btnEditar = new Button();
             btnEliminar = new Button();
             btnAgregar = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnImprimir = new Button();
+            btnBuscar = new Button();
             label1 = new Label();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -78,120 +78,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(900, 399);
             dataGridView1.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(920, 60);
-            panel1.TabIndex = 4;
-            panel1.Paint += panel1_Paint;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(txtBuscar);
-            panel3.Controls.Add(cbFiltro);
-            panel3.Controls.Add(btnEditar);
-            panel3.Controls.Add(btnEliminar);
-            panel3.Controls.Add(btnAgregar);
-            panel3.Controls.Add(button2);
-            panel3.Controls.Add(button1);
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(179, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(741, 60);
-            panel3.TabIndex = 2;
-            panel3.Paint += panel1_Paint;
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(537, 19);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = "Buscar";
-            txtBuscar.Size = new Size(109, 23);
-            txtBuscar.TabIndex = 12;
-            // 
-            // cbFiltro
-            // 
-            cbFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
-            cbFiltro.Location = new Point(410, 19);
-            cbFiltro.Name = "cbFiltro";
-            cbFiltro.Size = new Size(121, 24);
-            cbFiltro.TabIndex = 11;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEditar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.Location = new Point(234, 19);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(82, 23);
-            btnEditar.TabIndex = 10;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEliminar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(146, 20);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(82, 23);
-            btnEliminar.TabIndex = 9;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAgregar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAgregar.Location = new Point(58, 20);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(82, 23);
-            btnAgregar.TabIndex = 6;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(322, 19);
-            button2.Name = "button2";
-            button2.Size = new Size(82, 23);
-            button2.TabIndex = 1;
-            button2.Text = "Imprimir";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(652, 19);
-            button1.Name = "button1";
-            button1.Size = new Size(77, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(20, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Citas";
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column5
             // 
@@ -227,6 +114,124 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(920, 60);
+            panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(txtBuscar);
+            panel3.Controls.Add(cbFiltro);
+            panel3.Controls.Add(btnEditar);
+            panel3.Controls.Add(btnEliminar);
+            panel3.Controls.Add(btnAgregar);
+            panel3.Controls.Add(btnImprimir);
+            panel3.Controls.Add(btnBuscar);
+            panel3.Dock = DockStyle.Right;
+            panel3.Location = new Point(179, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(741, 60);
+            panel3.TabIndex = 2;
+            panel3.Paint += panel1_Paint;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(537, 19);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar";
+            txtBuscar.Size = new Size(109, 23);
+            txtBuscar.TabIndex = 12;
+            // 
+            // cbFiltro
+            // 
+            cbFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbFiltro.FormattingEnabled = true;
+            cbFiltro.Items.AddRange(new object[] { "Todos", "IDCita", "Nombre", "Apellido Paterno", "Apellido Materno", "Cliente Nombre", "Cliente Apellido Paterno", "Cliente Apellido Materno", "Dia", "Mes", "Año" });
+            cbFiltro.Location = new Point(410, 19);
+            cbFiltro.Name = "cbFiltro";
+            cbFiltro.Size = new Size(121, 24);
+            cbFiltro.TabIndex = 11;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.Location = new Point(234, 19);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(82, 23);
+            btnEditar.TabIndex = 10;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEliminar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminar.Location = new Point(146, 20);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(82, 23);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAgregar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.Location = new Point(58, 20);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(82, 23);
+            btnAgregar.TabIndex = 6;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnImprimir
+            // 
+            btnImprimir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnImprimir.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnImprimir.Location = new Point(322, 19);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(82, 23);
+            btnImprimir.TabIndex = 1;
+            btnImprimir.Text = "Imprimir";
+            btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBuscar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(652, 19);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(77, 23);
+            btnBuscar.TabIndex = 0;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(20, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(44, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Citas";
+            // 
             // Citas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -252,8 +257,8 @@
         private Panel panel1;
         private Label label1;
         private Panel panel3;
-        private Button button2;
-        private Button button1;
+        private Button btnImprimir;
+        private Button btnBuscar;
         private Button btnAgregar;
         private Button btnEliminar;
         private Button btnEditar;

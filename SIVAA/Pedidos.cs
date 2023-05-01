@@ -51,7 +51,6 @@ namespace SIVAA
             {
                 MessageBox.Show("Selecciona un pedido");
             }
-
         }
 
 
