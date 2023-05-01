@@ -73,6 +73,41 @@ namespace Datos
             return productos;
         }
 
+        public List<CitaM> ListadoCitas()
+        {
+            List<CitaM> productos = new List<CitaM>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Venta
+                string CdSql = "SELECT c.IDCita, CONCAT(TRIM(e.Nombre),' ',TRIM(e.ApellidoPaterno),' ',TRIM(e.ApellidoMaterno)) as Empleado, CONCAT(TRIM(cl.Nombre),' ',TRIM(cl.ApellidoPaterno),' ',TRIM(cl.ApellidoMaterno)) as Cliente, c.Dia, c.Mes, c.Año, c.Hora\r\nFROM Cita as c\r\nINNER JOIN Empleado as e\r\nON e.IDEmpleado = c.IDEmpleado\r\nINNER JOIN Cliente as cl\r\nON cl.IDCliente = c.IDCliente";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        CitaM Pqte = new CitaM
+                        {
+                            IDCita = Convert.ToString(Dr["IDCita"]),
+                            Empleado = Convert.ToString(Dr["Empleado"]),
+                            Cliente = Convert.ToString(Dr["Cliente"]),
+                            Dia = Convert.ToInt32(Dr["Dia"]),
+                            Mes = Convert.ToInt32(Dr["Mes"]),
+                            Año = Convert.ToInt32(Dr["Año"]),
+                            Hora = Convert.ToString(Dr["Hora"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
         public Cita ObtenerPdto(string CodPqt)
         {
             //Using que crea la conexión
