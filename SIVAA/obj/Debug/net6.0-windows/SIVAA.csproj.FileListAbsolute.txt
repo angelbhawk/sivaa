@@ -173,3 +173,11 @@ C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\refint\SIVAA.d
 C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.pdb
 C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.genruntimeconfig.cache
 C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\ref\SIVAA.dll
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Autenticacion.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspCita.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspCliente.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspCotizacion.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspEmpleado.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspProveedor.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspVersion.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Previsualizador.resources
