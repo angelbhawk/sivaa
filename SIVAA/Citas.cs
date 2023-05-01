@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +15,12 @@ namespace SIVAA
     public partial class Citas : Form
     {
         SIVAA form;
+        CitaD citaD = new CitaD();
         public Citas(SIVAA form)
         {
             InitializeComponent();
             this.form = form;
+            mostrar();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -29,6 +33,16 @@ namespace SIVAA
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             form.cambiarPantalla(this);
+        }
+
+        private void mostrar()
+        {
+            List<CitaM> citaMs = citaD.ListadoCitas();
+            foreach(CitaM x in citaMs)
+            {
+                string i = x.Dia.ToString()+ "/" + x.Mes + "/" + x.Año;
+                dataGridView1.Rows.Add(x.IDCita, x.Empleado, x.Cliente, i, x.Hora);
+            }
         }
     }
 }
