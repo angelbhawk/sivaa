@@ -39,8 +39,23 @@ namespace SIVAA
             dataGridView1.Rows.Clear();
             foreach (Entidades.Versiones x in pro)
             {
-                dataGridView1.Rows.Add(x.IDVersion, x.IDVehiculo, x.Version,x.TipoAsientos, x.TipoCombustible, x.Cilindraje);
+                dataGridView1.Rows.Add(x.IDVersion, x.IDVehiculo, x.Version, x.TipoAsientos, x.TipoCombustible, x.Cilindraje);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspVersion(mainForm, 0));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspVersion(mainForm, 1));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de versiones"));
         }
     }
 }

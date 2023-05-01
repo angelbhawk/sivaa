@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logicas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,26 @@ namespace SIVAA
 {
     public partial class EspVersion : Form
     {
-        public EspVersion()
+        private SIVAA mainForm;
+        readonly VersionLog versiones = new VersionLog();
+
+        public EspVersion(SIVAA mainForm, int modo)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
+            if (modo == 0)
+            {
+                label2.Text = "Agregar";
+            }
+            else
+            {
+                label2.Text = "Modificar";
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new Versiones(mainForm));
         }
     }
 }

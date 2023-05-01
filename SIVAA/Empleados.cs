@@ -42,5 +42,20 @@ namespace SIVAA
                 dataGridView1.Rows.Add(x.IDEmpleado, x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.Correo, x.Telefono, x.RFC, x.Tipo);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspEmpleado(mainForm, 0));
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspEmpleado(mainForm, 0));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de empleados"));
+        }
     }
 }
