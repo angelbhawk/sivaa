@@ -38,8 +38,23 @@ namespace SIVAA
             listas = pro;
             foreach (Proveedor x in pro)
             {
-                dataGridView1.Rows.Add(x.IDProveedor.Trim(), x.Nombre.Trim(), x.RFC.Trim(), x.Estado.Trim()+", "+ x.Ciudad.Trim() + ", "+x.Colonia.Trim());
+                dataGridView1.Rows.Add(x.IDProveedor.Trim(), x.Nombre.Trim(), x.RFC.Trim(), x.Estado.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Colonia.Trim());
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspProveedor(mainForm, 0));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new EspProveedor(mainForm, 1));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de proveedores"));
         }
     }
 }
