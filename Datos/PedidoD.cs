@@ -144,6 +144,44 @@ namespace Datos
             return productos;
         }
 
+        public List<PedidoEs> ListadoEspecifico(string CodPqt, string opcion)
+        {
+            List<PedidoEs> productos = new List<PedidoEs>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Proveedor
+
+                string CdSql = "SELECT p.IDPedido, CONCAT(TRIM(e.Nombre),' ',TRIM(e.ApellidoPaterno),' ',TRIM(e.ApellidoMaterno)) as Empleado, po.Nombre as Proveedor, p.Dia, p.Mes, p.Año, p.Importe\r\nFROM Pedido as p\r\nINNER JOIN Empleado as e\r\nON e.IDEmpleado = p.IDEmpleado\r\nINNER JOIN Proovedor as po\r\nON po.IDProovedor = p.IDProovedor WHERE " + opcion + "=@Cl";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        PedidoEs Pqte = new PedidoEs
+                        {
+                            IDPedido = Convert.ToString(Dr["IDPedido"]),
+                            Proveedor = Convert.ToString(Dr["Proveedor"]),
+                            Empleado = Convert.ToString(Dr["Empleado"]),
+                            Dia = Convert.ToInt32(Dr["Dia"]),
+                            Mes = Convert.ToInt32(Dr["Mes"]),
+                            Año = Convert.ToInt32(Dr["Año"]),
+                            Importe = Convert.ToDouble(Dr["Importe"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
+
         public void Eliminar(string CodPqt)
         {
             using (SqlConnection Cnx = new SqlConnection(CdCnx))
