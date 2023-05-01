@@ -102,7 +102,7 @@
             // 
             cbEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             cbEmpleado.FormattingEnabled = true;
-            cbEmpleado.Location = new Point(104, 161);
+            cbEmpleado.Location = new Point(103, 133);
             cbEmpleado.Name = "cbEmpleado";
             cbEmpleado.Size = new Size(229, 23);
             cbEmpleado.TabIndex = 4;
@@ -111,7 +111,7 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
-            label3.Location = new Point(104, 143);
+            label3.Location = new Point(103, 115);
             label3.Name = "label3";
             label3.Size = new Size(123, 15);
             label3.TabIndex = 5;
@@ -120,7 +120,7 @@
             // date
             // 
             date.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            date.Location = new Point(478, 161);
+            date.Location = new Point(474, 133);
             date.Name = "date";
             date.Size = new Size(229, 23);
             date.TabIndex = 6;
@@ -130,7 +130,7 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(478, 143);
+            label4.Location = new Point(474, 115);
             label4.Name = "label4";
             label4.Size = new Size(38, 15);
             label4.TabIndex = 7;
@@ -140,7 +140,7 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
-            label5.Location = new Point(104, 258);
+            label5.Location = new Point(103, 179);
             label5.Name = "label5";
             label5.Size = new Size(124, 15);
             label5.TabIndex = 9;
@@ -150,7 +150,7 @@
             // 
             cbProveedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             cbProveedor.FormattingEnabled = true;
-            cbProveedor.Location = new Point(104, 276);
+            cbProveedor.Location = new Point(103, 197);
             cbProveedor.Name = "cbProveedor";
             cbProveedor.Size = new Size(229, 23);
             cbProveedor.TabIndex = 8;
@@ -158,7 +158,7 @@
             // txtImporte
             // 
             txtImporte.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            txtImporte.Location = new Point(478, 276);
+            txtImporte.Location = new Point(474, 195);
             txtImporte.Name = "txtImporte";
             txtImporte.Size = new Size(229, 23);
             txtImporte.TabIndex = 10;
@@ -167,7 +167,7 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(478, 258);
+            label6.Location = new Point(474, 177);
             label6.Name = "label6";
             label6.Size = new Size(66, 15);
             label6.TabIndex = 11;

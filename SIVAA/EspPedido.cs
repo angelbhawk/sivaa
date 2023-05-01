@@ -92,6 +92,21 @@ namespace SIVAA
 
         #region Metodos
 
+        private string Aletorio()
+        {
+            Random random = new Random();
+            string caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            int longitudTexto = 9;
+            string textoAleatorio = "";
+
+            for (int i = 0; i < longitudTexto; i++)
+            {
+                int indiceCaracter = random.Next(caracteresPermitidos.Length);
+                textoAleatorio += caracteresPermitidos[indiceCaracter];
+            }
+            return textoAleatorio;
+        }
+
         private void CargarDatos()
         {
             List<Empleado> empleado = empleados.ListadoAll();
