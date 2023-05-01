@@ -40,7 +40,7 @@ namespace SIVAA
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            cambiarPantalla(new Pedidos());
+            cambiarPantalla(new Pedidos(this));
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)

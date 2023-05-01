@@ -12,9 +12,11 @@ namespace SIVAA
 {
     public partial class Citas : Form
     {
-        public Citas()
+        SIVAA form;
+        public Citas(SIVAA form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -22,6 +24,11 @@ namespace SIVAA
             Color miColor = Color.FromArgb(241, 241, 241);
 
             e.Graphics.DrawLine(new Pen(miColor), 0, panel1.Height - 1, panel1.Width, panel1.Height - 1);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            form.cambiarPantalla(this);
         }
     }
 }
