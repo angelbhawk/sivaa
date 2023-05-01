@@ -31,9 +31,9 @@
             panel1 = new Panel();
             label2 = new Label();
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            cbEmpleado = new ComboBox();
             label3 = new Label();
-            comboBox13 = new ComboBox();
+            cbCliente = new ComboBox();
             label16 = new Label();
             label6 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -72,15 +72,15 @@
             label1.TabIndex = 0;
             label1.Text = "Citas /";
             // 
-            // comboBox1
+            // cbEmpleado
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(33, 143);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(197, 31);
-            comboBox1.TabIndex = 68;
+            cbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbEmpleado.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
+            cbEmpleado.FormattingEnabled = true;
+            cbEmpleado.Location = new Point(33, 143);
+            cbEmpleado.Name = "cbEmpleado";
+            cbEmpleado.Size = new Size(286, 31);
+            cbEmpleado.TabIndex = 68;
             // 
             // label3
             // 
@@ -92,21 +92,21 @@
             label3.TabIndex = 67;
             label3.Text = "Empleado";
             // 
-            // comboBox13
+            // cbCliente
             // 
-            comboBox13.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox13.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox13.FormattingEnabled = true;
-            comboBox13.Location = new Point(249, 143);
-            comboBox13.Name = "comboBox13";
-            comboBox13.Size = new Size(197, 31);
-            comboBox13.TabIndex = 70;
+            cbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCliente.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
+            cbCliente.FormattingEnabled = true;
+            cbCliente.Location = new Point(33, 214);
+            cbCliente.Name = "cbCliente";
+            cbCliente.Size = new Size(286, 31);
+            cbCliente.TabIndex = 70;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(249, 120);
+            label16.Location = new Point(33, 191);
             label16.Name = "label16";
             label16.Size = new Size(57, 20);
             label16.TabIndex = 69;
@@ -116,7 +116,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(33, 199);
+            label6.Location = new Point(33, 275);
             label6.Name = "label6";
             label6.Size = new Size(50, 20);
             label6.TabIndex = 74;
@@ -125,7 +125,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(33, 222);
+            dateTimePicker1.Location = new Point(33, 298);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(413, 32);
             dateTimePicker1.TabIndex = 73;
@@ -140,6 +140,7 @@
             button1.TabIndex = 92;
             button1.Text = "Listo";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += btnAceptar_Click;
             // 
             // EspCita
             // 
@@ -149,9 +150,9 @@
             Controls.Add(button1);
             Controls.Add(label6);
             Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox13);
+            Controls.Add(cbCliente);
             Controls.Add(label16);
-            Controls.Add(comboBox1);
+            Controls.Add(cbEmpleado);
             Controls.Add(label3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -168,9 +169,9 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox cbEmpleado;
         private Label label3;
-        private ComboBox comboBox13;
+        private ComboBox cbCliente;
         private Label label16;
         private Label label6;
         private DateTimePicker dateTimePicker1;
