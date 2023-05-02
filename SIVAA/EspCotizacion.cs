@@ -34,5 +34,10 @@ namespace SIVAA
         {
             mainForm.cambiarPantalla(new Cotizaciones(mainForm));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
