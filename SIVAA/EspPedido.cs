@@ -196,7 +196,7 @@ namespace SIVAA
         #endregion
 
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
             form.cambiarPantalla(new Pedidos(form));
         }

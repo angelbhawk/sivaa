@@ -83,6 +83,11 @@ namespace SIVAA
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            form.cambiarPantalla(new Citas(form));
+        }
+
         #region
         private void CargarDatos()
         {

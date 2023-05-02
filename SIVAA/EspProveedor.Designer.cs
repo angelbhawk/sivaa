@@ -32,17 +32,17 @@
             label2 = new Label();
             label1 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtRFC = new TextBox();
             label3 = new Label();
-            tbxId = new TextBox();
+            txtNombre = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            txtColonia = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            txtNoExterior = new TextBox();
             label7 = new Label();
-            textBox4 = new TextBox();
+            txtEstado = new TextBox();
             label8 = new Label();
-            textBox5 = new TextBox();
+            txtCiudad = new TextBox();
             button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -83,19 +83,20 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(270, 95);
+            label4.Location = new Point(369, 95);
             label4.Name = "label4";
             label4.Size = new Size(38, 20);
             label4.TabIndex = 25;
             label4.Text = "RFC";
             // 
-            // textBox1
+            // txtRFC
             // 
-            textBox1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(270, 118);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(199, 32);
-            textBox1.TabIndex = 24;
+            txtRFC.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRFC.Location = new Point(369, 118);
+            txtRFC.MaxLength = 13;
+            txtRFC.Name = "txtRFC";
+            txtRFC.Size = new Size(294, 32);
+            txtRFC.TabIndex = 24;
             // 
             // label3
             // 
@@ -107,13 +108,13 @@
             label3.TabIndex = 23;
             label3.Text = "Nombre";
             // 
-            // tbxId
+            // txtNombre
             // 
-            tbxId.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxId.Location = new Point(33, 118);
-            tbxId.Name = "tbxId";
-            tbxId.Size = new Size(199, 32);
-            tbxId.TabIndex = 22;
+            txtNombre.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(33, 118);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(294, 32);
+            txtNombre.TabIndex = 22;
             // 
             // label5
             // 
@@ -125,31 +126,32 @@
             label5.TabIndex = 27;
             label5.Text = "Colonia";
             // 
-            // textBox2
+            // txtColonia
             // 
-            textBox2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(33, 200);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(199, 32);
-            textBox2.TabIndex = 26;
+            txtColonia.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtColonia.Location = new Point(33, 200);
+            txtColonia.Name = "txtColonia";
+            txtColonia.Size = new Size(294, 32);
+            txtColonia.TabIndex = 26;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(270, 177);
+            label6.Location = new Point(369, 177);
             label6.Name = "label6";
             label6.Size = new Size(117, 20);
             label6.TabIndex = 29;
             label6.Text = "Numero exterior";
             // 
-            // textBox3
+            // txtNoExterior
             // 
-            textBox3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(270, 200);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(199, 32);
-            textBox3.TabIndex = 28;
+            txtNoExterior.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNoExterior.Location = new Point(369, 200);
+            txtNoExterior.MaxLength = 5;
+            txtNoExterior.Name = "txtNoExterior";
+            txtNoExterior.Size = new Size(294, 32);
+            txtNoExterior.TabIndex = 28;
             // 
             // label7
             // 
@@ -161,31 +163,31 @@
             label7.TabIndex = 31;
             label7.Text = "Estado";
             // 
-            // textBox4
+            // txtEstado
             // 
-            textBox4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(33, 281);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(199, 32);
-            textBox4.TabIndex = 30;
+            txtEstado.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEstado.Location = new Point(33, 281);
+            txtEstado.Name = "txtEstado";
+            txtEstado.Size = new Size(294, 32);
+            txtEstado.TabIndex = 30;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(270, 258);
+            label8.Location = new Point(369, 258);
             label8.Name = "label8";
             label8.Size = new Size(58, 20);
             label8.TabIndex = 33;
             label8.Text = "Ciudad";
             // 
-            // textBox5
+            // txtCiudad
             // 
-            textBox5.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(270, 281);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(199, 32);
-            textBox5.TabIndex = 32;
+            txtCiudad.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCiudad.Location = new Point(369, 281);
+            txtCiudad.Name = "txtCiudad";
+            txtCiudad.Size = new Size(294, 32);
+            txtCiudad.TabIndex = 32;
             // 
             // button1
             // 
@@ -197,6 +199,7 @@
             button1.TabIndex = 34;
             button1.Text = "Listo";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // EspProveedor
             // 
@@ -205,17 +208,17 @@
             ClientSize = new Size(920, 481);
             Controls.Add(button1);
             Controls.Add(label8);
-            Controls.Add(textBox5);
+            Controls.Add(txtCiudad);
             Controls.Add(label7);
-            Controls.Add(textBox4);
+            Controls.Add(txtEstado);
             Controls.Add(label6);
-            Controls.Add(textBox3);
+            Controls.Add(txtNoExterior);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(txtColonia);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(txtRFC);
             Controls.Add(label3);
-            Controls.Add(tbxId);
+            Controls.Add(txtNombre);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EspProveedor";
@@ -232,17 +235,17 @@
         private Label label2;
         private Label label1;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtRFC;
         private Label label3;
-        private TextBox tbxId;
+        private TextBox txtNombre;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox txtColonia;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txtNoExterior;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox txtEstado;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox txtCiudad;
         private Button button1;
     }
 }

@@ -33,21 +33,21 @@
             label1 = new Label();
             button1 = new Button();
             label3 = new Label();
-            tbxId = new TextBox();
+            txtNombre = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtApellidoP = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            txtApellidoM = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            txtCorreo = new TextBox();
             label7 = new Label();
-            textBox4 = new TextBox();
+            txtTelefono = new TextBox();
             label8 = new Label();
             label9 = new Label();
-            textBox6 = new TextBox();
+            txtRFC = new TextBox();
             label10 = new Label();
-            textBox7 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtContraseña = new TextBox();
+            cbPuesto = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,6 +93,7 @@
             button1.TabIndex = 15;
             button1.Text = "Listo";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
@@ -104,13 +105,13 @@
             label3.TabIndex = 19;
             label3.Text = "Nombre";
             // 
-            // tbxId
+            // txtNombre
             // 
-            tbxId.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxId.Location = new Point(33, 118);
-            tbxId.Name = "tbxId";
-            tbxId.Size = new Size(199, 32);
-            tbxId.TabIndex = 17;
+            txtNombre.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(33, 118);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(199, 32);
+            txtNombre.TabIndex = 17;
             // 
             // label4
             // 
@@ -122,13 +123,13 @@
             label4.TabIndex = 21;
             label4.Text = "Apellido paterno";
             // 
-            // textBox1
+            // txtApellidoP
             // 
-            textBox1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(270, 118);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(199, 32);
-            textBox1.TabIndex = 20;
+            txtApellidoP.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellidoP.Location = new Point(270, 118);
+            txtApellidoP.Name = "txtApellidoP";
+            txtApellidoP.Size = new Size(199, 32);
+            txtApellidoP.TabIndex = 20;
             // 
             // label5
             // 
@@ -140,13 +141,13 @@
             label5.TabIndex = 23;
             label5.Text = "Apellido materno";
             // 
-            // textBox2
+            // txtApellidoM
             // 
-            textBox2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(505, 118);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(199, 32);
-            textBox2.TabIndex = 22;
+            txtApellidoM.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellidoM.Location = new Point(505, 118);
+            txtApellidoM.Name = "txtApellidoM";
+            txtApellidoM.Size = new Size(199, 32);
+            txtApellidoM.TabIndex = 22;
             // 
             // label6
             // 
@@ -158,13 +159,13 @@
             label6.TabIndex = 25;
             label6.Text = "Correo electronico";
             // 
-            // textBox3
+            // txtCorreo
             // 
-            textBox3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(33, 199);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(436, 32);
-            textBox3.TabIndex = 24;
+            txtCorreo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCorreo.Location = new Point(33, 199);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(436, 32);
+            txtCorreo.TabIndex = 24;
             // 
             // label7
             // 
@@ -176,13 +177,14 @@
             label7.TabIndex = 27;
             label7.Text = "Telefono";
             // 
-            // textBox4
+            // txtTelefono
             // 
-            textBox4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(505, 199);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(199, 32);
-            textBox4.TabIndex = 26;
+            txtTelefono.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTelefono.Location = new Point(505, 199);
+            txtTelefono.MaxLength = 10;
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(199, 32);
+            txtTelefono.TabIndex = 26;
             // 
             // label8
             // 
@@ -204,13 +206,14 @@
             label9.TabIndex = 31;
             label9.Text = "RFC";
             // 
-            // textBox6
+            // txtRFC
             // 
-            textBox6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.Location = new Point(270, 290);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(199, 32);
-            textBox6.TabIndex = 30;
+            txtRFC.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRFC.Location = new Point(270, 290);
+            txtRFC.MaxLength = 13;
+            txtRFC.Name = "txtRFC";
+            txtRFC.Size = new Size(199, 32);
+            txtRFC.TabIndex = 30;
             // 
             // label10
             // 
@@ -222,45 +225,46 @@
             label10.TabIndex = 29;
             label10.Text = "Contraseña";
             // 
-            // textBox7
+            // txtContraseña
             // 
-            textBox7.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.Location = new Point(33, 290);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(199, 32);
-            textBox7.TabIndex = 28;
+            txtContraseña.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContraseña.Location = new Point(33, 290);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(199, 32);
+            txtContraseña.TabIndex = 28;
             // 
-            // comboBox1
+            // cbPuesto
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(505, 290);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(199, 31);
-            comboBox1.TabIndex = 34;
+            cbPuesto.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbPuesto.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
+            cbPuesto.FormattingEnabled = true;
+            cbPuesto.Items.AddRange(new object[] { "Atencion", "Caja", "Vendedor", "Supervisor" });
+            cbPuesto.Location = new Point(505, 290);
+            cbPuesto.Name = "cbPuesto";
+            cbPuesto.Size = new Size(199, 31);
+            cbPuesto.TabIndex = 34;
             // 
             // EspEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 481);
-            Controls.Add(comboBox1);
+            Controls.Add(cbPuesto);
             Controls.Add(label8);
             Controls.Add(label9);
-            Controls.Add(textBox6);
+            Controls.Add(txtRFC);
             Controls.Add(label10);
-            Controls.Add(textBox7);
+            Controls.Add(txtContraseña);
             Controls.Add(label7);
-            Controls.Add(textBox4);
+            Controls.Add(txtTelefono);
             Controls.Add(label6);
-            Controls.Add(textBox3);
+            Controls.Add(txtCorreo);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(txtApellidoM);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(txtApellidoP);
             Controls.Add(label3);
-            Controls.Add(tbxId);
+            Controls.Add(txtNombre);
             Controls.Add(button1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -279,20 +283,20 @@
         private Label label1;
         private Button button1;
         private Label label3;
-        private TextBox tbxId;
+        private TextBox txtNombre;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtApellidoP;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox txtApellidoM;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txtCorreo;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox txtTelefono;
         private Label label8;
         private Label label9;
-        private TextBox textBox6;
+        private TextBox txtRFC;
         private Label label10;
-        private TextBox textBox7;
-        private ComboBox comboBox1;
+        private TextBox txtContraseña;
+        private ComboBox cbPuesto;
     }
 }

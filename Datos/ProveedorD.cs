@@ -75,6 +75,45 @@ namespace Datos
             return productos;
         }
 
+
+        public List<Proveedor> ListadoEspecifico(string CodPqt, string opcion)
+        {
+            string CdCnx = ConfigurationManager.ConnectionStrings["CnxSQL"].ToString();
+            List<Proveedor> productos = new List<Proveedor>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Proveedor
+
+                string CdSql = "SELECT * FROM Proovedor WHERE " + opcion + "=@Cl";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        Proveedor Pqte = new Proveedor
+                        {
+                            IDProveedor = Convert.ToString(Dr["IDProovedor"]),
+                            Nombre = Convert.ToString(Dr["Nombre"]),
+                            RFC = Convert.ToString(Dr["RFC"]),
+                            NoExterior = Convert.ToString(Dr["NoExterior"]),
+                            Colonia = Convert.ToString(Dr["Colonia"]),
+                            Ciudad = Convert.ToString(Dr["Ciudad"]),
+                            Estado = Convert.ToString(Dr["Estado"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
         public Proveedor ObtenerPdto(string CodPqt)
         {
             string CdCnx = ConfigurationManager.ConnectionStrings["CnxSQL"].ToString();

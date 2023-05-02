@@ -33,7 +33,6 @@
             label1 = new Label();
             btnAceptar = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            btnCancelar = new Button();
             cbEmpleado = new ComboBox();
             label3 = new Label();
             date = new DateTimePicker();
@@ -75,6 +74,7 @@
             label1.Size = new Size(68, 20);
             label1.TabIndex = 2;
             label1.Text = "Pedido /";
+            label1.Click += label1_Click;
             // 
             // btnAceptar
             // 
@@ -86,17 +86,6 @@
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Anchor = AnchorStyles.Bottom;
-            btnCancelar.Location = new Point(182, 435);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(166, 23);
-            btnCancelar.TabIndex = 3;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
             // 
             // cbEmpleado
             // 
@@ -187,7 +176,6 @@
             Controls.Add(date);
             Controls.Add(label3);
             Controls.Add(cbEmpleado);
-            Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -206,7 +194,6 @@
         private Label label1;
         private Button btnAceptar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Button btnCancelar;
         private ComboBox cbEmpleado;
         private Label label3;
         private DateTimePicker date;

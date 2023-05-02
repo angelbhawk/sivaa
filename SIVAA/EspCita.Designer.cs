@@ -71,6 +71,7 @@
             label1.Size = new Size(55, 20);
             label1.TabIndex = 0;
             label1.Text = "Citas /";
+            label1.Click += label1_Click;
             // 
             // cbEmpleado
             // 

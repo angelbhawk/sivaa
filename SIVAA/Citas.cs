@@ -16,7 +16,7 @@ namespace SIVAA
     {
         SIVAA form;
         CitaD citaD = new CitaD();
-        string ID;
+        string id;
         public Citas(SIVAA form)
         {
             InitializeComponent();
@@ -38,9 +38,9 @@ namespace SIVAA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (ID != null)
+            if (id != null)
             {
-                form.cambiarPantalla(new EspCita(form, 1, ID));
+                form.cambiarPantalla(new EspCita(form, 1, id));
             }
             else
             {
@@ -52,7 +52,7 @@ namespace SIVAA
         {
             try
             {
-                citaD.Eliminar(ID);
+                citaD.Eliminar(id);
                 Mostrar();
             }
             catch (Exception ex)
@@ -120,7 +120,7 @@ namespace SIVAA
             if (dataGridView1.CurrentCell.RowIndex >= 0)
             {
                 int i = dataGridView1.CurrentCell.RowIndex;
-                ID = dataGridView1[0, i].Value.ToString();
+                id = dataGridView1[0, i].Value.ToString();
             }
         }
 

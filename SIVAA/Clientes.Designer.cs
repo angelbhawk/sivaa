@@ -162,7 +162,7 @@
             cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
+            cbFiltro.Items.AddRange(new object[] { "Todos", "IDCliente", "Nombre", "Apellido Paterno", "Apellido Materno", "RFC", "Correo", "Telefono", "Colonia", "Ciudad", "Estado" });
             cbFiltro.Location = new Point(407, 19);
             cbFiltro.Name = "cbFiltro";
             cbFiltro.Size = new Size(121, 24);
@@ -190,6 +190,7 @@
             btnEliminar.TabIndex = 10;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
@@ -225,6 +226,7 @@
             btnBuscar.TabIndex = 0;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 

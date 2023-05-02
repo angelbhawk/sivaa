@@ -78,6 +78,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(900, 401);
             dataGridView1.TabIndex = 4;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column1
             // 
@@ -147,7 +148,7 @@
             cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
+            cbFiltro.Items.AddRange(new object[] { "Todos", "IDProveedor", "Nombre", "RFC", "Colonia", "Ciudad", "Estado" });
             cbFiltro.Location = new Point(372, 18);
             cbFiltro.Name = "cbFiltro";
             cbFiltro.Size = new Size(121, 24);
@@ -163,7 +164,7 @@
             btnEditar.TabIndex = 11;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += button5_Click;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -175,6 +176,7 @@
             btnEliminar.TabIndex = 10;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
@@ -210,6 +212,7 @@
             btnBuscar.TabIndex = 0;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 

@@ -32,6 +32,12 @@ namespace Logicas
             return Pdto.ListadoTotal();
         }
 
+        public List<Proveedor> ListadoEspecifico(string busqueda, string filtro)
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.ListadoEspecifico(busqueda, filtro);
+        }
+
         public void Eliminar(string CodPqte)
         {
             Mensaje.Clear();
