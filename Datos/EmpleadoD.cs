@@ -188,6 +188,45 @@ namespace Datos
             return null;
         }
 
+        public List<Empleado> ListadoEspecifico(string CodPqt, string opcion)
+        {
+            List<Empleado> productos = new List<Empleado>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Proveedor
+
+                string CdSql = "SELECT * FROM Empleado WHERE " + opcion + "=@Cl";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        Empleado Pqte = new Empleado
+                        {
+                            IDEmpleado = Convert.ToString(Dr["IDEmpleado"]),
+                            Nombre = Convert.ToString(Dr["Nombre"]),
+                            ApellidoPat = Convert.ToString(Dr["ApellidoPaterno"]),
+                            ApellidoMat = Convert.ToString(Dr["ApellidoMaterno"]),
+                            RFC = Convert.ToString(Dr["RFC"]),
+                            Correo = Convert.ToString(Dr["Correo"]),
+                            Telefono = Convert.ToString(Dr["Telefono"]),
+                            Contraseña = Convert.ToString(Dr["Contraseña"]),
+                            Tipo = Convert.ToString(Dr["Tipo"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
         public void Eliminar(string CodPqt)
         {
             using (SqlConnection Cnx = new SqlConnection(CdCnx))

@@ -19,7 +19,7 @@ namespace SIVAA
         private SIVAA form;
         List<PedidoEs> pedidoEs = new List<PedidoEs>();
         PedidoD PedidoD = new PedidoD();
-        string ID = null;
+        string id = null;
 
         public Pedidos(SIVAA form)
         {
@@ -43,9 +43,9 @@ namespace SIVAA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (ID != null)
+            if (id != null)
             {
-                form.cambiarPantalla(new EspPedido(form, 1, ID));
+                form.cambiarPantalla(new EspPedido(form, 1, id));
             }
             else
             {
@@ -58,7 +58,7 @@ namespace SIVAA
         {
             try
             {
-                PedidoD.Eliminar(ID);
+                PedidoD.Eliminar(id);
                 Mostrar();
             }
             catch (Exception ex)
@@ -123,7 +123,7 @@ namespace SIVAA
             if (dataGridView1.CurrentCell.RowIndex >= 0)
             {
                 int i = dataGridView1.CurrentCell.RowIndex;
-                ID = dataGridView1[0, i].Value.ToString();
+                id = dataGridView1[0, i].Value.ToString();
             }
         }
 
