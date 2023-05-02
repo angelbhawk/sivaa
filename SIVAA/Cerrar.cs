@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace SIVAA
 {
-    public partial class BusCotizacion : Form
+    public partial class Cerrar : Form
     {
-        private Venta mainForm;
-
-        public BusCotizacion(Venta mainForm)
+        public Cerrar()
         {
             InitializeComponent();
-            this.mainForm = mainForm;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            mainForm.cerrarCotizaciones(this);
         }
     }
 }

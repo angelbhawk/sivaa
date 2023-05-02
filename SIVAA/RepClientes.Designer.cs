@@ -152,35 +152,35 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Nombre";
+            Column2.HeaderText = "Vehiculo";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "RFC";
+            Column5.HeaderText = "Version";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Correo";
+            Column3.HeaderText = "Asientos";
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "Telefono";
+            Column4.HeaderText = "Combustible";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
             // Column6
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.HeaderText = "Direccion";
+            Column6.HeaderText = "Cilindraje";
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
             // 
@@ -195,7 +195,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RepClientes";
             Text = "RepClientes";
-            Load += RepClientes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);

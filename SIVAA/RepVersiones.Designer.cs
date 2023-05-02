@@ -104,7 +104,6 @@
             btnBuscar.TabIndex = 3;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 
@@ -195,7 +194,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RepVersiones";
             Text = "RepVersiones";
-            Load += RepVersiones_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);

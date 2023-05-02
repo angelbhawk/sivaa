@@ -37,6 +37,12 @@
             label1 = new Label();
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -86,7 +92,6 @@
             button2.TabIndex = 12;
             button2.Text = "Selecionar";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // cbFiltro
             // 
@@ -94,7 +99,7 @@
             cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Contado", "Credito" });
+            cbFiltro.Items.AddRange(new object[] { "Todos", "Contado", "Credito" });
             cbFiltro.Location = new Point(19, 20);
             cbFiltro.Name = "cbFiltro";
             cbFiltro.Size = new Size(121, 24);
@@ -110,7 +115,6 @@
             button1.TabIndex = 0;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -138,10 +142,10 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.FromArgb(241, 241, 241);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column5, Column1, Column2, Column3, Column4, Column6 });
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(10, 11);
             dataGridView1.Name = "dataGridView1";
@@ -150,7 +154,47 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(900, 399);
             dataGridView1.TabIndex = 1;
-            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "#";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.HeaderText = "Cliente";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Vehiculo";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.HeaderText = "Empleado";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.HeaderText = "Precio";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column6.HeaderText = "Tipo";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
             // 
             // BusCotizacion
             // 
@@ -162,7 +206,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "BusCotizacion";
             Text = "BusCotizacion";
-            Load += BusCotizacion_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
@@ -182,5 +225,11 @@
         private Button button2;
         private Label label2;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
     }
 }

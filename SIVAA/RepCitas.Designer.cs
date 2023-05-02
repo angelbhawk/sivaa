@@ -41,6 +41,7 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -103,7 +104,6 @@
             btnBuscar.TabIndex = 3;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 
@@ -133,7 +133,7 @@
             dataGridView1.BackgroundColor = Color.FromArgb(241, 241, 241);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column3, Column4 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column3, Column4, Column6 });
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(10, 10);
             dataGridView1.Name = "dataGridView1";
@@ -152,30 +152,37 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Empleado";
+            Column2.HeaderText = "Vehiculo";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Cliente";
+            Column5.HeaderText = "Version";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Fecha";
+            Column3.HeaderText = "Asientos";
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "Hora";
+            Column4.HeaderText = "Combustible";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column6.HeaderText = "Cilindraje";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
             // 
             // RepCitas
             // 
@@ -188,7 +195,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RepCitas";
             Text = "RepCitas";
-            Load += RepCitas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
@@ -212,5 +218,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
     }
 }

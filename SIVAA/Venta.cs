@@ -13,8 +13,6 @@ namespace SIVAA
     public partial class Venta : Form
     {
         private SIVAA mainForm;
-        public string total;
-        public Entidades.Venta VENTA;
 
         public Venta(SIVAA mainForm)
         {
@@ -99,7 +97,7 @@ namespace SIVAA
             child.Dock = DockStyle.Fill;
             this.Controls.Add(child);
             child.Location = new Point(0, 0);
-
+            
             child.Show();
             this.Refresh();
         }
@@ -110,11 +108,6 @@ namespace SIVAA
             panel1.Visible = true;
             panel2.Visible = true;
             this.Refresh();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(VENTA.NoSerie);
         }
     }
 }

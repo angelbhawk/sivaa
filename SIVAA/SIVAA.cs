@@ -45,7 +45,7 @@ namespace SIVAA
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            cambiarPantalla(new Citas(this));
+            cambiarPantalla(new Citas());
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
