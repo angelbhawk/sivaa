@@ -42,12 +42,12 @@ namespace SIVAA
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            cambiarPantalla(new Citas(this));
+            cambiarPantalla(new Citas());
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            cambiarPantalla(new Compras());
+            cambiarPantalla(new Compras(this));
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace SIVAA
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            cambiarPantalla(new Reportes());
+            cambiarPantalla(new Reportes(this));
         }
 
         private void SIVAA_Load(object sender, EventArgs e)
