@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panel4 = new Panel();
+            button2 = new Button();
             label1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel4 = new Panel();
-            btnEditar = new Button();
-            button2 = new Button();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             panel4.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -50,6 +49,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(920, 60);
             panel1.TabIndex = 14;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(button2);
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(690, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(230, 60);
+            panel4.TabIndex = 4;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(123, 20);
+            button2.Name = "button2";
+            button2.Size = new Size(82, 23);
+            button2.TabIndex = 8;
+            button2.Text = "Imprimir";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -78,38 +98,6 @@
             panel3.Size = new Size(686, 360);
             panel3.TabIndex = 0;
             // 
-            // panel4
-            // 
-            panel4.Controls.Add(btnEditar);
-            panel4.Controls.Add(button2);
-            panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(690, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(230, 60);
-            panel4.TabIndex = 4;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEditar.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.Location = new Point(25, 20);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(82, 23);
-            btnEditar.TabIndex = 11;
-            btnEditar.Text = "Cancelar";
-            btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(123, 20);
-            button2.Name = "button2";
-            button2.Size = new Size(82, 23);
-            button2.TabIndex = 8;
-            button2.Text = "Imprimir";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // Previsualizador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -122,8 +110,8 @@
             Text = "Previsualizador";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -134,7 +122,6 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
-        private Button btnEditar;
         private Button button2;
     }
 }
