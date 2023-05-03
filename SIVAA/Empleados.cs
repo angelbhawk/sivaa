@@ -81,6 +81,7 @@ namespace SIVAA
             {
                 empleado.Eliminar(id);
                 Mostrar();
+                MessageBox.Show("Eliminado con exito", "Mensaje");
             }
             catch (Exception ex)
             {

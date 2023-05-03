@@ -22,6 +22,9 @@ namespace SIVAA
         Pedido pedido = new Pedido();
         EmpleadoLog empleados = new EmpleadoLog();
         ProveedorLog proveedores = new ProveedorLog();
+        UnidadLog Unidades = new UnidadLog();
+        Unidad unidad = new Unidad();
+        VersionLog versionLog = new VersionLog();
 
         public EspPedido(SIVAA form, int modo, string id)
         {
@@ -67,6 +70,14 @@ namespace SIVAA
                     pedido.Importe = Convert.ToDouble(txtImporte.Text);
                     PedidoLog.Insertar(pedido);
 
+                    unidad.IDPedido = i;
+                    unidad.Color = cbColor.Text;
+                    unidad.IDVersion = texto(cbVersion.Text, 1);
+                    unidad.NoSerie = check(Aletorio());
+                    unidad.Estatus = "En camino";
+
+                    Unidades.Registrar(unidad);
+
                     MessageBox.Show("Agregado con exito", "Mensaje");
                 }
                 else
@@ -78,6 +89,14 @@ namespace SIVAA
                     pedido.Año = date.Value.Year;
                     pedido.Importe = Convert.ToDouble(txtImporte.Text);
                     PedidoLog.Actualizar(pedido);
+
+                    unidad.IDPedido = pedido.IDPedido;
+                    unidad.Color = cbColor.Text;
+                    unidad.IDVersion = texto(cbVersion.Text, 1);
+                    unidad.NoSerie = regreso(pedido.IDPedido);
+                    unidad.Estatus = "En camino";
+
+                    Unidades.Modificar(unidad);
 
                     MessageBox.Show("Actualizado con exito", "Mensaje");
                 }
@@ -175,11 +194,24 @@ namespace SIVAA
                     }
                 }
             }
+            if (tipo == 2)
+            {
+                List<CotiVh> refVersions = PedidoLog.ReferenciaV(iD(cbProveedor.Text, 1));
+                foreach (CotiVh x in refVersions)
+                {
+                    if (x.IDVersion == id)
+                    {
+                        return x.Nombre.Trim() + " " + x.Version.Trim() + " " + x.Año.Trim();
+                    }
+                }
+            }
             return null;
         }
+
         private void Datos(string id)
         {
             List<Pedido> pe = PedidoLog.ListadoTotal();
+            List<Unidad> un = Unidades.ListadoAll();
             foreach (Pedido p in pe)
             {
                 if (p.IDPedido == id)
@@ -189,16 +221,87 @@ namespace SIVAA
                     cbProveedor.Text = Nombre(p.IDProveedor, 1);
                     txtImporte.Text = p.Importe.ToString();
                     date.Value = new DateTime(p.Año, p.Mes, p.Dia);
-
+                }
+            }
+            foreach (Unidad x in un)
+            {
+                if (x.IDPedido == id)
+                {
+                    cbVersion.Text = Nombre(x.IDVersion, 2);
+                    cbColor.Text = x.Color.ToString();
                 }
             }
         }
+
+        private string check(string noserie)
+        {
+            List<Unidad> uni = Unidades.ListadoAll();
+            foreach (Unidad x in uni)
+            {
+                if (x.NoSerie != noserie)
+                {
+                    return noserie;
+                }
+            }
+            return check(Aletorio());
+        }
+
+        private string regreso(string id)
+        {
+            List<Unidad> unidad = Unidades.ListadoAll();
+            foreach (Unidad x in unidad)
+            {
+                if (x.IDPedido == id)
+                {
+                    return x.NoSerie;
+                }
+            }
+            return null;
+        }
+
+        private string texto(string texto, int modo)
+        {
+            List<CotiVh> refVersions = PedidoLog.ReferenciaV(iD(cbProveedor.Text, 1));
+            foreach (CotiVh x in refVersions)
+            {
+                string i = x.Nombre.Trim() + " " + x.Version.Trim() + " " + x.Año.Trim();
+                if (texto == i)
+                {
+                    if (modo == 0)
+                    {
+                        return x.Costo.ToString();
+                    }
+                    else
+                    {
+                        return x.IDVersion;
+                    }
+
+                }
+            }
+            return null;
+        }
+
         #endregion
+
 
 
         private void label1_Click(object sender, EventArgs e)
         {
             form.cambiarPantalla(new Pedidos(form));
+        }
+
+        private void cbProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<CotiVh> refVersions = PedidoLog.ReferenciaV(iD(cbProveedor.Text, 1));
+            foreach (CotiVh x in refVersions)
+            {
+                cbVersion.Items.Add(x.Nombre.Trim() + " " + x.Version.Trim() + " " + x.Año.Trim());
+            }
+        }
+
+        private void cbVersion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtImporte.Text = texto(cbVersion.Text, 0);
         }
     }
 }

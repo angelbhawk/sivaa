@@ -1,7 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Abrir.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Autenticacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BusCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cerrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Citas.cs">
@@ -20,6 +32,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Entrega.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EspCita.cs">
@@ -61,13 +76,37 @@
     <Compile Update="Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Recuperar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RepCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RepClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RepCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RepEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RepVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RepVersiones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SIVAA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Venta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Versiones.cs">

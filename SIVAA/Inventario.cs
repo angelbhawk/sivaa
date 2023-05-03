@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,6 +40,8 @@ namespace SIVAA
                 Filtro("Disponible");
             if (cbFiltro.SelectedIndex == 2)
                 Filtro("Vendido");
+            if (cbFiltro.SelectedIndex == 3)
+                Filtro("En camino");
         }
 
         private void Inventario_Load(object sender, EventArgs e)
@@ -64,6 +67,36 @@ namespace SIVAA
             {
                 dataGridView1.Rows.Add(x.NoSerie, x.Vehiculo, x.Version, x.Modelo, x.Color, x.Estatus);
             }
+        }
+
+        private void actualizar(string deam)
+        {
+            List<Unidad> uni = unidadLog.ListadoAll();
+            foreach(Unidad x in uni)
+            {
+                if(x.NoSerie == deam)
+                {
+                    x.Estatus = "Disponible";
+                    unidadLog.Modificar(x);
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dataGridView1.CurrentCell.RowIndex;
+            
+            if (dataGridView1[5, i].Value.ToString() == "En camino")
+            {
+                DialogResult result = MessageBox.Show("¿Estás seguro que quieres hacer esto?", "Confirmar acción", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    dataGridView1[5, i].Value = "Disponible";
+                    actualizar(dataGridView1[0, i].Value.ToString());
+                    dataGridView1.Refresh();
+                }
+            }
+
         }
     }
 }

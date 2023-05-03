@@ -342,7 +342,7 @@ namespace Datos
             using (SqlConnection Cnx = new SqlConnection(CdCnx))
             {
                 Cnx.Open();
-                string CdSql = "UPDATE Unidad SET IDVersion=@Nm,IdPedido=@App, Color=@Apm,CostoUnitario=@Rfc,Importe=@Cr WHERE NoSerie=@Cl";
+                string CdSql = "UPDATE Unidad SET IDVersion=@Nm,IdPedido=@App, Color=@Apm, Estatus = @Cr WHERE NoSerie=@Cl";
                 using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
                 {
                     //Añadir los parámetros

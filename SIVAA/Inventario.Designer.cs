@@ -62,7 +62,6 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.FromArgb(241, 241, 241);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -75,6 +74,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(900, 401);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column1
             // 
@@ -158,7 +158,7 @@
             cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "Disponibles", "Vendidos" });
+            cbFiltro.Items.AddRange(new object[] { "Todos", "Disponibles", "Vendidos", "En Camino" });
             cbFiltro.Location = new Point(125, 18);
             cbFiltro.Name = "cbFiltro";
             cbFiltro.Size = new Size(121, 24);

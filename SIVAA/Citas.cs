@@ -54,6 +54,7 @@ namespace SIVAA
             {
                 citaD.Eliminar(id);
                 Mostrar();
+                MessageBox.Show("Eliminado con exito", "Mensaje");
             }
             catch (Exception ex)
             {

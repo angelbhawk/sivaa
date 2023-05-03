@@ -35,7 +35,7 @@ namespace SIVAA
         List<Proveedor> listas;
         private void Proveedores_Load(object sender, EventArgs e)
         {
-            dataGridView1.ClearSelection();
+            dataGridView1.Rows.Clear();
             List<Proveedor> pro = proveedor.ListadoAll();
             listas = pro;
             foreach (Proveedor x in pro)
@@ -72,6 +72,7 @@ namespace SIVAA
             {
                 proveedor.Eliminar(id);
                 Mostrar();
+                MessageBox.Show("Eliminado con exito", "Mensaje");
             }
             catch (Exception ex)
             {

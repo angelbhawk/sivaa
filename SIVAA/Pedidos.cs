@@ -49,7 +49,7 @@ namespace SIVAA
             }
             else
             {
-                MessageBox.Show("Selecciona un pedido");
+                MessageBox.Show("Selecciona un Pedido");
             }
         }
 
@@ -60,6 +60,7 @@ namespace SIVAA
             {
                 PedidoD.Eliminar(id);
                 Mostrar();
+                MessageBox.Show("Eliminado con exito", "Mensaje");
             }
             catch (Exception ex)
             {

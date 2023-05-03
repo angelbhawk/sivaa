@@ -35,7 +35,7 @@ namespace SIVAA
         List<Cliente> listas;
         private void Clientes_Load(object sender, EventArgs e)
         {
-            dataGridView1.ClearSelection();
+            dataGridView1.Rows.Clear();
             List<Cliente> pro = cliente.ListadoAll();
             listas = pro;
             foreach (Cliente x in pro)
@@ -57,7 +57,7 @@ namespace SIVAA
             }
             else
             {
-                MessageBox.Show("Selecciona un Empleado");
+                MessageBox.Show("Selecciona un Cliente");
             }
         }
 
@@ -72,6 +72,7 @@ namespace SIVAA
             {
                 cliente.Eliminar(id);
                 Mostrar();
+                MessageBox.Show("Eliminado con exito", "Mensaje");
             }
             catch (Exception ex)
             {
@@ -121,7 +122,7 @@ namespace SIVAA
 
         private void Mostrar()
         {
-            dataGridView1.ClearSelection();
+            dataGridView1.Rows.Clear();
             List<Cliente> pro = cliente.ListadoAll();
             foreach (Cliente x in pro)
             {

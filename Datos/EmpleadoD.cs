@@ -232,7 +232,7 @@ namespace Datos
             using (SqlConnection Cnx = new SqlConnection(CdCnx))
             {
                 Cnx.Open();
-                string CdSql = "DELETE FROM Cliente WHERE IDEmpleado=@Cl";
+                string CdSql = "DELETE FROM Empleado WHERE IDEmpleado=@Cl";
                 using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
                 {
                     Cmd.Parameters.AddWithValue("@Cl", CodPqt);

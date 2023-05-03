@@ -181,6 +181,41 @@ namespace Datos
             return productos;
         }
 
+        public List<CotiVh> ReferenciaV(string CodPqt)
+        {
+            List<CotiVh> productos = new List<CotiVh>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Proveedor
+
+                string CdSql = "SELECT v.IDVersion, vh.Nombre, v.[Version], m.Año, v.Costo\r\n\tFrom [Version] as v\r\n\tinner join Vehiculo as vh\r\n\ton vh.IDVehiculo = v.IDVehiculo\r\n\tinner join Unidad as u\r\n\ton v.IDVersion = u.IDVersion\r\n\tinner join Pedido as p\r\n\ton u.IDPedido = p.IDPedido\r\n\tinner join ModeloVersion as mv\r\n\ton mv.IDVersion = v.IDVersion\r\n\tinner join Modelo as m\r\n\ton m.IDModelo = mv.IDModelo\r\n\tinner join Proovedor as pro\r\n\ton p.IDProovedor = pro.IDProovedor\r\n\twhere pro.IDProovedor = @Cl";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        CotiVh Pqte = new CotiVh
+                        {
+                            IDVersion = Convert.ToString(Dr["IDVersion"]),
+                            Nombre = Convert.ToString(Dr["Nombre"]),
+                            Version = Convert.ToString(Dr["Version"]),
+                            Año = Convert.ToString(Dr["Año"]),
+                            Costo = Convert.ToDouble(Dr["Costo"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
 
         public void Eliminar(string CodPqt)
         {

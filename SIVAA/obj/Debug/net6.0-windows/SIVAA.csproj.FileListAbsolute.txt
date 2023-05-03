@@ -181,3 +181,16 @@ C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspEmple
 C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspProveedor.resources
 C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.EspVersion.resources
 C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Previsualizador.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Abrir.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.BusCotizacion.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Caja.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Cerrar.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Entrega.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Recuperar.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.RepCitas.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.RepClientes.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.RepCotizaciones.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.RepEmpleados.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.RepVentas.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.RepVersiones.resources
+C:\Universidad\Ing. Software\SIVAA\SIVAA\obj\Debug\net6.0-windows\SIVAA.Venta.resources

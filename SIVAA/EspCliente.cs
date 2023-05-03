@@ -82,7 +82,7 @@ namespace SIVAA
 
                     MessageBox.Show("Actualizado con exito", "Mensaje");
                 }
-                mainForm.cambiarPantalla(new Empleados(mainForm));
+                mainForm.cambiarPantalla(new Clientes(mainForm));
             }
             catch
             (Exception ex)

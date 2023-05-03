@@ -11,6 +11,7 @@ namespace Entidades
         public string IDVersion { get; set; }
         public string Nombre { get; set; }
         public string Version { get; set; }
+        public string Año { get; set; }
         public double Costo { get; set; }
     }
 }
