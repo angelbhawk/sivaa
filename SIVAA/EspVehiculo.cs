@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using Datos;
+using Entidades;
 using Logicas;
 using System;
 using System.Collections.Generic;
@@ -15,23 +16,24 @@ namespace SIVAA
     public partial class EspVehiculo : Form
     {
         private SIVAA mainForm;
-        readonly VehiculoLog vehiculo = new VehiculoLog();
+        private int modo;
+        readonly VehiculoLog vehiculos = new VehiculoLog();
+        private Vehiculo vehiculo = new Vehiculo();
+        
 
-        public EspVehiculo(SIVAA mainForm, int modo)
+        public EspVehiculo(SIVAA mainForm, int modo, string id)
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            this.modo = modo;
             if (modo == 0)
             {
                 label2.Text = "Agregar";
-                tbxId.Enabled = true;
-                tbxNombre.Enabled = true;
             }
             else
             {
                 label2.Text = "Modificar";
-                tbxId.Enabled = false;
-                tbxNombre.Enabled = true;
+                Datos(id);
             }
         }
 
@@ -45,6 +47,69 @@ namespace SIVAA
         private void label1_Click(object sender, EventArgs e)
         {
             mainForm.cambiarPantalla(new Vehiculos(mainForm));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (modo == 0)
+                {
+                    if (Verificacion(tbxNombre.Text) != false)
+                    {
+                        List<Vehiculo> vh = vehiculos.ListadoAll();
+                        string i = "VH" + (vh.Count + 1).ToString();
+                        vehiculo.IDVehiculo = i;
+                        vehiculo.Nombre = tbxNombre.Text;
+                        vehiculos.Registrar(vehiculo);
+
+                        MessageBox.Show("Agregado con exito", "Mensaje");
+                        mainForm.cambiarPantalla(new Vehiculos(mainForm));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vehiculo ya existente", "Aviso");
+                    }
+                }
+                else
+                {
+                    vehiculo.Nombre = tbxNombre.Text;
+                    vehiculos.Modificar(vehiculo);
+                    MessageBox.Show("Actualizado con exito", "Mensaje");
+                    mainForm.cambiarPantalla(new Vehiculos(mainForm));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error: " + ex.Message, "ERROR");
+            }
+        }
+
+        private bool Verificacion(string nombre)
+        {
+            List<Vehiculo> vh = vehiculos.ListadoAll();
+            foreach (Vehiculo x in vh)
+            {
+                if (x.Nombre.Trim() == nombre)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void Datos(string id)
+        {
+            List<Vehiculo> vh = vehiculos.ListadoAll();
+            foreach(Vehiculo x in vh)
+            {
+                if(x.IDVehiculo == id)
+                {
+                    vehiculo.IDVehiculo = x.IDVehiculo;
+                    tbxNombre.Text = x.Nombre;
+                }
+            }
         }
     }
 }

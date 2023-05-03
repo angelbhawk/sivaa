@@ -19,6 +19,7 @@ namespace SIVAA
     {
         private SIVAA mainForm;
         private int modo;
+        private string id;
         readonly ProveedorLog proveedores = new ProveedorLog();
         private Proveedor proveedor = new Proveedor();
 
@@ -28,6 +29,7 @@ namespace SIVAA
             InitializeComponent();
             this.mainForm = mainForm;
             this.modo = modo;
+            this.id = id;
             if (modo == 0)
             {
                 label2.Text = "Agregar";
@@ -66,6 +68,7 @@ namespace SIVAA
                 }
                 else
                 {
+                    proveedor.IDProveedor = id;
                     proveedor.Nombre = txtNombre.Text;
                     proveedor.NoExterior = txtNoExterior.Text;
                     proveedor.Ciudad = txtCiudad.Text;
@@ -77,7 +80,7 @@ namespace SIVAA
 
                     MessageBox.Show("Actualizado con exito", "Mensaje");
                 }
-                mainForm.cambiarPantalla(new Empleados(mainForm));
+                mainForm.cambiarPantalla(new Proveedores(mainForm));
             }
             catch(Exception ex)
             {
@@ -90,9 +93,8 @@ namespace SIVAA
             List<Proveedor> pro = proveedores.ListadoAll();
             foreach (Proveedor x in pro)
             {
-                if (x.IDProveedor == id)
+                if (x.IDProveedor.Trim() == id)
                 {
-                    proveedor.IDProveedor = x.IDProveedor;
                     txtNombre.Text = x.Nombre;
                     txtNoExterior.Text = x.NoExterior;
                     txtRFC.Text = x.RFC;

@@ -48,15 +48,16 @@ namespace SIVAA
             {
                 if (modo == 0)
                 {
+                    cita = new Cita();
                     List<Cita> x = citas.ListadoAll();
-                    string i = "CT" + (x.Count + 1).ToString();
+                    string i = "CT" + (x.Count + 2).ToString();
                     cita.IDCita = i;
                     cita.IDEmpleado = iD(cbEmpleado.Text, 0);
                     cita.IDCliente = iD(cbCliente.Text, 1);
                     cita.Dia = dateTimePicker1.Value.Day;
                     cita.Mes = dateTimePicker1.Value.Month;
                     cita.Año = dateTimePicker1.Value.Year;
-                    cita.Hora = dateTimePicker1.Value.ToString("HH:mm:ss.fff");
+                    cita.Hora = dateTimePicker1.Value.ToString("HH:mm:ss");
 
                     citas.Registrar(cita);
                     MessageBox.Show("Agregado con exito", "Mensaje");
@@ -69,12 +70,11 @@ namespace SIVAA
                     cita.Dia = dateTimePicker1.Value.Day;
                     cita.Mes = dateTimePicker1.Value.Month;
                     cita.Año = dateTimePicker1.Value.Year;
-                    cita.Hora = dateTimePicker1.Value.ToString("HH:mm:ss.fff");
 
                     citas.Modificar(cita);
                     MessageBox.Show("Actualizado con exito", "Mensaje");
                 }
-                form.cambiarPantalla(new Pedidos(form));
+                form.cambiarPantalla(new Citas(form));
             }
             catch
             (Exception ex)
@@ -91,7 +91,7 @@ namespace SIVAA
         #region
         private void CargarDatos()
         {
-            List<Empleado> empleado = empleados.ListadoAll();
+            List<Empleado> empleado = empleados.ListaEsp("Atencion");
             foreach (Empleado x in empleado)
             {
                 string nombre = x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim();
@@ -171,6 +171,7 @@ namespace SIVAA
                     cbEmpleado.Text = Nombre(p.IDEmpleado, 0);
                     cbCliente.Text = Nombre(p.IDCliente, 1);
                     dateTimePicker1.Value = new DateTime(p.Año, p.Mes, p.Dia);
+                    cita.Hora = p.Hora;
                 }
             }
         }

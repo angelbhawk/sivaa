@@ -228,7 +228,7 @@ namespace SIVAA
                 if (x.IDPedido == id)
                 {
                     cbVersion.Text = Nombre(x.IDVersion, 2);
-                    cbColor.Text = x.Color.ToString();
+                    cbColor.Text = x.Color.Trim();
                 }
             }
         }
@@ -275,7 +275,6 @@ namespace SIVAA
                     {
                         return x.IDVersion;
                     }
-
                 }
             }
             return null;

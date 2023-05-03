@@ -53,7 +53,7 @@ namespace SIVAA
         {
             if (id != null)
             {
-                mainForm.cambiarPantalla(new EspEmpleado(mainForm, 1, id));
+                mainForm.cambiarPantalla(new EspCliente(mainForm, 1, id));
             }
             else
             {

@@ -31,10 +31,10 @@ namespace Logicas
             //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
             return Pdto.ListadoTotal();
         }
-        public List<Empleado> ListadoAllCajeros()
+        public List<Empleado> ListaEsp(string tipo)
         {
             //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
-            return Pdto.ListadoCajeros();
+            return Pdto.ListaEspecifica(tipo);
         }
 
         public List<Empleado> ListadoEsp(string busqueda, string filtro)

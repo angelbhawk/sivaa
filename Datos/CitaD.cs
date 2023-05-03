@@ -210,6 +210,7 @@ namespace Datos
                     Cmd.Parameters.AddWithValue("@Apm", Pqte.Dia);
                     Cmd.Parameters.AddWithValue("@Rfc", Pqte.Mes);
                     Cmd.Parameters.AddWithValue("@Cr", Pqte.Año);
+                    Cmd.Parameters.AddWithValue("@Tl", Pqte.Hora);
                     Cmd.ExecuteNonQuery();
                     //Borrar variable cmd de la memoria
                     Cmd.Dispose();

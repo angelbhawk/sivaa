@@ -210,7 +210,7 @@
             // 
             txtRFC.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtRFC.Location = new Point(270, 290);
-            txtRFC.MaxLength = 13;
+            txtRFC.MaxLength = 10;
             txtRFC.Name = "txtRFC";
             txtRFC.Size = new Size(199, 32);
             txtRFC.TabIndex = 30;
@@ -238,7 +238,7 @@
             cbPuesto.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPuesto.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbPuesto.FormattingEnabled = true;
-            cbPuesto.Items.AddRange(new object[] { "Atencion", "Caja", "Vendedor", "Supervisor" });
+            cbPuesto.Items.AddRange(new object[] { "Atencion", "Cajero", "Vendedor", "Supervisor" });
             cbPuesto.Location = new Point(505, 290);
             cbPuesto.Name = "cbPuesto";
             cbPuesto.Size = new Size(199, 31);

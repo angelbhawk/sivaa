@@ -31,10 +31,8 @@
             panel1 = new Panel();
             label2 = new Label();
             label1 = new Label();
-            tbxId = new TextBox();
             tbxNombre = new TextBox();
             button1 = new Button();
-            label3 = new Label();
             label4 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -72,18 +70,10 @@
             label1.Text = "Vehiculo /";
             label1.Click += label1_Click;
             // 
-            // tbxId
-            // 
-            tbxId.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxId.Location = new Point(33, 118);
-            tbxId.Name = "tbxId";
-            tbxId.Size = new Size(199, 32);
-            tbxId.TabIndex = 12;
-            // 
             // tbxNombre
             // 
             tbxNombre.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxNombre.Location = new Point(33, 190);
+            tbxNombre.Location = new Point(36, 124);
             tbxNombre.Name = "tbxNombre";
             tbxNombre.Size = new Size(199, 32);
             tbxNombre.TabIndex = 13;
@@ -98,22 +88,13 @@
             button1.TabIndex = 14;
             button1.Text = "Listo";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(33, 95);
-            label3.Name = "label3";
-            label3.Size = new Size(87, 20);
-            label3.TabIndex = 15;
-            label3.Text = "ID Vehiculo";
+            button1.Click += button1_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(33, 167);
+            label4.Location = new Point(36, 101);
             label4.Name = "label4";
             label4.Size = new Size(63, 20);
             label4.TabIndex = 16;
@@ -125,10 +106,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 481);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(tbxNombre);
-            Controls.Add(tbxId);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EspVehiculo";
@@ -144,10 +123,8 @@
         private Panel panel1;
         private Label label1;
         private Label label2;
-        private TextBox tbxId;
         private TextBox tbxNombre;
         private Button button1;
-        private Label label3;
         private Label label4;
     }
 }

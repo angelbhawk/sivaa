@@ -56,10 +56,10 @@ namespace SIVAA
                     empleado.Nombre = txtNombre.Text;
                     empleado.ApellidoPat = txtApellidoP.Text;
                     empleado.ApellidoMat = txtApellidoM.Text;
-                    empleado.Correo = txtCorreo.Text;
+                    empleado.Correo = txtCorreo.Text.Trim();
                     empleado.Telefono = txtTelefono.Text;
                     empleado.Contraseña = txtContraseña.Text;
-                    empleado.RFC = txtRFC.Text;
+                    empleado.RFC = txtRFC.Text.Trim();
                     empleado.Tipo = cbPuesto.Text;
 
                     empleados.Registrar(empleado);
@@ -71,10 +71,10 @@ namespace SIVAA
                     empleado.Nombre = txtNombre.Text;
                     empleado.ApellidoPat = txtApellidoP.Text;
                     empleado.ApellidoMat = txtApellidoM.Text;
-                    empleado.Correo = txtCorreo.Text;
+                    empleado.Correo = txtCorreo.Text.Trim();
                     empleado.Telefono = txtTelefono.Text;
                     empleado.Contraseña = txtContraseña.Text;
-                    empleado.RFC = txtRFC.Text;
+                    empleado.RFC = txtRFC.Text.Trim();
                     empleado.Tipo = cbPuesto.Text;
                     empleados.Modificar(empleado);
                     MessageBox.Show("Actualizado con exito", "Mensaje");
@@ -103,7 +103,7 @@ namespace SIVAA
                     txtRFC.Text = x.RFC;
                     txtTelefono.Text = x.Telefono;
                     txtContraseña.Text = x.Contraseña;
-                    cbPuesto.Text = x.Tipo;
+                    cbPuesto.Text = x.Tipo.Trim();
                 }
             }
         }

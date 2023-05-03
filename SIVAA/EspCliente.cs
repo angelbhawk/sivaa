@@ -96,7 +96,7 @@ namespace SIVAA
             List<Cliente> es = clientes.ListadoAll();
             foreach (Cliente x in es)
             {
-                if (x.IDCliente == id)
+                if (x.IDCliente.Trim() == id)
                 {
                     cliente.IDCliente = x.IDCliente;
                     txtNombre.Text = x.Nombre;

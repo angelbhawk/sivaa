@@ -41,7 +41,7 @@ namespace Datos
                 Cnx.Close();
             }
         }
-        public List<Empleado> ListadoCajeros()
+        public List<Empleado> ListaEspecifica(string CodPqt)
         {
             List<Empleado> productos = new List<Empleado>();
 
@@ -50,9 +50,10 @@ namespace Datos
             {
                 Cnx.Open();
                 //Creo el Query (todos los registros de la tabla cliente
-                string CdSql = "Select * from Empleado where Tipo='Cajero'";
+                string CdSql = "Select * from Empleado where Tipo= @Cl";
                 using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
                 {
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
                     SqlDataReader Dr = Cmd.ExecuteReader();
                     //Leo registro por registro que tiene la tabla 
                     while (Dr.Read())

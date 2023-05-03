@@ -32,6 +32,12 @@ namespace Logicas
             return Pdto.ListadoTotal();
         }
 
+        public List<Vehiculo> ListadoEsp(string busqueda, string filtro)
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.ListadoEspecifico(busqueda, filtro);
+        }
+
         public void Modificar(Vehiculo Pqte)
         {
             if (ValidarProducto(Pqte))

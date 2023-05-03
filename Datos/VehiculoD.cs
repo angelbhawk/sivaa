@@ -215,5 +215,38 @@ namespace Datos
                 Cnx.Close();
             }
         }
+
+        public List<Vehiculo> ListadoEspecifico(string CodPqt, string opcion)
+        {
+            List<Vehiculo> productos = new List<Vehiculo>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Proveedor
+
+                string CdSql = "SELECT * from Vehiculo WHERE " + opcion + "=@Cl";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        Vehiculo Pqte = new Vehiculo
+                        {
+                            IDVehiculo = Convert.ToString(Dr["IDVehiculo"]),
+                            Nombre = Convert.ToString(Dr["Nombre"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
     }
 }
