@@ -181,6 +181,43 @@ namespace SIVAA.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        ///    &lt;title&gt;Reporte de Empleados&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            font-family: Arial, sans-serif;
+        ///        }
+        ///
+        ///        #header {
+        ///            width: 100%;
+        ///        }
+        ///
+        ///        #logo {
+        ///            height: 20%;
+        ///
+        ///        }
+        ///
+        ///            #logo img {
+        ///                margin-left: 20%;
+        ///				width: 75px;
+        ///            }
+        ///
+        ///        #title {
+        ///            font-size: 1.2em;
+        ///            width: 60%;
+        ///            text-align: center;
+        ///    [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string plantilla_reporte {
+            get {
+                return ResourceManager.GetString("plantilla_reporte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap portada {

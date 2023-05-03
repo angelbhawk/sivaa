@@ -18,46 +18,46 @@ namespace Logicas
 {
     public class ImpresorPdf
     {
-        public static void Imprimir(string nombre, string mensaje, string plantilla, List<string> datos, Bitmap logo)
+        public static void Imprimir(string nombre, string html)
         {
             SaveFileDialog guardar = new SaveFileDialog();
             string modificado = nombre.Replace(" ", "_");
             guardar.FileName = modificado + "_" + DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
-            List<string> html = new List<string>();
-            if (datos.Count < 2)
-            {
-                html.Add(plantilla);
-                html[0] = html[0].Replace("@Tabla", datos[0]);
-                html[0] = html[0].Replace("@Dia", DateTime.Now.Day.ToString());
-                html[0] = html[0].Replace("@Mes", DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month));
-                html[0] = html[0].Replace("@Año", DateTime.Now.Year.ToString());
-                html[0] = html[0].Replace("@Nombre", nombre);
-                html[0] = html[0].Replace("@Mensaje", mensaje);
-                html[0] = html[0].Replace("@Firma", "");
-                html[0] = html[0].Replace("@Folio", DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString());
-                html[0] = html[0].Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
-                html[0] = html[0].Replace("@Logo", "Mateo Jordan");
-            }
-            else
-            {
-                int i = 0;
-                foreach (string s in datos)
-                {
-                    html.Add(plantilla);
-                    html[i] = html[i].Replace("@Tabla", s);
-                    html[i] = html[i].Replace("@Dia", DateTime.Now.Day.ToString());
-                    html[i] = html[i].Replace("@Mes", DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month));
-                    html[i] = html[i].Replace("@Año", DateTime.Now.Year.ToString());
-                    html[i] = html[i].Replace("@Nombre", nombre);
-                    html[i] = html[i].Replace("@Mensaje", mensaje);
-                    html[i] = html[i].Replace("@Firma", "");
-                    html[i] = html[i].Replace("@Folio", DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString());
-                    html[i] = html[i].Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
-                    html[i] = html[i].Replace("@Logo", "Mateo Jordan");
-                    i++;
-                }
-            }
+            //List<string> html = new List<string>();
+            //if (datos.Count < 2)
+            //{
+            //    html.Add(plantilla);
+            //    html[0] = html[0].Replace("@Tabla", datos[0]);
+            //    html[0] = html[0].Replace("@Dia", DateTime.Now.Day.ToString());
+            //    html[0] = html[0].Replace("@Mes", DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month));
+            //    html[0] = html[0].Replace("@Año", DateTime.Now.Year.ToString());
+            //    html[0] = html[0].Replace("@Nombre", nombre);
+            //    html[0] = html[0].Replace("@Mensaje", mensaje);
+            //    html[0] = html[0].Replace("@Firma", "");
+            //    html[0] = html[0].Replace("@Folio", DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString());
+            //    html[0] = html[0].Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
+            //    html[0] = html[0].Replace("@Logo", "Mateo Jordan");
+            //}
+            //else
+            //{
+            //    int i = 0;
+            //    foreach (string s in datos)
+            //    {
+            //        html.Add(plantilla);
+            //        html[i] = html[i].Replace("@Tabla", s);
+            //        html[i] = html[i].Replace("@Dia", DateTime.Now.Day.ToString());
+            //        html[i] = html[i].Replace("@Mes", DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month));
+            //        html[i] = html[i].Replace("@Año", DateTime.Now.Year.ToString());
+            //        html[i] = html[i].Replace("@Nombre", nombre);
+            //        html[i] = html[i].Replace("@Mensaje", mensaje);
+            //        html[i] = html[i].Replace("@Firma", "");
+            //        html[i] = html[i].Replace("@Folio", DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString());
+            //        html[i] = html[i].Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
+            //        html[i] = html[i].Replace("@Logo", "Mateo Jordan");
+            //        i++;
+            //    }
+            //}
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
@@ -68,13 +68,9 @@ namespace Logicas
                     pdfDoc.Open();
                     //foreach (string s in html)
                     //{
-                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(logo, System.Drawing.Imaging.ImageFormat.Png);
-                    img.ScaleToFit(80, 60);
-                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
-                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 40);
-                    pdfDoc.Add(img);
+
                     //using (StringReader sr = new StringReader(s))
-                    using (StringReader sr = new StringReader(html[0]))
+                    using (StringReader sr = new StringReader(html))
                     {
                         XMLWorkerHelper.GetInstance().ParseXHtml(writter, pdfDoc, sr);
                     }
@@ -143,6 +139,27 @@ namespace Logicas
                 }
             }
             return tablas;
+        }
+
+        public static void generarReporte(string html, string plantilla, string titulo, string mensaje)
+        {
+            string nuevohtml = plantilla;
+            nuevohtml = nuevohtml.Replace("@Tabla", html);
+            nuevohtml = nuevohtml.Replace("@Dia", DateTime.Now.Day.ToString());
+            nuevohtml = nuevohtml.Replace("@Mes", DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month));
+            nuevohtml = nuevohtml.Replace("@Año", DateTime.Now.Year.ToString());
+            nuevohtml = nuevohtml.Replace("@Nombre", titulo);
+            nuevohtml = nuevohtml.Replace("@Mensaje", mensaje);
+            nuevohtml = nuevohtml.Replace("@Firma", "");
+            nuevohtml = nuevohtml.Replace("@Folio", DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString());
+            nuevohtml = nuevohtml.Replace("@Fecha", DateTime.Now.ToString("dd/MM/yyyy"));
+            //nuevohtml = nuevohtml.Replace("@Logo", "Mateo Jordan");
+
+            string contenidoHTML = nuevohtml;
+            string nombreArchivo = "reporte.html";
+            string rutaArchivo = Path.Combine(Directory.GetCurrentDirectory(), nombreArchivo);
+            File.WriteAllText(rutaArchivo, contenidoHTML);
+
         }
     }
 }

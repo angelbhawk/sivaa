@@ -89,5 +89,30 @@ namespace SIVAA
             Color miColor = Color.FromArgb(241, 241, 241);
             e.Graphics.DrawLine(new Pen(miColor), 0, panel5.Height - 1, panel5.Width, panel5.Height - 1);
         }
+
+        public void abrirRecuperar(Form child)
+        {
+            child.TopLevel = false;
+            child.FormBorderStyle = FormBorderStyle.None;
+            panel7.Visible = false;
+            child.Dock = DockStyle.Fill;
+            panel6.Controls.Add(child);
+            child.Location = new Point(0, 0);
+
+            child.Show();
+            this.Refresh();
+        }
+
+        public void cerrarRecuperar(Form child)
+        {
+            child.Close();
+            panel7.Visible = true;
+            this.Refresh();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            abrirRecuperar(new Recuperar(this));
+        }
     }
 }

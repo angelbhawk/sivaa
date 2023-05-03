@@ -194,6 +194,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RepCotizaciones";
             Text = "RepCotizaciones";
+            Load += RepCotizaciones_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
