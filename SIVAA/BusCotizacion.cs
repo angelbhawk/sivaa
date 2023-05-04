@@ -85,7 +85,7 @@ namespace SIVAA
             }
             else if (cbFiltro.SelectedIndex == 1)
             {
-                List<Entidades.ConsultaCotizacionCredito> cotizacionescredito = ccrel.ListadoAll();
+                List<Entidades.ConsultaCotizacionCredito> cotizacionescredito = ccrel.Consulta();
                 listaCredito = cotizacionescredito;
                 dataGridView1.DataSource = listaCredito;
             }
@@ -264,7 +264,7 @@ namespace SIVAA
             }
             else if (cbFiltro.SelectedIndex == 1)
             {
-                List<Entidades.ConsultaCotizacionCredito> cotizacionescredito = ccrel.ListadoAll();
+                List<Entidades.ConsultaCotizacionCredito> cotizacionescredito = ccrel.Consulta();
                 listaCredito = cotizacionescredito;
                 dataGridView1.DataSource = listaCredito;
             }

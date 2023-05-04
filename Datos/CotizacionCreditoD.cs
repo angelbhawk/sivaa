@@ -40,6 +40,47 @@ namespace Datos
             }
         }
 
+
+        public List<ConsultaCotizacionCredito> ListadoConsulta()
+        {
+            List<ConsultaCotizacionCredito> productos = new List<ConsultaCotizacionCredito>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Venta
+                string CdSql = "SELECT c.IDCotizacion, c.IDCliente, CONCAT(TRIM(cli.Nombre),' ',TRIM(cli.ApellidoPaterno),' ',TRIM(cli.ApellidoMaterno)) as Cliente,v.IDVehiculo, c.IDEmpleado, c.PrecioInicial, c.TipoPago, v.Nombre,m.Año,u.Color,u.NoSerie\r\nFROM Cotizacion as c\r\nINNER JOIN CotizacionCredito AS con\r\nON con.IDCotizacion = c.IDCotizacion\r\nINNER JOIN Cliente as cli\r\nON c.IDCliente = cli.IDCliente\r\nINNER JOIN [Version] as ver\r\nON c.IDVersion = ver.IDVersion\r\nINNER JOIN Vehiculo as v\r\nON ver.IDVehiculo = v.IDVehiculo\r\nINNER JOIN Modelo  as m\r\nON ver.IDModelo = m.IDModelo\r\nINNER JOIN Unidad as u\r\nON u.IDVersion = ver.IDVersion\r\nWHERE c.TipoPago = 'Credito'";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        ConsultaCotizacionCredito Pqte = new ConsultaCotizacionCredito
+                        {
+                            IDCotizacion = Convert.ToString(Dr["IDCotizacion"]),
+                            IDCliente = Convert.ToString(Dr["IDCliente"]),
+                            Cliente = Convert.ToString(Dr["Cliente"]),
+                            IDVehiculo = Convert.ToString(Dr["IDVehiculo"]),
+                            IDEmpleado = Convert.ToString(Dr["IDEmpleado"]),
+                            PrecioInicial = Convert.ToString(Dr["PrecioInicial"]),
+                            TipoPago = Convert.ToString(Dr["TipoPago"]),
+                            Nombre = Convert.ToString(Dr["Nombre"]),
+                            Año = Convert.ToString(Dr["Año"]),
+                            Color = Convert.ToString(Dr["Color"]),
+                            NoSerie = Convert.ToString(Dr["NoSerie"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
+
         public List<CotizacionCredito> ListadoTotal()
         {
             List<CotizacionCredito> productos = new List<CotizacionCredito>();
