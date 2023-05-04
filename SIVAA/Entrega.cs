@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logicas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,20 @@ namespace SIVAA
     public partial class Entrega : Form
     {
         private SIVAA mainForm;
+        readonly VentaLog logven;
+        readonly UnidadLog unidadLog;
+        readonly VersionLog versionLog;
+        private Entidades.Unidad unidad;
+        private Entidades.Venta venta;
+        private Entidades.Versiones version;
 
         public Entrega(SIVAA mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            logven = new VentaLog();
+            unidadLog = new UnidadLog();
+            versionLog = new VersionLog();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,23 +42,6 @@ namespace SIVAA
             e.Graphics.DrawLine(new Pen(miColor), 0, panel1.Height - 1, panel1.Width, panel1.Height - 1);
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            Color miColor = Color.FromArgb(51, 58, 86);
-
-            e.Graphics.DrawLine(new Pen(miColor), 0, panel5.Height - 1, panel5.Width, panel5.Height - 1);
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            //244
-            if (panel3.Height == 170)
-            {
-                panel3.Height = 51;
-            }
-            else
-                panel3.Height = 170;
-        }
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -69,7 +62,33 @@ namespace SIVAA
 
         private void button1_Click(object sender, EventArgs e)
         {
+            venta = logven.LeerPorClave(textBox4.Text);
+            if (venta != null)
+            {
+                unidad = unidadLog.LeerPorClave(venta.NoSerie);
+                version = versionLog.LeerPorClave(unidad.IDVersion);
+                tbxcolor.Text = unidad.Color;
+                tbxid.Text = unidad.IDVersion;
+                tbxmodelo.Text = version.Version;
+                tbxnoserie.Text = unidad.NoSerie;
+                button2.Enabled = true;
 
+            }
+            else
+            {
+                MessageBox.Show("Ingresa un codigo valido");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            unidad.Estatus = "Vendido";
+            unidadLog.Modificar(unidad);
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+            textBox4.Text = "";
         }
     }
 }

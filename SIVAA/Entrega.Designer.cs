@@ -42,25 +42,13 @@
             label7 = new Label();
             panel11 = new Panel();
             label8 = new Label();
-            textBox5 = new TextBox();
+            tbxnoserie = new TextBox();
             label9 = new Label();
-            textBox7 = new TextBox();
+            tbxcolor = new TextBox();
             label10 = new Label();
-            textBox8 = new TextBox();
+            tbxmodelo = new TextBox();
             label11 = new Label();
-            textBox9 = new TextBox();
-            panel3 = new Panel();
-            panel5 = new Panel();
-            label3 = new Label();
-            panel4 = new Panel();
-            label6 = new Label();
-            textBox3 = new TextBox();
-            label5 = new Label();
-            textBox2 = new TextBox();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            label13 = new Label();
-            textBox6 = new TextBox();
+            tbxid = new TextBox();
             panel1.SuspendLayout();
             panel8.SuspendLayout();
             panel2.SuspendLayout();
@@ -68,9 +56,6 @@
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel11.SuspendLayout();
-            panel3.SuspendLayout();
-            panel5.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -108,6 +93,7 @@
             button2.TabIndex = 114;
             button2.Text = "Entregar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -129,6 +115,7 @@
             textBox4.Size = new Size(176, 32);
             textBox4.TabIndex = 90;
             textBox4.Text = "Folio";
+            textBox4.Click += textBox4_Click;
             // 
             // label2
             // 
@@ -164,7 +151,6 @@
             // panel7
             // 
             panel7.Controls.Add(panel9);
-            panel7.Controls.Add(panel3);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
@@ -176,7 +162,7 @@
             panel9.Controls.Add(panel10);
             panel9.Controls.Add(panel11);
             panel9.Dock = DockStyle.Top;
-            panel9.Location = new Point(0, 170);
+            panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
             panel9.Size = new Size(920, 170);
             panel9.TabIndex = 1;
@@ -206,13 +192,13 @@
             // 
             panel11.BackColor = Color.FromArgb(241, 241, 241);
             panel11.Controls.Add(label8);
-            panel11.Controls.Add(textBox5);
+            panel11.Controls.Add(tbxnoserie);
             panel11.Controls.Add(label9);
-            panel11.Controls.Add(textBox7);
+            panel11.Controls.Add(tbxcolor);
             panel11.Controls.Add(label10);
-            panel11.Controls.Add(textBox8);
+            panel11.Controls.Add(tbxmodelo);
             panel11.Controls.Add(label11);
-            panel11.Controls.Add(textBox9);
+            panel11.Controls.Add(tbxid);
             panel11.Dock = DockStyle.Fill;
             panel11.Location = new Point(0, 0);
             panel11.Name = "panel11";
@@ -229,14 +215,14 @@
             label8.TabIndex = 96;
             label8.Text = "No. Serie";
             // 
-            // textBox5
+            // tbxnoserie
             // 
-            textBox5.Enabled = false;
-            textBox5.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(690, 100);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(180, 32);
-            textBox5.TabIndex = 95;
+            tbxnoserie.Enabled = false;
+            tbxnoserie.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxnoserie.Location = new Point(690, 100);
+            tbxnoserie.Name = "tbxnoserie";
+            tbxnoserie.Size = new Size(180, 32);
+            tbxnoserie.TabIndex = 95;
             // 
             // label9
             // 
@@ -248,14 +234,14 @@
             label9.TabIndex = 94;
             label9.Text = "Color";
             // 
-            // textBox7
+            // tbxcolor
             // 
-            textBox7.Enabled = false;
-            textBox7.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.Location = new Point(475, 100);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(180, 32);
-            textBox7.TabIndex = 93;
+            tbxcolor.Enabled = false;
+            tbxcolor.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxcolor.Location = new Point(475, 100);
+            tbxcolor.Name = "tbxcolor";
+            tbxcolor.Size = new Size(180, 32);
+            tbxcolor.TabIndex = 93;
             // 
             // label10
             // 
@@ -267,14 +253,14 @@
             label10.TabIndex = 92;
             label10.Text = "Modelo";
             // 
-            // textBox8
+            // tbxmodelo
             // 
-            textBox8.Enabled = false;
-            textBox8.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox8.Location = new Point(261, 100);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(180, 32);
-            textBox8.TabIndex = 91;
+            tbxmodelo.Enabled = false;
+            tbxmodelo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxmodelo.Location = new Point(261, 100);
+            tbxmodelo.Name = "tbxmodelo";
+            tbxmodelo.Size = new Size(180, 32);
+            tbxmodelo.TabIndex = 91;
             // 
             // label11
             // 
@@ -286,139 +272,14 @@
             label11.TabIndex = 90;
             label11.Text = "Id";
             // 
-            // textBox9
+            // tbxid
             // 
-            textBox9.Enabled = false;
-            textBox9.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox9.Location = new Point(50, 100);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(180, 32);
-            textBox9.TabIndex = 89;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(panel5);
-            panel3.Controls.Add(panel4);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(920, 170);
-            panel3.TabIndex = 0;
-            panel3.Paint += panel3_Paint;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(label3);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(920, 51);
-            panel5.TabIndex = 4;
-            panel5.Paint += panel3_Paint;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(20, 15);
-            label3.Name = "label3";
-            label3.Size = new Size(124, 20);
-            label3.TabIndex = 2;
-            label3.Text = "Datos del cliente";
-            label3.Click += label3_Click;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(241, 241, 241);
-            panel4.Controls.Add(label6);
-            panel4.Controls.Add(textBox3);
-            panel4.Controls.Add(label5);
-            panel4.Controls.Add(textBox2);
-            panel4.Controls.Add(label4);
-            panel4.Controls.Add(textBox1);
-            panel4.Controls.Add(label13);
-            panel4.Controls.Add(textBox6);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(920, 170);
-            panel4.TabIndex = 3;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(690, 77);
-            label6.Name = "label6";
-            label6.Size = new Size(125, 20);
-            label6.TabIndex = 96;
-            label6.Text = "Apellido materno";
-            // 
-            // textBox3
-            // 
-            textBox3.Enabled = false;
-            textBox3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(690, 100);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(180, 32);
-            textBox3.TabIndex = 95;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(475, 77);
-            label5.Name = "label5";
-            label5.Size = new Size(121, 20);
-            label5.TabIndex = 94;
-            label5.Text = "Apellido paterno";
-            // 
-            // textBox2
-            // 
-            textBox2.Enabled = false;
-            textBox2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(475, 100);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(180, 32);
-            textBox2.TabIndex = 93;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(261, 77);
-            label4.Name = "label4";
-            label4.Size = new Size(63, 20);
-            label4.TabIndex = 92;
-            label4.Text = "Nombre";
-            // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(261, 100);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(180, 32);
-            textBox1.TabIndex = 91;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(50, 77);
-            label13.Name = "label13";
-            label13.Size = new Size(22, 20);
-            label13.TabIndex = 90;
-            label13.Text = "Id";
-            // 
-            // textBox6
-            // 
-            textBox6.Enabled = false;
-            textBox6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.Location = new Point(50, 100);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(180, 32);
-            textBox6.TabIndex = 89;
+            tbxid.Enabled = false;
+            tbxid.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxid.Location = new Point(50, 100);
+            tbxid.Name = "tbxid";
+            tbxid.Size = new Size(180, 32);
+            tbxid.TabIndex = 89;
             // 
             // Entrega
             // 
@@ -441,11 +302,6 @@
             panel10.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -455,18 +311,6 @@
         private Label label2;
         private Label label1;
         private Panel panel2;
-        private Panel panel3;
-        private Label label3;
-        private Panel panel5;
-        private Panel panel4;
-        private Label label6;
-        private TextBox textBox3;
-        private Label label5;
-        private TextBox textBox2;
-        private Label label4;
-        private TextBox textBox1;
-        private Label label13;
-        private TextBox textBox6;
         private Panel panel7;
         private TextBox textBox4;
         private Panel panel8;
@@ -477,12 +321,12 @@
         private Label label7;
         private Panel panel11;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox tbxnoserie;
         private Label label9;
-        private TextBox textBox7;
+        private TextBox tbxcolor;
         private Label label10;
-        private TextBox textBox8;
+        private TextBox tbxmodelo;
         private Label label11;
-        private TextBox textBox9;
+        private TextBox tbxid;
     }
 }
