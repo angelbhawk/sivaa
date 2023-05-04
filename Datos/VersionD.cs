@@ -18,7 +18,7 @@ namespace Datos
             {
                 //Abrir la conexión y crear el Query
                 Cnx.Open();
-                string CdSql = "INSERT INTO Version (IDVersion,IDVehiculo,Llantas,TipoAsientos,CamaraTrasera,Pantalla,TipoCombustible,Version,Rines,Cilindraje,Costo,CapacidadCajuela,DistanciaEjes,Anchura,Altura,AudioVelC,TomaCorriente,TipoTraccion,NumPuertas,Transmision,FarosHal,NumEngranajes,ACAutom,FarosLED,RendimientoCombustible,FrenosTraseros,FrenosDelanteros,SuspensionDelantera,SuspensionTrasera,EspejosLatDirC,EspejosLatAE) VALUES (@IV,@Ve,@L,@TA,@CT,@P,@TC,@V,@R,@Ci,@Co,@CC,@DE,@At,@Al,@AVC,@TCO,@TT,@NP,@Trans,@FH,@NumEng,@ACA,@FLED,@RCom,@FTr,@FDl,@SD,@ST,@ELDC,@ELAE)";
+                string CdSql = "INSERT INTO Version (IDVersion,IDVehiculo,Llantas,TipoAsientos,CamaraTrasera,Pantalla,TipoCombustible,Version,Rines,Cilindraje,Costo,CapacidadCajuela,DistanciaEjes,Anchura,Altura,AudioVelC,TomaCorriente,TipoTraccion,NumPuertas,Transmision,FarosHal,NumEngranajes,ACAutom,FarosLED,RendimientoCombustible,FrenosTraseros,FrenosDelanteros,SuspensionDelantera,SuspensionTrasera,EspejosLatDirC,EspejosLatAE,IDModelo) VALUES (@IV,@Ve,@L,@TA,@CT,@P,@TC,@V,@R,@Ci,@Co,@CC,@DE,@At,@Al,@AVC,@TCO,@TT,@NP,@Trans,@FH,@NumEng,@ACA,@FLED,@RCom,@FTr,@FDl,@SD,@ST,@ELDC,@ELAE,@Mo)";
                 using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))//SolicitA: la cadena de SQL y la conexeión
                 {
                     //Añadir los parámetros
@@ -53,6 +53,7 @@ namespace Datos
                     Cmd.Parameters.AddWithValue("@ST", Pqte.SuspensionTrasera);
                     Cmd.Parameters.AddWithValue("@ELDC", Pqte.EspejosLatDirC);
                     Cmd.Parameters.AddWithValue("@ELAE", Pqte.EspejosLatAE);
+                    Cmd.Parameters.AddWithValue("@Mo", Pqte.IDModelo);
                     Cmd.ExecuteNonQuery();
 
                     Cmd.Dispose();

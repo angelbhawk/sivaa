@@ -67,7 +67,47 @@ namespace SIVAA
                 Mostrar();
             }else if(cbFiltro.SelectedIndex == 1)
             {
-
+                MostrarEsp(txtBuscar.Text, "ct.IDCotizacion");
+            }
+            else if (cbFiltro.SelectedIndex == 1)
+            {
+                MostrarEsp(txtBuscar.Text, "c.Nombre");
+            }
+            else if (cbFiltro.SelectedIndex == 2)
+            {
+                MostrarEsp(txtBuscar.Text, "c.ApellidoPaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 3)
+            {
+                MostrarEsp(txtBuscar.Text, "c.ApellidoMaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 4)
+            {
+                MostrarEsp(txtBuscar.Text, "vh.Nombre");
+            }
+            else if (cbFiltro.SelectedIndex == 5)
+            {
+                MostrarEsp(txtBuscar.Text, "v.[Version]");
+            }
+            else if (cbFiltro.SelectedIndex == 6)
+            {
+                MostrarEsp(txtBuscar.Text, "e.Nombre");
+            }
+            else if (cbFiltro.SelectedIndex == 7)
+            {
+                MostrarEsp(txtBuscar.Text, "e.ApellidoPaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 8)
+            {
+                MostrarEsp(txtBuscar.Text, "e.ApellidoMaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 9)
+            {
+                MostrarEsp(txtBuscar.Text, "ct.PrecioInicial");
+            }
+            else
+            {
+                MostrarEsp(txtBuscar.Text, "ct.TipoPago");
             }
         }
 
@@ -91,6 +131,17 @@ namespace SIVAA
             {
                 int i = dataGridView1.CurrentCell.RowIndex;
                 id = dataGridView1[0, i].Value.ToString();
+            }
+        }
+
+        private void MostrarEsp(string busqueda, string filtro)
+        {
+            dataGridView1.Rows.Clear();
+            
+            List<CotizacionNoUsar> list = cotizacion.Tablas(busqueda, filtro);
+            foreach (CotizacionNoUsar x in list)
+            {
+                dataGridView1.Rows.Add(x.IDCotizacion, x.Cliente.Trim(), x.Vehiculo.Trim(), x.Empleado.Trim(), x.precioInicial, x.Tipo.Trim());
             }
         }
 
