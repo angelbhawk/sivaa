@@ -78,6 +78,10 @@
             checkBox6 = new CheckBox();
             checkBox7 = new CheckBox();
             checkBox8 = new CheckBox();
+            label26 = new Label();
+            textBox3 = new TextBox();
+            comboBox14 = new ComboBox();
+            label27 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -89,7 +93,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(920, 60);
+            panel1.Size = new Size(999, 60);
             panel1.TabIndex = 12;
             // 
             // label2
@@ -117,7 +121,7 @@
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(708, 399);
+            button1.Location = new Point(759, 518);
             button1.Name = "button1";
             button1.Size = new Size(174, 33);
             button1.TabIndex = 16;
@@ -406,7 +410,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(482, 377);
+            label17.Location = new Point(155, 463);
             label17.Name = "label17";
             label17.Size = new Size(206, 20);
             label17.TabIndex = 64;
@@ -415,7 +419,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(482, 400);
+            textBox2.Location = new Point(155, 486);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(199, 32);
             textBox2.TabIndex = 63;
@@ -572,11 +576,53 @@
             checkBox8.TabIndex = 81;
             checkBox8.UseVisualStyleBackColor = true;
             // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.Location = new Point(408, 463);
+            label26.Name = "label26";
+            label26.Size = new Size(48, 20);
+            label26.TabIndex = 83;
+            label26.Text = "Costo";
+            // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(408, 486);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(199, 32);
+            textBox3.TabIndex = 82;
+            // 
+            // comboBox14
+            // 
+            comboBox14.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox14.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox14.FormattingEnabled = true;
+            comboBox14.Location = new Point(482, 401);
+            comboBox14.Name = "comboBox14";
+            comboBox14.Size = new Size(199, 31);
+            comboBox14.TabIndex = 85;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Location = new Point(482, 378);
+            label27.Name = "label27";
+            label27.Size = new Size(143, 20);
+            label27.TabIndex = 84;
+            label27.Text = "Suspension Trasera";
+            // 
             // EspVersion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(920, 481);
+            ClientSize = new Size(999, 575);
+            Controls.Add(comboBox14);
+            Controls.Add(label27);
+            Controls.Add(label26);
+            Controls.Add(textBox3);
             Controls.Add(checkBox8);
             Controls.Add(checkBox7);
             Controls.Add(checkBox6);
@@ -628,6 +674,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "EspVersion";
             Text = "EspVersion";
+            Load += EspVersion_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -686,5 +733,9 @@
         private CheckBox checkBox6;
         private CheckBox checkBox7;
         private CheckBox checkBox8;
+        private Label label26;
+        private TextBox textBox3;
+        private ComboBox comboBox14;
+        private Label label27;
     }
 }

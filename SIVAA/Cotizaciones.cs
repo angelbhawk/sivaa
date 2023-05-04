@@ -16,6 +16,7 @@ namespace SIVAA
     public partial class Cotizaciones : Form
     {
         private SIVAA mainForm;
+        private string id;
         readonly CotizacionLog cotizacion = new CotizacionLog();
 
         public Cotizaciones(SIVAA mainForm)
@@ -30,33 +31,77 @@ namespace SIVAA
 
             e.Graphics.DrawLine(new Pen(miColor), 0, panel1.Height - 1, panel1.Width, panel1.Height - 1);
         }
-        List<CotizacionUsar> listas;
+        List<CotizacionNoUsar> listas;
         private void Cotizaciones_Load(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
-            List<CotizacionUsar> pro = cotizacion.ListadoAll();
+            List<CotizacionNoUsar> pro = cotizacion.Tabla();
             listas = pro;
-            foreach (CotizacionUsar x in pro)
+            foreach (CotizacionNoUsar x in pro)
             {
-                dataGridView1.Rows.Add(x.IDCotizacion.Trim(), x.IDCliente.Trim(), x.IDVersion.Trim(), x.IDEmpleado.Trim(), x.PrecioInicial, x.TipoPago.Trim());
+                dataGridView1.Rows.Add(x.IDCotizacion.Trim(), x.Cliente.Trim(), x.Vehiculo.Trim(), x.Empleado.Trim(), x.precioInicial, x.Tipo.Trim());
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            mainForm.cambiarPantalla(new EspCotizacion(mainForm, 1));
+            mainForm.cambiarPantalla(new EspCotizacion(mainForm, 0, ""));
         }
 
 
         private void button5_Click(object sender, EventArgs e)
         {
-            mainForm.cambiarPantalla(new EspCotizacion(mainForm, 1));
+            mainForm.cambiarPantalla(new EspCotizacion(mainForm, 1, id.Trim()));
         }
 
 
         private void button2_Click(object sender, EventArgs e)
         {
             mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de cotizaciones"));
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if(cbFiltro.SelectedIndex == 0)
+            {
+                Mostrar();
+            }else if(cbFiltro.SelectedIndex == 1)
+            {
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cotizacion.Eliminar(id);
+                Mostrar();
+                MessageBox.Show("Eliminado con exito", "Mensaje");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No es posible eliminar la tabla", "ERROR");
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                int i = dataGridView1.CurrentCell.RowIndex;
+                id = dataGridView1[0, i].Value.ToString();
+            }
+        }
+
+        private void Mostrar()
+        {
+            dataGridView1.Rows.Clear();
+            List<CotizacionNoUsar> pro = cotizacion.Tabla();
+            foreach (CotizacionNoUsar x in pro)
+            {
+                dataGridView1.Rows.Add(x.IDCotizacion, x.Cliente.Trim(), x.Vehiculo.Trim(), x.Empleado.Trim(), x.precioInicial, x.Tipo.Trim());
+            }
         }
     }
 }

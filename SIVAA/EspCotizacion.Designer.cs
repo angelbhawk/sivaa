@@ -101,16 +101,16 @@
             cbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCliente.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbCliente.FormattingEnabled = true;
-            cbCliente.Location = new Point(68, 133);
+            cbCliente.Location = new Point(20, 133);
             cbCliente.Name = "cbCliente";
-            cbCliente.Size = new Size(169, 31);
+            cbCliente.Size = new Size(222, 31);
             cbCliente.TabIndex = 64;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(68, 110);
+            label16.Location = new Point(20, 110);
             label16.Name = "label16";
             label16.Size = new Size(57, 20);
             label16.TabIndex = 63;
@@ -121,16 +121,16 @@
             cbEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbEmpleado.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbEmpleado.FormattingEnabled = true;
-            cbEmpleado.Location = new Point(270, 133);
+            cbEmpleado.Location = new Point(267, 134);
             cbEmpleado.Name = "cbEmpleado";
-            cbEmpleado.Size = new Size(169, 31);
+            cbEmpleado.Size = new Size(235, 31);
             cbEmpleado.TabIndex = 66;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(270, 110);
+            label3.Location = new Point(267, 111);
             label3.Name = "label3";
             label3.Size = new Size(77, 20);
             label3.TabIndex = 65;
@@ -141,16 +141,17 @@
             cbVersion.DropDownStyle = ComboBoxStyle.DropDownList;
             cbVersion.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbVersion.FormattingEnabled = true;
-            cbVersion.Location = new Point(477, 134);
+            cbVersion.Location = new Point(530, 134);
             cbVersion.Name = "cbVersion";
-            cbVersion.Size = new Size(169, 31);
+            cbVersion.Size = new Size(187, 31);
             cbVersion.TabIndex = 68;
+            cbVersion.SelectedIndexChanged += cbVersion_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(477, 110);
+            label4.Location = new Point(530, 110);
             label4.Name = "label4";
             label4.Size = new Size(60, 20);
             label4.TabIndex = 67;
@@ -159,9 +160,9 @@
             // dateTimer
             // 
             dateTimer.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimer.Location = new Point(68, 216);
+            dateTimer.Location = new Point(20, 216);
             dateTimer.Name = "dateTimer";
-            dateTimer.Size = new Size(371, 32);
+            dateTimer.Size = new Size(482, 32);
             dateTimer.TabIndex = 71;
             dateTimer.Value = new DateTime(2023, 5, 2, 0, 0, 0, 0);
             // 
@@ -169,7 +170,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(68, 193);
+            label6.Location = new Point(20, 193);
             label6.Name = "label6";
             label6.Size = new Size(144, 20);
             label6.TabIndex = 72;
@@ -181,16 +182,17 @@
             cbTipo.Font = new Font("Yu Gothic", 13.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbTipo.FormattingEnabled = true;
             cbTipo.Items.AddRange(new object[] { "Contado", "Credito" });
-            cbTipo.Location = new Point(477, 216);
+            cbTipo.Location = new Point(530, 216);
             cbTipo.Name = "cbTipo";
-            cbTipo.Size = new Size(169, 31);
+            cbTipo.Size = new Size(187, 31);
             cbTipo.TabIndex = 74;
+            cbTipo.SelectedIndexChanged += cbTipo_SelectedIndexChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(477, 193);
+            label7.Location = new Point(530, 193);
             label7.Name = "label7";
             label7.Size = new Size(133, 20);
             label7.TabIndex = 73;
@@ -199,7 +201,7 @@
             // nudPlazo
             // 
             nudPlazo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            nudPlazo.Location = new Point(684, 215);
+            nudPlazo.Location = new Point(741, 215);
             nudPlazo.Name = "nudPlazo";
             nudPlazo.Size = new Size(169, 32);
             nudPlazo.TabIndex = 75;
@@ -209,7 +211,7 @@
             // 
             lblPlazo.AutoSize = true;
             lblPlazo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPlazo.Location = new Point(684, 192);
+            lblPlazo.Location = new Point(741, 192);
             lblPlazo.Name = "lblPlazo";
             lblPlazo.Size = new Size(46, 20);
             lblPlazo.TabIndex = 76;
@@ -220,7 +222,7 @@
             // 
             lblEnganche.AutoSize = true;
             lblEnganche.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEnganche.Location = new Point(684, 279);
+            lblEnganche.Location = new Point(741, 279);
             lblEnganche.Name = "lblEnganche";
             lblEnganche.Size = new Size(77, 20);
             lblEnganche.TabIndex = 77;
@@ -230,7 +232,7 @@
             // txtEnganche
             // 
             txtEnganche.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEnganche.Location = new Point(684, 302);
+            txtEnganche.Location = new Point(741, 302);
             txtEnganche.Name = "txtEnganche";
             txtEnganche.Size = new Size(169, 32);
             txtEnganche.TabIndex = 78;
@@ -239,9 +241,9 @@
             // txtInteres
             // 
             txtInteres.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtInteres.Location = new Point(477, 302);
+            txtInteres.Location = new Point(530, 302);
             txtInteres.Name = "txtInteres";
-            txtInteres.Size = new Size(169, 32);
+            txtInteres.Size = new Size(187, 32);
             txtInteres.TabIndex = 80;
             txtInteres.Visible = false;
             // 
@@ -249,7 +251,7 @@
             // 
             lblInteres.AutoSize = true;
             lblInteres.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInteres.Location = new Point(477, 279);
+            lblInteres.Location = new Point(530, 279);
             lblInteres.Name = "lblInteres";
             lblInteres.Size = new Size(56, 20);
             lblInteres.TabIndex = 79;
@@ -259,9 +261,9 @@
             // txtAnualidad
             // 
             txtAnualidad.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAnualidad.Location = new Point(477, 390);
+            txtAnualidad.Location = new Point(530, 390);
             txtAnualidad.Name = "txtAnualidad";
-            txtAnualidad.Size = new Size(169, 32);
+            txtAnualidad.Size = new Size(187, 32);
             txtAnualidad.TabIndex = 82;
             txtAnualidad.Visible = false;
             // 
@@ -269,17 +271,18 @@
             // 
             lblAnualidad.AutoSize = true;
             lblAnualidad.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAnualidad.Location = new Point(477, 367);
+            lblAnualidad.Location = new Point(530, 367);
             lblAnualidad.Name = "lblAnualidad";
             lblAnualidad.Size = new Size(79, 20);
             lblAnualidad.TabIndex = 81;
             lblAnualidad.Text = "Anualidad";
+            lblAnualidad.Visible = false;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(684, 110);
+            label13.Location = new Point(741, 110);
             label13.Name = "label13";
             label13.Size = new Size(52, 20);
             label13.TabIndex = 86;
@@ -288,8 +291,9 @@
             // txtPrecioInicial
             // 
             txtPrecioInicial.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPrecioInicial.Location = new Point(684, 133);
+            txtPrecioInicial.Location = new Point(741, 133);
             txtPrecioInicial.Name = "txtPrecioInicial";
+            txtPrecioInicial.ReadOnly = true;
             txtPrecioInicial.Size = new Size(169, 32);
             txtPrecioInicial.TabIndex = 85;
             // 
@@ -297,7 +301,7 @@
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(684, 387);
+            button1.Location = new Point(741, 387);
             button1.Name = "button1";
             button1.Size = new Size(169, 33);
             button1.TabIndex = 91;
@@ -309,7 +313,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(68, 279);
+            lblPrecio.Location = new Point(20, 279);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(52, 20);
             lblPrecio.TabIndex = 93;
@@ -319,9 +323,9 @@
             // txtPrecio
             // 
             txtPrecio.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPrecio.Location = new Point(68, 302);
+            txtPrecio.Location = new Point(20, 302);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(169, 32);
+            txtPrecio.Size = new Size(222, 32);
             txtPrecio.TabIndex = 92;
             txtPrecio.Visible = false;
             // 
@@ -329,7 +333,7 @@
             // 
             lblPorcentaje.AutoSize = true;
             lblPorcentaje.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPorcentaje.Location = new Point(270, 279);
+            lblPorcentaje.Location = new Point(267, 279);
             lblPorcentaje.Name = "lblPorcentaje";
             lblPorcentaje.Size = new Size(82, 20);
             lblPorcentaje.TabIndex = 95;
@@ -339,18 +343,18 @@
             // txtPorcentaje
             // 
             txtPorcentaje.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPorcentaje.Location = new Point(270, 302);
+            txtPorcentaje.Location = new Point(267, 302);
             txtPorcentaje.Name = "txtPorcentaje";
-            txtPorcentaje.Size = new Size(169, 32);
+            txtPorcentaje.Size = new Size(235, 32);
             txtPorcentaje.TabIndex = 94;
             txtPorcentaje.Visible = false;
             // 
             // txtMensualidad
             // 
             txtMensualidad.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMensualidad.Location = new Point(270, 390);
+            txtMensualidad.Location = new Point(267, 390);
             txtMensualidad.Name = "txtMensualidad";
-            txtMensualidad.Size = new Size(169, 32);
+            txtMensualidad.Size = new Size(235, 32);
             txtMensualidad.TabIndex = 97;
             txtMensualidad.Visible = false;
             // 
@@ -358,17 +362,18 @@
             // 
             lblMensualidad.AutoSize = true;
             lblMensualidad.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMensualidad.Location = new Point(270, 367);
+            lblMensualidad.Location = new Point(267, 367);
             lblMensualidad.Name = "lblMensualidad";
             lblMensualidad.Size = new Size(99, 20);
             lblMensualidad.TabIndex = 96;
             lblMensualidad.Text = "Mensualidad";
+            lblMensualidad.Visible = false;
             // 
             // lblFinanciamiento
             // 
             lblFinanciamiento.AutoSize = true;
             lblFinanciamiento.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFinanciamiento.Location = new Point(68, 367);
+            lblFinanciamiento.Location = new Point(20, 367);
             lblFinanciamiento.Name = "lblFinanciamiento";
             lblFinanciamiento.Size = new Size(115, 20);
             lblFinanciamiento.TabIndex = 99;
@@ -378,9 +383,9 @@
             // txtFinanciamiento
             // 
             txtFinanciamiento.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFinanciamiento.Location = new Point(68, 390);
+            txtFinanciamiento.Location = new Point(20, 390);
             txtFinanciamiento.Name = "txtFinanciamiento";
-            txtFinanciamiento.Size = new Size(169, 32);
+            txtFinanciamiento.Size = new Size(222, 32);
             txtFinanciamiento.TabIndex = 98;
             txtFinanciamiento.Visible = false;
             // 

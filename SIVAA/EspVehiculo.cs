@@ -19,7 +19,7 @@ namespace SIVAA
         private int modo;
         readonly VehiculoLog vehiculos = new VehiculoLog();
         private Vehiculo vehiculo = new Vehiculo();
-        
+
 
         public EspVehiculo(SIVAA mainForm, int modo, string id)
         {
@@ -102,9 +102,9 @@ namespace SIVAA
         private void Datos(string id)
         {
             List<Vehiculo> vh = vehiculos.ListadoAll();
-            foreach(Vehiculo x in vh)
+            foreach (Vehiculo x in vh)
             {
-                if(x.IDVehiculo == id)
+                if (x.IDVehiculo == id)
                 {
                     vehiculo.IDVehiculo = x.IDVehiculo;
                     tbxNombre.Text = x.Nombre;

@@ -26,7 +26,7 @@ namespace Logicas
             }
         }
 
-        public List<ConsultaCotizacionCredito> ListadoAll()
+        public List<CotizacionCredito> ListadoAll()
         {
             //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
             return Pdto.ListadoTotal();

@@ -128,7 +128,7 @@ namespace SIVAA
 
         private void CargarDatos()
         {
-            List<Empleado> empleado = empleados.ListadoAll();
+            List<Empleado> empleado = empleados.ListaEsp("Supervisor");
             foreach (Empleado x in empleado)
             {
                 string nombre = x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim();

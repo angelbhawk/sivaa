@@ -79,6 +79,40 @@ namespace Datos
             return productos;
         }
 
+        public List<CotizacionNoUsar> ListadoTabla()
+        {
+            List<CotizacionNoUsar> productos = new List<CotizacionNoUsar>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Cotizacion
+                string CdSql = "SELECT ct.IDCotizacion, CONCAT(TRIM(c.Nombre),' ',TRIM(c.ApellidoPaterno),' ',TRIM(c.ApellidoMaterno)) as Cliente, CONCAT(TRIM(vh.Nombre),' ',TRIM(v.[Version])) as Vehiculo, CONCAT(TRIM(e.Nombre),' ',TRIM(e.ApellidoPaterno),' ',TRIM(e.ApellidoMaterno)) as Empleado, ct.PrecioInicial, ct.TipoPago\r\nFROM Cotizacion as ct\r\nINNER JOIN Cliente as c\r\nON c.IDCliente = ct.IDCliente\r\nINNER JOIN Empleado as e\r\nON e.IDEmpleado = ct.IDEmpleado\r\nINNER JOIN [Version] as v\r\nON v.IDVersion = ct.IDVersion\r\nINNER JOIN Vehiculo as vh\r\nON vh.IDVehiculo = v.IDVehiculo";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        CotizacionNoUsar Pqte = new CotizacionNoUsar
+                        {
+                            IDCotizacion = Convert.ToString(Dr["IDCotizacion"]),
+                            Cliente = Convert.ToString(Dr["Cliente"]),
+                            Vehiculo = Convert.ToString(Dr["Vehiculo"]),
+                            Empleado = Convert.ToString(Dr["Empleado"]),
+                            precioInicial = Convert.ToDouble(Dr["PrecioInicial"]),
+                            Tipo = Convert.ToString(Dr["TipoPago"]),
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
         public CotizacionUsar ObtenerPdto(string CodPqt)
         {
             //Using que crea la conexión
@@ -153,6 +187,7 @@ namespace Datos
             }
             return productos;
         }
+
         public List<CotizacionUsar> ListadoTotalESPCred(string nom)
         {
             List<CotizacionUsar> productos = new List<CotizacionUsar>();
@@ -191,12 +226,48 @@ namespace Datos
             }
             return productos;
         }
+
+        public List<CotiVh> ListaDisponibles()
+        {
+            List<CotiVh> productos = new List<CotiVh>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla cliente
+                string CdSql = "SELECT v.IDVersion, vh.Nombre, v.[Version], m.Año, v.Costo\r\nFROM Unidad as u\r\nINNER JOIN [Version] as v\r\nON v.IDVersion = u.IDVersion\r\nINNER JOIN Vehiculo as vh\r\nON vh.IDVehiculo = v.IDVehiculo\r\nINNER JOIN ModeloVersion as mv\r\nON mv.IDVersion = v.IDVersion\r\nINNER JOIN Modelo as m\r\nON m.IDModelo = mv.IDModelo\r\nWHERE u.Estatus = 'Disponible'";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    //Cmd.Parameters.AddWithValue("@Ap", app);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        CotiVh Pqte = new CotiVh
+                        {
+                            IDVersion = Convert.ToString(Dr["IDVersion"]),
+                            Nombre = Convert.ToString(Dr["Nombre"]),
+                            Version = Convert.ToString(Dr["Version"]),
+                            Año = Convert.ToString(Dr["Año"]),
+                            Costo = Convert.ToDouble(Dr["Costo"])
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
+
         public void Eliminar(string CodPqt)
         {
             using (SqlConnection Cnx = new SqlConnection(CdCnx))
             {
                 Cnx.Open();
-                string CdSql = "DELETE FROM Cotizacion WHERE IDCliente=@Cl";
+                string CdSql = "DELETE FROM Cotizacion WHERE IDCotizacion=@Cl";
                 using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
                 {
                     Cmd.Parameters.AddWithValue("@Cl", CodPqt);

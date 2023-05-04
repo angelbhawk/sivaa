@@ -34,5 +34,10 @@ namespace SIVAA
         {
             mainForm.cambiarPantalla(new Versiones(mainForm));
         }
+
+        private void EspVersion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

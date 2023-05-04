@@ -73,7 +73,7 @@
             // tbxNombre
             // 
             tbxNombre.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxNombre.Location = new Point(36, 124);
+            tbxNombre.Location = new Point(20, 113);
             tbxNombre.Name = "tbxNombre";
             tbxNombre.Size = new Size(199, 32);
             tbxNombre.TabIndex = 13;
@@ -94,7 +94,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(36, 101);
+            label4.Location = new Point(20, 90);
             label4.Name = "label4";
             label4.Size = new Size(63, 20);
             label4.TabIndex = 16;

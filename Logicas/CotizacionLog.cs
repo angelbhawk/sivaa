@@ -68,6 +68,20 @@ namespace Logicas
             return Pdto.ListadoTotal();
         }
 
+
+        public List<CotiVh> ListaDis()
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.ListaDisponibles();
+        }
+
+
+        public List<CotizacionNoUsar> Tabla()
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.ListadoTabla();
+        }
+
         public CotizacionUsar LeerPorClave(string ClPdto)
         {
             CotizacionUsar Pd = null;
