@@ -55,7 +55,9 @@ namespace SIVAA
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de versiones"));
+            string html = ImpresorPdf.Formatear(listas);
+            ImpresorPdf.generarReporte(html, Properties.Resources.plantilla_reporte.ToString(), "Reporte de Versiones", "Versiones Registrados");
+            mainForm.cambiarPantalla(new Previsualizador("Reporte de Versiones"));
         }
     }
 }

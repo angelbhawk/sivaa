@@ -63,7 +63,9 @@ namespace SIVAA
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de clientes"));
+            string html = ImpresorPdf.Formatear(listas);
+            ImpresorPdf.generarReporte(html, Properties.Resources.plantilla_reporte.ToString(), "Reporte de Clientes", "Clientes Registrados");
+            mainForm.cambiarPantalla(new Previsualizador("Reporte de Clientes"));
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

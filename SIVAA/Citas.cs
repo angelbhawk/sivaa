@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Entidades;
+using Logicas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +18,14 @@ namespace SIVAA
         SIVAA form;
         CitaD citaD = new CitaD();
         string id;
+        List<CitaM> lista =new List<CitaM>();
         public Citas(SIVAA form)
         {
             InitializeComponent();
             this.form = form;
             Mostrar();
+            lista = citaD.ListadoCitas();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -64,7 +68,10 @@ namespace SIVAA
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            
+            string html = ImpresorPdf.Formatear(lista);
+            ImpresorPdf.generarReporte(html, Properties.Resources.plantilla_reporte.ToString(), "Reporte de Citas", "Citas Registrados");
+            form.cambiarPantalla(new Previsualizador("Reporte de Citas"));
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

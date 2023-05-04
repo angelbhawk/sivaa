@@ -1,5 +1,7 @@
 ﻿using Datos;
 using Entidades;
+using iTextSharp.text;
+using Logicas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +21,7 @@ namespace SIVAA
         private SIVAA form;
         List<PedidoEs> pedidoEs = new List<PedidoEs>();
         PedidoD PedidoD = new PedidoD();
+        List<PedidoEs> lista = new List<PedidoEs>();
         string id = null;
 
         public Pedidos(SIVAA form)
@@ -27,6 +30,7 @@ namespace SIVAA
             cbFiltro.SelectedIndex = 0;
             this.form = form;
             Mostrar();
+            lista = PedidoD.ListaPedidos();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -82,7 +86,7 @@ namespace SIVAA
             {
                 MostrarEsp(txtBuscar.Text, "e.Nombre");
             }
-            else if(cbFiltro.SelectedIndex == 3)
+            else if (cbFiltro.SelectedIndex == 3)
             {
                 MostrarEsp(txtBuscar.Text, "e.ApellidoPaterno");
             }
@@ -115,7 +119,9 @@ namespace SIVAA
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            string html = ImpresorPdf.Formatear(lista);
+            ImpresorPdf.generarReporte(html, Properties.Resources.plantilla_reporte.ToString(), "Reporte de pedidos", "Pedidos registrados");
+            form.cambiarPantalla(new Previsualizador("Reporte de Pedidos"));
         }
 
 

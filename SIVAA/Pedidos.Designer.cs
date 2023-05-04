@@ -202,7 +202,7 @@
             cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
+            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Paterno", "Apellido Materno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
             cbFiltro.Location = new Point(365, 21);
             cbFiltro.Name = "cbFiltro";
             cbFiltro.Size = new Size(121, 24);

@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Entidades;
+using iTextSharp.text;
 using Logicas;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,8 @@ namespace SIVAA
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string html = ImpresorPdf.Formatear(lista);
+            ImpresorPdf.generarReporte(html, Properties.Resources.plantilla_reporte.ToString(), "Reporte de Empleados", "Empleados Registrados");
             mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de empleados"));
         }
 

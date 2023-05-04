@@ -57,7 +57,9 @@ namespace SIVAA
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mainForm.cambiarPantalla(new Previsualizador("Previsualización del reporte de cotizaciones"));
+            string html = ImpresorPdf.Formatear(listas);
+            ImpresorPdf.generarReporte(html, Properties.Resources.plantilla_reporte.ToString(), "Reporte de Cotizaciones", "Cotizaciones Registradas");
+            mainForm.cambiarPantalla(new Previsualizador("Reporte de Cotizaciones"));
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

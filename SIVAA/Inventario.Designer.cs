@@ -151,6 +151,7 @@
             btnImprimir.TabIndex = 1;
             btnImprimir.Text = "Imprimir";
             btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
             // 
             // cbFiltro
             // 
