@@ -153,6 +153,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(198, 32);
             textBox1.TabIndex = 95;
+            textBox1.UseSystemPasswordChar = true;
             // 
             // button1
             // 
