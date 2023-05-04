@@ -5,6 +5,9 @@ namespace SIVAA
     public partial class SIVAA : Form
     {
         public Entidades.Empleado empleado;
+        public double abertura = 0;
+        public string abertura_string = "";
+        public bool estado_de_caja = false;
 
         public SIVAA(Entidades.Empleado empleado)
         {
@@ -52,7 +55,7 @@ namespace SIVAA
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            cambiarPantalla(new Cobro());
+            cambiarPantalla(new Cobro(this));
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)

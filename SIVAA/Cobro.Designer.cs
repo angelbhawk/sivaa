@@ -83,6 +83,7 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(251, 146);
             panel6.TabIndex = 4;
+            panel6.Click += panel6_Click;
             // 
             // pictureBox3
             // 
@@ -115,6 +116,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(251, 146);
             panel5.TabIndex = 3;
+            panel5.Click += panel5_Click;
             // 
             // pictureBox2
             // 
@@ -147,6 +149,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(251, 146);
             panel4.TabIndex = 2;
+            panel4.Click += panel4_Click;
             // 
             // pictureBox1
             // 

@@ -22,6 +22,7 @@ namespace SIVAA
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            cbFiltro.SelectedIndex = 0;
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)

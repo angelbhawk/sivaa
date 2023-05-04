@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             panel14 = new Panel();
-            button2 = new Button();
+            btnImprimir = new Button();
             button1 = new Button();
             textBox5 = new TextBox();
             label2 = new Label();
@@ -43,37 +43,37 @@
             label12 = new Label();
             panel12 = new Panel();
             label9 = new Label();
-            textBox13 = new TextBox();
+            tbxTotal = new TextBox();
             label8 = new Label();
-            textBox7 = new TextBox();
+            tbxPrecio = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            tbxNoSerie = new TextBox();
             label14 = new Label();
-            textBox4 = new TextBox();
+            tbxColor = new TextBox();
             label15 = new Label();
-            textBox10 = new TextBox();
+            tbxModelo = new TextBox();
             label16 = new Label();
-            textBox11 = new TextBox();
+            tbxNombreVehiculo = new TextBox();
             label17 = new Label();
-            textBox12 = new TextBox();
+            tbxIdVehiculo = new TextBox();
             panel9 = new Panel();
             panel10 = new Panel();
             label7 = new Label();
             panel11 = new Panel();
             label10 = new Label();
-            textBox8 = new TextBox();
+            tbxNombreVendedor = new TextBox();
             label11 = new Label();
-            textBox9 = new TextBox();
+            tbxIdVendedor = new TextBox();
             panel3 = new Panel();
             panel5 = new Panel();
             label3 = new Label();
             panel4 = new Panel();
             label6 = new Label();
-            textBox3 = new TextBox();
+            tbxCorreo = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            tbxNombreCliente = new TextBox();
             label13 = new Label();
-            textBox6 = new TextBox();
+            tbxIdCliente = new TextBox();
             panel1.SuspendLayout();
             panel14.SuspendLayout();
             panel2.SuspendLayout();
@@ -104,7 +104,7 @@
             // 
             // panel14
             // 
-            panel14.Controls.Add(button2);
+            panel14.Controls.Add(btnImprimir);
             panel14.Controls.Add(button1);
             panel14.Controls.Add(textBox5);
             panel14.Dock = DockStyle.Right;
@@ -113,17 +113,18 @@
             panel14.Size = new Size(475, 60);
             panel14.TabIndex = 92;
             // 
-            // button2
+            // btnImprimir
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.Enabled = false;
-            button2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(333, 14);
-            button2.Name = "button2";
-            button2.Size = new Size(131, 33);
-            button2.TabIndex = 114;
-            button2.Text = "Imprimir";
-            button2.UseVisualStyleBackColor = true;
+            btnImprimir.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnImprimir.Enabled = false;
+            btnImprimir.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnImprimir.Location = new Point(333, 14);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(131, 33);
+            btnImprimir.TabIndex = 114;
+            btnImprimir.Text = "Imprimir";
+            btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += button2_Click;
             // 
             // button1
             // 
@@ -233,19 +234,19 @@
             // 
             panel12.BackColor = Color.FromArgb(241, 241, 241);
             panel12.Controls.Add(label9);
-            panel12.Controls.Add(textBox13);
+            panel12.Controls.Add(tbxTotal);
             panel12.Controls.Add(label8);
-            panel12.Controls.Add(textBox7);
+            panel12.Controls.Add(tbxPrecio);
             panel12.Controls.Add(label5);
-            panel12.Controls.Add(textBox2);
+            panel12.Controls.Add(tbxNoSerie);
             panel12.Controls.Add(label14);
-            panel12.Controls.Add(textBox4);
+            panel12.Controls.Add(tbxColor);
             panel12.Controls.Add(label15);
-            panel12.Controls.Add(textBox10);
+            panel12.Controls.Add(tbxModelo);
             panel12.Controls.Add(label16);
-            panel12.Controls.Add(textBox11);
+            panel12.Controls.Add(tbxNombreVehiculo);
             panel12.Controls.Add(label17);
-            panel12.Controls.Add(textBox12);
+            panel12.Controls.Add(tbxIdVehiculo);
             panel12.Dock = DockStyle.Fill;
             panel12.Location = new Point(0, 0);
             panel12.Name = "panel12";
@@ -262,14 +263,14 @@
             label9.TabIndex = 102;
             label9.Text = "Total";
             // 
-            // textBox13
+            // tbxTotal
             // 
-            textBox13.Enabled = false;
-            textBox13.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox13.Location = new Point(452, 170);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(180, 32);
-            textBox13.TabIndex = 101;
+            tbxTotal.Enabled = false;
+            tbxTotal.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxTotal.Location = new Point(452, 170);
+            tbxTotal.Name = "tbxTotal";
+            tbxTotal.Size = new Size(180, 32);
+            tbxTotal.TabIndex = 101;
             // 
             // label8
             // 
@@ -281,14 +282,14 @@
             label8.TabIndex = 100;
             label8.Text = "Precio";
             // 
-            // textBox7
+            // tbxPrecio
             // 
-            textBox7.Enabled = false;
-            textBox7.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.Location = new Point(249, 170);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(180, 32);
-            textBox7.TabIndex = 99;
+            tbxPrecio.Enabled = false;
+            tbxPrecio.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxPrecio.Location = new Point(249, 170);
+            tbxPrecio.Name = "tbxPrecio";
+            tbxPrecio.Size = new Size(180, 32);
+            tbxPrecio.TabIndex = 99;
             // 
             // label5
             // 
@@ -300,14 +301,14 @@
             label5.TabIndex = 98;
             label5.Text = "No. Serie";
             // 
-            // textBox2
+            // tbxNoSerie
             // 
-            textBox2.Enabled = false;
-            textBox2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(50, 170);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(179, 32);
-            textBox2.TabIndex = 97;
+            tbxNoSerie.Enabled = false;
+            tbxNoSerie.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxNoSerie.Location = new Point(50, 170);
+            tbxNoSerie.Name = "tbxNoSerie";
+            tbxNoSerie.Size = new Size(179, 32);
+            tbxNoSerie.TabIndex = 97;
             // 
             // label14
             // 
@@ -319,14 +320,14 @@
             label14.TabIndex = 96;
             label14.Text = "Color";
             // 
-            // textBox4
+            // tbxColor
             // 
-            textBox4.Enabled = false;
-            textBox4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(571, 100);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(180, 32);
-            textBox4.TabIndex = 95;
+            tbxColor.Enabled = false;
+            tbxColor.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxColor.Location = new Point(571, 100);
+            tbxColor.Name = "tbxColor";
+            tbxColor.Size = new Size(180, 32);
+            tbxColor.TabIndex = 95;
             // 
             // label15
             // 
@@ -338,14 +339,14 @@
             label15.TabIndex = 94;
             label15.Text = "Modelo";
             // 
-            // textBox10
+            // tbxModelo
             // 
-            textBox10.Enabled = false;
-            textBox10.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox10.Location = new Point(368, 100);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(180, 32);
-            textBox10.TabIndex = 93;
+            tbxModelo.Enabled = false;
+            tbxModelo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxModelo.Location = new Point(368, 100);
+            tbxModelo.Name = "tbxModelo";
+            tbxModelo.Size = new Size(180, 32);
+            tbxModelo.TabIndex = 93;
             // 
             // label16
             // 
@@ -357,14 +358,14 @@
             label16.TabIndex = 92;
             label16.Text = "Nombre";
             // 
-            // textBox11
+            // tbxNombreVehiculo
             // 
-            textBox11.Enabled = false;
-            textBox11.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox11.Location = new Point(166, 100);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(180, 32);
-            textBox11.TabIndex = 91;
+            tbxNombreVehiculo.Enabled = false;
+            tbxNombreVehiculo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxNombreVehiculo.Location = new Point(166, 100);
+            tbxNombreVehiculo.Name = "tbxNombreVehiculo";
+            tbxNombreVehiculo.Size = new Size(180, 32);
+            tbxNombreVehiculo.TabIndex = 91;
             // 
             // label17
             // 
@@ -376,14 +377,14 @@
             label17.TabIndex = 90;
             label17.Text = "Id";
             // 
-            // textBox12
+            // tbxIdVehiculo
             // 
-            textBox12.Enabled = false;
-            textBox12.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox12.Location = new Point(50, 100);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(94, 32);
-            textBox12.TabIndex = 89;
+            tbxIdVehiculo.Enabled = false;
+            tbxIdVehiculo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxIdVehiculo.Location = new Point(50, 100);
+            tbxIdVehiculo.Name = "tbxIdVehiculo";
+            tbxIdVehiculo.Size = new Size(94, 32);
+            tbxIdVehiculo.TabIndex = 89;
             // 
             // panel9
             // 
@@ -420,9 +421,9 @@
             // 
             panel11.BackColor = Color.FromArgb(241, 241, 241);
             panel11.Controls.Add(label10);
-            panel11.Controls.Add(textBox8);
+            panel11.Controls.Add(tbxNombreVendedor);
             panel11.Controls.Add(label11);
-            panel11.Controls.Add(textBox9);
+            panel11.Controls.Add(tbxIdVendedor);
             panel11.Dock = DockStyle.Fill;
             panel11.Location = new Point(0, 0);
             panel11.Name = "panel11";
@@ -439,14 +440,14 @@
             label10.TabIndex = 92;
             label10.Text = "Nombre";
             // 
-            // textBox8
+            // tbxNombreVendedor
             // 
-            textBox8.Enabled = false;
-            textBox8.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox8.Location = new Point(166, 100);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(379, 32);
-            textBox8.TabIndex = 91;
+            tbxNombreVendedor.Enabled = false;
+            tbxNombreVendedor.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxNombreVendedor.Location = new Point(166, 100);
+            tbxNombreVendedor.Name = "tbxNombreVendedor";
+            tbxNombreVendedor.Size = new Size(379, 32);
+            tbxNombreVendedor.TabIndex = 91;
             // 
             // label11
             // 
@@ -458,14 +459,14 @@
             label11.TabIndex = 90;
             label11.Text = "Id";
             // 
-            // textBox9
+            // tbxIdVendedor
             // 
-            textBox9.Enabled = false;
-            textBox9.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox9.Location = new Point(50, 100);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(94, 32);
-            textBox9.TabIndex = 89;
+            tbxIdVendedor.Enabled = false;
+            tbxIdVendedor.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxIdVendedor.Location = new Point(50, 100);
+            tbxIdVendedor.Name = "tbxIdVendedor";
+            tbxIdVendedor.Size = new Size(94, 32);
+            tbxIdVendedor.TabIndex = 89;
             // 
             // panel3
             // 
@@ -502,11 +503,11 @@
             // 
             panel4.BackColor = Color.FromArgb(241, 241, 241);
             panel4.Controls.Add(label6);
-            panel4.Controls.Add(textBox3);
+            panel4.Controls.Add(tbxCorreo);
             panel4.Controls.Add(label4);
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(tbxNombreCliente);
             panel4.Controls.Add(label13);
-            panel4.Controls.Add(textBox6);
+            panel4.Controls.Add(tbxIdCliente);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
@@ -523,14 +524,14 @@
             label6.TabIndex = 96;
             label6.Text = "Correo electronico";
             // 
-            // textBox3
+            // tbxCorreo
             // 
-            textBox3.Enabled = false;
-            textBox3.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(568, 100);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(302, 32);
-            textBox3.TabIndex = 95;
+            tbxCorreo.Enabled = false;
+            tbxCorreo.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxCorreo.Location = new Point(568, 100);
+            tbxCorreo.Name = "tbxCorreo";
+            tbxCorreo.Size = new Size(302, 32);
+            tbxCorreo.TabIndex = 95;
             // 
             // label4
             // 
@@ -542,14 +543,14 @@
             label4.TabIndex = 92;
             label4.Text = "Nombre";
             // 
-            // textBox1
+            // tbxNombreCliente
             // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(166, 100);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(379, 32);
-            textBox1.TabIndex = 91;
+            tbxNombreCliente.Enabled = false;
+            tbxNombreCliente.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxNombreCliente.Location = new Point(166, 100);
+            tbxNombreCliente.Name = "tbxNombreCliente";
+            tbxNombreCliente.Size = new Size(379, 32);
+            tbxNombreCliente.TabIndex = 91;
             // 
             // label13
             // 
@@ -561,14 +562,14 @@
             label13.TabIndex = 90;
             label13.Text = "Id";
             // 
-            // textBox6
+            // tbxIdCliente
             // 
-            textBox6.Enabled = false;
-            textBox6.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.Location = new Point(50, 100);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(94, 32);
-            textBox6.TabIndex = 89;
+            tbxIdCliente.Enabled = false;
+            tbxIdCliente.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxIdCliente.Location = new Point(50, 100);
+            tbxIdCliente.Name = "tbxIdCliente";
+            tbxIdCliente.Size = new Size(94, 32);
+            tbxIdCliente.TabIndex = 89;
             // 
             // Venta
             // 
@@ -617,40 +618,40 @@
         private Label label12;
         private Panel panel12;
         private Label label5;
-        private TextBox textBox2;
         private Label label14;
-        private TextBox textBox4;
         private Label label15;
-        private TextBox textBox10;
         private Label label16;
-        private TextBox textBox11;
         private Label label17;
-        private TextBox textBox12;
         private Panel panel9;
         private Panel panel10;
         private Label label7;
         private Panel panel11;
         private Label label10;
-        private TextBox textBox8;
         private Label label11;
-        private TextBox textBox9;
         private Panel panel3;
         private Panel panel5;
         private Label label3;
         private Panel panel4;
         private Label label6;
-        private TextBox textBox3;
         private Label label4;
-        private TextBox textBox1;
         private Label label13;
-        private TextBox textBox6;
         private Panel panel14;
-        private Button button2;
         private Button button1;
         private TextBox textBox5;
         private Label label9;
-        private TextBox textBox13;
         private Label label8;
-        private TextBox textBox7;
+        public TextBox tbxNoSerie;
+        public TextBox tbxColor;
+        public TextBox tbxModelo;
+        public TextBox tbxNombreVehiculo;
+        public TextBox tbxIdVehiculo;
+        public TextBox tbxNombreVendedor;
+        public TextBox tbxIdVendedor;
+        public TextBox tbxCorreo;
+        public TextBox tbxNombreCliente;
+        public TextBox tbxIdCliente;
+        public TextBox tbxTotal;
+        public TextBox tbxPrecio;
+        public Button btnImprimir;
     }
 }

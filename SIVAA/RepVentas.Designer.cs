@@ -104,6 +104,7 @@
             btnBuscar.TabIndex = 3;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 
@@ -130,6 +131,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.FromArgb(241, 241, 241);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -152,35 +154,35 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Vehiculo";
+            Column2.HeaderText = "Empleado";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Version";
+            Column5.HeaderText = "No. Serie";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Asientos";
+            Column3.HeaderText = "Fecha";
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "Combustible";
+            Column4.HeaderText = "Subtotal";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
             // Column6
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.HeaderText = "Cilindraje";
+            Column6.HeaderText = "Tipo";
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
             // 
@@ -195,6 +197,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RepVentas";
             Text = "RepVentas";
+            Load += RepVentas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);

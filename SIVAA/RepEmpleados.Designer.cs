@@ -195,6 +195,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RepEmpleados";
             Text = "RepEmpleados";
+            Load += RepEmpleados_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
