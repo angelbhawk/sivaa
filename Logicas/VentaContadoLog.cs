@@ -32,6 +32,10 @@ namespace Logicas
             return Pdto.ListadoTotal();
         }
 
+        public bool existe(string p)
+        {
+            return Pdto.Existe(p);
+        }
         public VentaContado LeerPorClave(string ClPdto)
         {
             VentaContado Pd = null;

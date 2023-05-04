@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logicas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace SIVAA
         private SIVAA mainForm;
         public string total;
         public Entidades.Venta VENTA;
+        readonly VentaLog logventa;
+        readonly VentaContadoLog logventacon;
+        readonly VentaCreditoLog logventacred;
 
         public Venta(SIVAA mainForm)
         {
@@ -114,7 +118,19 @@ namespace SIVAA
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(VENTA.NoSerie);
+            //Imprimir
+            List<Entidades.Folio> rvs = new List<Entidades.Folio>();
+
+            Entidades.Folio fol = new Entidades.Folio();
+            fol.Asunto = "Voucher de pago";
+            fol.Codigo = VENTA.IDVenta;
+            rvs.Add(fol);
+
+            string html = ImpresorPdf.Formatear(rvs);
+            ImpresorPdf.generarReporte(html, Properties.Resources.plantilla_reporte.ToString(), "Voucher de pago", "Voucher de pago del vehiculo "+VENTA.NoSerie);
+            mainForm.cambiarPantalla(new Previsualizador("Voucher de pago"));
+
+            //mainForm.cambiarPantalla(new Cobro(mainForm));
         }
     }
 }

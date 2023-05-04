@@ -87,9 +87,6 @@
             lblfinal = new Label();
             lbltotalreal = new Label();
             blbtotalcaja = new Label();
-            lbltotaltarjeta = new Label();
-            lblabonostarjeta = new Label();
-            lblpagostarjeta = new Label();
             lbltotalefectivo = new Label();
             lblabonosefectivo = new Label();
             lblpagosefectivo = new Label();
@@ -97,12 +94,9 @@
             panel7 = new Panel();
             label19 = new Label();
             label18 = new Label();
-            panel6 = new Panel();
             panel5 = new Panel();
             label17 = new Label();
             panel4 = new Panel();
-            label16 = new Label();
-            label15 = new Label();
             label14 = new Label();
             label13 = new Label();
             panel1.SuspendLayout();
@@ -173,6 +167,7 @@
             button1.TabIndex = 97;
             button1.Text = "Cerrar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -730,9 +725,6 @@
             panel3.Controls.Add(lblfinal);
             panel3.Controls.Add(lbltotalreal);
             panel3.Controls.Add(blbtotalcaja);
-            panel3.Controls.Add(lbltotaltarjeta);
-            panel3.Controls.Add(lblabonostarjeta);
-            panel3.Controls.Add(lblpagostarjeta);
             panel3.Controls.Add(lbltotalefectivo);
             panel3.Controls.Add(lblabonosefectivo);
             panel3.Controls.Add(lblpagosefectivo);
@@ -740,12 +732,9 @@
             panel3.Controls.Add(panel7);
             panel3.Controls.Add(label19);
             panel3.Controls.Add(label18);
-            panel3.Controls.Add(panel6);
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(label17);
             panel3.Controls.Add(panel4);
-            panel3.Controls.Add(label16);
-            panel3.Controls.Add(label15);
             panel3.Controls.Add(label14);
             panel3.Controls.Add(label13);
             panel3.Dock = DockStyle.Right;
@@ -758,7 +747,7 @@
             // 
             lblfinal.AutoSize = true;
             lblfinal.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblfinal.Location = new Point(216, 352);
+            lblfinal.Location = new Point(216, 279);
             lblfinal.Name = "lblfinal";
             lblfinal.Size = new Size(17, 20);
             lblfinal.TabIndex = 21;
@@ -768,7 +757,7 @@
             // 
             lbltotalreal.AutoSize = true;
             lbltotalreal.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbltotalreal.Location = new Point(216, 316);
+            lbltotalreal.Location = new Point(216, 243);
             lbltotalreal.Name = "lbltotalreal";
             lbltotalreal.Size = new Size(17, 20);
             lbltotalreal.TabIndex = 20;
@@ -778,41 +767,11 @@
             // 
             blbtotalcaja.AutoSize = true;
             blbtotalcaja.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            blbtotalcaja.Location = new Point(216, 296);
+            blbtotalcaja.Location = new Point(216, 223);
             blbtotalcaja.Name = "blbtotalcaja";
             blbtotalcaja.Size = new Size(17, 20);
             blbtotalcaja.TabIndex = 19;
             blbtotalcaja.Text = "0";
-            // 
-            // lbltotaltarjeta
-            // 
-            lbltotaltarjeta.AutoSize = true;
-            lbltotaltarjeta.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbltotaltarjeta.Location = new Point(216, 262);
-            lbltotaltarjeta.Name = "lbltotaltarjeta";
-            lbltotaltarjeta.Size = new Size(17, 20);
-            lbltotaltarjeta.TabIndex = 18;
-            lbltotaltarjeta.Text = "0";
-            // 
-            // lblabonostarjeta
-            // 
-            lblabonostarjeta.AutoSize = true;
-            lblabonostarjeta.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblabonostarjeta.Location = new Point(216, 226);
-            lblabonostarjeta.Name = "lblabonostarjeta";
-            lblabonostarjeta.Size = new Size(17, 20);
-            lblabonostarjeta.TabIndex = 17;
-            lblabonostarjeta.Text = "0";
-            // 
-            // lblpagostarjeta
-            // 
-            lblpagostarjeta.AutoSize = true;
-            lblpagostarjeta.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblpagostarjeta.Location = new Point(216, 205);
-            lblpagostarjeta.Name = "lblpagostarjeta";
-            lblpagostarjeta.Size = new Size(17, 20);
-            lblpagostarjeta.TabIndex = 16;
-            lblpagostarjeta.Text = "0";
             // 
             // lbltotalefectivo
             // 
@@ -856,7 +815,7 @@
             // 
             // panel7
             // 
-            panel7.Location = new Point(45, 339);
+            panel7.Location = new Point(45, 266);
             panel7.Name = "panel7";
             panel7.Size = new Size(235, 10);
             panel7.TabIndex = 9;
@@ -866,29 +825,21 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(45, 316);
+            label19.Location = new Point(45, 223);
             label19.Name = "label19";
-            label19.Size = new Size(70, 20);
+            label19.Size = new Size(94, 20);
             label19.TabIndex = 10;
-            label19.Text = "Total real";
+            label19.Text = "Total en caja";
             // 
             // label18
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(45, 296);
+            label18.Location = new Point(45, 243);
             label18.Name = "label18";
-            label18.Size = new Size(94, 20);
+            label18.Size = new Size(70, 20);
             label18.TabIndex = 9;
-            label18.Text = "Total en caja";
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(45, 249);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(235, 10);
-            panel6.TabIndex = 8;
-            panel6.Paint += panel6_Paint;
+            label18.Text = "Total real";
             // 
             // panel5
             // 
@@ -915,26 +866,6 @@
             panel4.Size = new Size(235, 10);
             panel4.TabIndex = 6;
             panel4.Paint += panel4_Paint;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(45, 226);
-            label16.Name = "label16";
-            label16.Size = new Size(134, 20);
-            label16.TabIndex = 5;
-            label16.Text = "Abonos por tarjeta";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(45, 205);
-            label15.Name = "label15";
-            label15.Size = new Size(124, 20);
-            label15.TabIndex = 4;
-            label15.Text = "Pagos por tarjeta";
             // 
             // label14
             // 
@@ -1063,12 +994,9 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox2;
-        private Panel panel6;
         private Panel panel5;
         private Label label17;
         private Panel panel4;
-        private Label label16;
-        private Label label15;
         private Label label14;
         private Label label13;
         private Label label18;
@@ -1076,9 +1004,6 @@
         private Label lblfinal;
         private Label lbltotalreal;
         private Label blbtotalcaja;
-        private Label lbltotaltarjeta;
-        private Label lblabonostarjeta;
-        private Label lblpagostarjeta;
         private Label lbltotalefectivo;
         private Label lblabonosefectivo;
         private Label lblpagosefectivo;

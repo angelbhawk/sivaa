@@ -66,5 +66,10 @@ namespace SIVAA
 
             e.Graphics.DrawLine(new Pen(miColor), 0, panel10.Height - 1, panel10.Width, panel10.Height - 1);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

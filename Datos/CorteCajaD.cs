@@ -65,7 +65,7 @@ namespace Datos
                         //Cada vez que lo lea se crea un nuevo objeto
                         CorteCaja Pqte = new CorteCaja
                         {
-                            IDCorteCaja = Convert.ToString(Dr["IDPago"]),
+                            IDCorteCaja = Convert.ToString(Dr["IDCortecaja"]),
                             IDEmpleado = Convert.ToString(Dr["IDEmpleado"]),
                             Dia = Convert.ToInt32(Dr["Dia"]),
                             Mes = Convert.ToInt32(Dr["Mes"]),

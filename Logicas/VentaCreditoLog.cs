@@ -25,6 +25,10 @@ namespace Logicas
                     Mensaje.Append("El Codigo del VentaCredito ya se encuentra en la B.D.");
             }
         }
+        public bool existe(string p)
+        {
+            return Pdto.existe(p);
+        }
 
         public List<VentaCredito> ListadoAll()
         {

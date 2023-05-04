@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logicas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,16 @@ namespace SIVAA
         private SIVAA mainForm;
         private int uno = 0, dos = 0, cinco = 0, diez = 0, veinte = 0, cincuenta = 0, cien = 0, dosientos = 0, quinientos = 0, mil = 0;
         private double sumareal = 0, total = 0, pagosefectivo = 0, abonoefectivo = 0, pagostarjeta = 0, abonostarjeta = 0, totalefectivo = 0, totaltarjeta = 0;
+        readonly PagoLog pagolog = new PagoLog();
+        readonly AbonoLog abonolog = new AbonoLog();
+        readonly CorteCajaLog cortelog = new CorteCajaLog();
 
         public Cierre(SIVAA mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
             lblinicial.Text = mainForm.abertura_string;
+            totalFinal();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -47,13 +52,6 @@ namespace SIVAA
             Color miColor = Color.FromArgb(51, 58, 86);
 
             e.Graphics.DrawLine(new Pen(miColor), 0, panel5.Height - 1, panel5.Width, panel5.Height - 1);
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-            Color miColor = Color.FromArgb(51, 58, 86);
-
-            e.Graphics.DrawLine(new Pen(miColor), 0, panel6.Height - 1, panel6.Width, panel6.Height - 1);
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
@@ -346,11 +344,48 @@ namespace SIVAA
 
         private void totalFinal()
         {
+            totalefectivo = 0;
             total = totalefectivo + mainForm.abertura;
+            blbtotalcaja.Text = sumareal.ToString();
+            string resefectivo = pagolog.MontoTotalDeHoy();
+            if (resefectivo != "")
+                totalefectivo += Convert.ToDouble(resefectivo);
+
+            string resabono = abonolog.TotalDeHoy();
+            if (resabono != "")
+                totalefectivo += Convert.ToDouble(resabono);
+
+            lblabonosefectivo.Text = resabono.ToString();
+            lblpagosefectivo.Text = resefectivo.ToString();
             lbltotalefectivo.Text = totalefectivo.ToString();
-            lbltotaltarjeta.Text = totaltarjeta.ToString();
-            blbtotalcaja.Text = total.ToString();
-            
+            total = totalefectivo + mainForm.abertura;
+            lblfinal.Text = total.ToString();
+            lbltotalreal.Text = total.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Entidades.CorteCaja> ccs = cortelog.ListadoAll();
+            Entidades.CorteCaja cc = new Entidades.CorteCaja();
+            cc.IDCorteCaja = "CC" + ccs.Count+2;
+            cc.IDEmpleado = mainForm.empleado.IDEmpleado;
+            cc.Dia = DateTime.Now.Day;
+            cc.Mes = DateTime.Now.Month;
+            cc.Año = DateTime.Now.Year;
+            cc.Hora = null;//DateTime.Now.ToString("HH:mm:ss:fffffff");
+            cc.FondoInicial = mainForm.abertura;
+            cc.EfectivoFinal = totalefectivo;
+            cc.TarjetaFinal = 0;
+            cc.TotalFinal = totalefectivo + mainForm.abertura;
+            cc.BalanceTarjeta = 0;
+            cc.BalanceEfectivo = totalefectivo;
+            cc.Estado = "Finalizado";
+            cortelog.Registrar(cc);
+            MessageBox.Show("Ha cerrado la caja");
+            mainForm.estado_de_caja = false;
+            mainForm.abertura = 0;
+            mainForm.abertura_string = "";
+            mainForm.cambiarPantalla(new Cobro(mainForm));
         }
     }
 }

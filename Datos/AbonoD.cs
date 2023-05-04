@@ -20,7 +20,7 @@ namespace Datos
             {
                 //Abrir la conexión y crear el Query
                 Cnx.Open();
-                string CdSql = "INSERT INTO Abono (IDAbono,IDEmpleado,IDVenta,SaldoActual,SaldoAnterior,Monto,FormaPago,Dia,Mes,Año,Tipo) VALUES (@Cl,@emp,@Nm,@sac,@san,@mon,@fp,@d,@m,@a,@t)";
+                string CdSql = "INSERT INTO Abono (IDAbono,IDEmpleado,IDVenta,SaldoActual,SaldoAnterior,Monto,Dia,Mes,Año,Tipo) VALUES (@Cl,@emp,@Nm,@sac,@san,@mon,@d,@m,@a,@t)";
                 using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))//SolicitA: la cadena de SQL y la conexeión
                 {
                     //Añadir los parámetros
@@ -30,7 +30,7 @@ namespace Datos
                     Cmd.Parameters.AddWithValue("@sac", Pqte.SaldoActual);
                     Cmd.Parameters.AddWithValue("@san", Pqte.SaldoAnterior);
                     Cmd.Parameters.AddWithValue("@mon", Pqte.Monto);
-                    Cmd.Parameters.AddWithValue("@fp", Pqte.FormaPago);
+
                     Cmd.Parameters.AddWithValue("@d", Pqte.Dia);
                     Cmd.Parameters.AddWithValue("@m", Pqte.Mes);
                     Cmd.Parameters.AddWithValue("@a", Pqte.Año);
@@ -42,6 +42,30 @@ namespace Datos
                 //Cierre
                 Cnx.Close();
             }
+        }
+
+        public string TotalDeHoy()
+        {
+            string montoTotal = "";
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla cliente
+                string CdSql = "SELECT * FROM Pago AS P INNER JOIN Venta AS V ON P.IDVenta = V.IDVenta WHERE V.TipoVenta = 'CONTADO' AND P.Dia = DAY(GETDATE()) AND P.Mes = MONTH(GETDATE()) AND P.Año = YEAR(GETDATE())";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        montoTotal = Convert.ToString(Dr["Monto"]);
+                    }
+                }
+                Cnx.Close();
+            }
+            return montoTotal;
         }
 
         public List<Abono> ListadoTotal()

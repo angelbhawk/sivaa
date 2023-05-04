@@ -41,6 +41,30 @@ namespace Datos
             }
         }
 
+        public string TotalDeHoy()
+        {
+            string montoTotal = "";
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla cliente
+                string CdSql = "SELECT SUM(Monto) AS Total FROM Abono AS A INNER JOIN Venta AS V ON A.IDVenta = V.IDVenta WHERE V.TipoVenta = 'CREDITO' AND A.Dia = DAY(GETDATE()) AND A.Mes = MONTH(GETDATE()) AND A.Año = YEAR(GETDATE())";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        montoTotal = Convert.ToString(Dr["Total"]);
+                    }
+                }
+                Cnx.Close();
+            }
+            return montoTotal;
+        }
+
         public List<Pago> ListadoTotal()
         {
             List<Pago> productos = new List<Pago>();
@@ -64,7 +88,7 @@ namespace Datos
                             IDVenta = Convert.ToString(Dr["IDVenta"]),
                             IDEmpleado = Convert.ToString(Dr["IDEmpleado"]),
                             Monto = Convert.ToDouble(Dr["Monto"]),
-                            FormaPago = Convert.ToString(Dr["FormaPago"]),
+                            FormaPago = null,
                             Dia = Convert.ToInt32(Dr["Dia"]),
                             Mes = Convert.ToInt32(Dr["Mes"]),
                             Año = Convert.ToInt32(Dr["Año"])

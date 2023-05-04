@@ -70,6 +70,32 @@ namespace Datos
             return productos;
         }
 
+        public bool existe(string CodPqt)
+        {
+            string existe = "";
+            //Using que crea la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                //Abro la conexión y creo el Query insertar, eliminar, consultar, elminar, actualizar, consulta individaul, general, orrar todo
+                Cnx.Open();
+                string CdSql = "SELECT COUNT(*) AS Existe FROM Venta INNER JOIN VentaCredito ON Venta.IDVenta = VentaCredito.IDVenta WHERE Venta.IDVenta = @Cl";
+                //Using que crea el comando que voy a ejecutar con relación al query que planeteo
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    //Asignar el valor a @Cl
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    if (Dr.Read())
+                    {
+
+                        existe = Convert.ToString(Dr["Existe"]);
+                    }
+                }
+                Cnx.Close();
+            }
+            return existe != "";
+        }
+
         public VentaCredito ObtenerPdto(string CodPqt)
         {
             //Using que crea la conexión

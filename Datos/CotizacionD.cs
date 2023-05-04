@@ -149,6 +149,44 @@ namespace Datos
             }
             return null;
         }
+
+        public CotizacionUsar ObtenerPdtoPorVenta(string CodPqt)
+        {
+            //Using que crea la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                //Abro la conexión y creo el Query insertar, eliminar, consultar, elminar, actualizar, consulta individaul, general, orrar todo
+                Cnx.Open();
+                string CdSql = "SELECT * FROM Cotizacion WHERE IDCotizacion=@Cl";
+                //Using que crea el comando que voy a ejecutar con relación al query que planeteo
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    //Asignar el valor a @Cl
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    if (Dr.Read())
+                    {
+
+                        CotizacionUsar Pqte = new CotizacionUsar
+                        {
+                            IDCotizacion = Convert.ToString(Dr["IDCotizacion"]),
+                            IDVersion = Convert.ToString(Dr["IDVersion"]),
+                            IDCliente = Convert.ToString(Dr["IDCliente"]),
+                            IDEmpleado = Convert.ToString(Dr["IDEmpleado"]),
+                            Dia = Convert.ToInt32(Dr["Dia"]),
+                            Mes = Convert.ToInt32(Dr["Mes"]),
+                            Año = Convert.ToInt32(Dr["Año"]),
+                            PrecioInicial = Convert.ToDouble(Dr["PrecioInicial"]),
+                            TipoPago = Convert.ToString(Dr["TipoPago"])
+                        };
+                        return Pqte;
+                    }
+                }
+                Cnx.Close();
+            }
+            return null;
+        }
+
         public List<CotizacionUsar> ListadoTotalESP(string nom)
         {
             List<CotizacionUsar> productos = new List<CotizacionUsar>();

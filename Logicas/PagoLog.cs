@@ -32,6 +32,12 @@ namespace Logicas
             return Pdto.ListadoTotal();
         }
 
+        public string MontoTotalDeHoy()
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.TotalDeHoy();
+        }
+
         public Pago LeerPorClave(string ClPdto)
         {
             Pago Pd = null;

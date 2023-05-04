@@ -32,6 +32,13 @@ namespace Logicas
             return Pdto.ListadoTotal();
         }
 
+
+        public List<ConsultaCotizacionCredito> Consulta()
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.ListadoConsulta();
+        }
+
         public CotizacionCredito LeerPorClave(string ClPdto)
         {
             CotizacionCredito Pd = null;

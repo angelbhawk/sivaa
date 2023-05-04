@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panel8 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
+            textBox4 = new TextBox();
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
@@ -57,11 +61,8 @@
             textBox1 = new TextBox();
             label13 = new Label();
             textBox6 = new TextBox();
-            panel8 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
-            textBox4 = new TextBox();
             panel1.SuspendLayout();
+            panel8.SuspendLayout();
             panel2.SuspendLayout();
             panel7.SuspendLayout();
             panel9.SuspendLayout();
@@ -70,7 +71,6 @@
             panel3.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
-            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -85,6 +85,50 @@
             panel1.Size = new Size(920, 60);
             panel1.TabIndex = 7;
             panel1.Paint += panel1_Paint;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(button2);
+            panel8.Controls.Add(button1);
+            panel8.Controls.Add(textBox4);
+            panel8.Dock = DockStyle.Right;
+            panel8.Location = new Point(445, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(475, 60);
+            panel8.TabIndex = 91;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button2.Enabled = false;
+            button2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(334, 14);
+            button2.Name = "button2";
+            button2.Size = new Size(131, 33);
+            button2.TabIndex = 114;
+            button2.Text = "Entregar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(197, 14);
+            button1.Name = "button1";
+            button1.Size = new Size(131, 33);
+            button1.TabIndex = 113;
+            button1.Text = "Cargar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox4.Location = new Point(14, 14);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(176, 32);
+            textBox4.TabIndex = 90;
+            textBox4.Text = "Folio";
             // 
             // label2
             // 
@@ -376,49 +420,6 @@
             textBox6.Size = new Size(180, 32);
             textBox6.TabIndex = 89;
             // 
-            // panel8
-            // 
-            panel8.Controls.Add(button2);
-            panel8.Controls.Add(button1);
-            panel8.Controls.Add(textBox4);
-            panel8.Dock = DockStyle.Right;
-            panel8.Location = new Point(445, 0);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(475, 60);
-            panel8.TabIndex = 91;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.Enabled = false;
-            button2.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(334, 14);
-            button2.Name = "button2";
-            button2.Size = new Size(131, 33);
-            button2.TabIndex = 114;
-            button2.Text = "Entregar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(197, 14);
-            button1.Name = "button1";
-            button1.Size = new Size(131, 33);
-            button1.TabIndex = 113;
-            button1.Text = "Cargar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Yu Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(14, 14);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(176, 32);
-            textBox4.TabIndex = 90;
-            textBox4.Text = "Folio";
-            // 
             // Entrega
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -431,6 +432,8 @@
             Text = "Entrega";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             panel2.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel9.ResumeLayout(false);
@@ -443,8 +446,6 @@
             panel5.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
             ResumeLayout(false);
         }
 
