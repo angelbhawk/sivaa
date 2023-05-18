@@ -38,14 +38,14 @@
             Column6 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel3 = new Panel();
+            txtBuscar = new TextBox();
+            cbFiltro = new ComboBox();
             btnEditar = new Button();
             btnEliminar = new Button();
             btnAgregar = new Button();
             btnImprimir = new Button();
             btnBuscar = new Button();
             label1 = new Label();
-            txtBuscar = new TextBox();
-            cbFiltro = new ComboBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -79,6 +79,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(900, 401);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column1
             // 
@@ -148,6 +149,26 @@
             panel3.Size = new Size(775, 60);
             panel3.TabIndex = 3;
             // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(571, 19);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar";
+            txtBuscar.Size = new Size(109, 23);
+            txtBuscar.TabIndex = 13;
+            // 
+            // cbFiltro
+            // 
+            cbFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbFiltro.FormattingEnabled = true;
+            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
+            cbFiltro.Location = new Point(444, 19);
+            cbFiltro.Name = "cbFiltro";
+            cbFiltro.Size = new Size(121, 24);
+            cbFiltro.TabIndex = 12;
+            // 
             // btnEditar
             // 
             btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -170,6 +191,7 @@
             btnEliminar.TabIndex = 10;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
@@ -205,6 +227,7 @@
             btnBuscar.TabIndex = 0;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 
@@ -215,26 +238,6 @@
             label1.Size = new Size(76, 20);
             label1.TabIndex = 0;
             label1.Text = "Versiones";
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(571, 19);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = "Buscar";
-            txtBuscar.Size = new Size(109, 23);
-            txtBuscar.TabIndex = 13;
-            // 
-            // cbFiltro
-            // 
-            cbFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
-            cbFiltro.Location = new Point(444, 19);
-            cbFiltro.Name = "cbFiltro";
-            cbFiltro.Size = new Size(121, 24);
-            cbFiltro.TabIndex = 12;
             // 
             // Versiones
             // 

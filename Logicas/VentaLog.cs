@@ -135,9 +135,9 @@ namespace Logicas
         private bool ValidarProducto(Venta Pq)
         {
             Mensaje.Clear();
-            if (string.IsNullOrEmpty(Pq.IDEmpleado) || Pq.IDEmpleado == "IDEmpleado")
+            if (string.IsNullOrEmpty(Pq.IDEmpleado))
                 Mensaje.Append("El campo empleado no puede estar vacio");
-            if (!string.IsNullOrEmpty(Pq.NoSerie))
+            if (string.IsNullOrEmpty(Pq.NoSerie))
                 Mensaje.Append("El campo No de serie debe estar vacio");
             if (Pq.Dia < 0 || Pq.Dia > 31)
                 Mensaje.Append("El campo dia no puede ser menor que 0 ni mayor que 31");

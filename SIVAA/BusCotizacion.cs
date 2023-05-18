@@ -44,6 +44,7 @@ namespace SIVAA
         Entidades.Modelo M;
         Entidades.Unidad U;
         Entidades.CotizacionUsar CO;
+        Entidades.Venta venta;
 
         VentaContado ventaContado;
         VentaCredito ventaCredito;
@@ -66,8 +67,7 @@ namespace SIVAA
             this.ventaLog = new VentaLog();
             this.ventaContado = new VentaContado();
             this.ventaCredito = new VentaCredito();
-            //
-            mainForm.VENTA = new Entidades.Venta();
+            this.venta = new Entidades.Venta();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -134,54 +134,6 @@ namespace SIVAA
             //}
         }
 
-        private void registrarventa()
-        {
-            DateTime now = DateTime.Now;
-            listaventa = ventaLog.ListadoAll();
-            string i = "V" + (listaventa.Count + 1).ToString();
-
-            if (cbFiltro.SelectedIndex == 0)
-            {
-                mainForm.VENTA.IDVenta = i;
-                mainForm.VENTA.IDEmpleado = idEmpleado(mainForm.tbxNombreVendedor.Text);
-                mainForm.VENTA.NoSerie = mainForm.tbxNoSerie.Text;
-                mainForm.VENTA.Subtotal = Convert.ToDouble(mainForm.tbxTotal.Text);
-                mainForm.VENTA.Dia = now.Day;
-                mainForm.VENTA.Mes = now.Month;
-                mainForm.VENTA.Año = now.Year;
-                mainForm.VENTA.Hora = now.Hour.ToString();
-                mainForm.VENTA.TipoVenta = "CONTADO";
-                ventaLog.Registrar(mainForm.VENTA);
-                ventaContado.IDCotizacion = idcotizacion;
-                ventaContado.IDVenta = i;
-                ventaContado.Estatus = "Finalizado";
-                ventaContadoLog.Registrar(ventaContado);
-
-                MessageBox.Show("Venta Realizada");
-
-            }
-            if (cbFiltro.SelectedIndex == 1)
-            {
-                mainForm.VENTA.IDVenta = i;
-                mainForm.VENTA.IDEmpleado = idEmpleado(mainForm.tbxNombreVendedor.Text);
-                mainForm.VENTA.NoSerie = mainForm.tbxNoSerie.Text;
-                mainForm.VENTA.Subtotal = Convert.ToDouble(mainForm.tbxTotal.Text);
-                mainForm.VENTA.Dia = now.Day;
-                mainForm.VENTA.Mes = now.Month;
-                mainForm.VENTA.Año = now.Year;
-                mainForm.VENTA.Hora = now.Hour.ToString();
-                mainForm.VENTA.TipoVenta = "CREDITO";
-                ventaLog.Registrar(mainForm.VENTA);
-                ventaCredito.IDCotizacion = idcotizacion;
-                ventaCredito.IDVenta = i;
-                ventaCredito.Estatus = "Finalizado";
-                ventaCredito.TotalFinal = Convert.ToDouble(mainForm.tbxTotal.Text);
-                ventaCreditoLog.Registrar(ventaCredito);
-
-                MessageBox.Show("Venta Realizada");
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -225,8 +177,9 @@ namespace SIVAA
                 double tot = Convert.ToDouble(precioinicial) + (Convert.ToDouble(precioinicial) * Convert.ToDouble(porcentaje));
                 mainForm.tbxTotal.Text = "" + tot;
 
+                mainForm.tipo = cbFiltro.SelectedIndex;
+                mainForm.idcotizacion = idcotizacion;
                 mainForm.btnImprimir.Enabled = true;
-                registrarventa();
                 mainForm.cerrarCotizaciones(this);
             }
         }
@@ -237,21 +190,6 @@ namespace SIVAA
             {
                 dataGridView1.Rows[e.RowIndex].Selected = true;
             }
-        }
-
-        private string idEmpleado(string nombre)
-        {
-            List<Empleado> en = emp.ListadoAll();
-            string id = null;
-            foreach (Empleado x in en)
-            {
-                if (x.Nombre == nombre)
-                {
-                    id = x.IDEmpleado;
-                    break;
-                }
-            }
-            return id;
         }
 
         private void button1_Click(object sender, EventArgs e)

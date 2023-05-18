@@ -48,6 +48,15 @@ namespace Logicas
             //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
             return Pdto.ListadoTotal();
         }
+
+
+        public List<Versiones> ListadoEsp(string busqueda, string filtro)
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.ListadoEspecifico(busqueda, filtro);
+        }
+
+
         public Versiones ObtenerFicha(string id,string nombre )
         {
             Versiones datos = Pdto.ObtenerPdtoPorNombreModelo(id, nombre);
