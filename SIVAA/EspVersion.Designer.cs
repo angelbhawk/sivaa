@@ -749,6 +749,7 @@
             button1.TabIndex = 99;
             button1.Text = "Listo";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // EspVersion
             // 
@@ -822,7 +823,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "EspVersion";
             Text = "EspVersion";
-            Load += EspVersion_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

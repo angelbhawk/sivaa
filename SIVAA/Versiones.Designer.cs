@@ -30,12 +30,6 @@
         {
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel3 = new Panel();
             txtBuscar = new TextBox();
@@ -70,7 +64,6 @@
             dataGridView1.BackgroundColor = Color.FromArgb(241, 241, 241);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column3, Column4, Column6 });
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(10, 10);
             dataGridView1.Name = "dataGridView1";
@@ -80,47 +73,6 @@
             dataGridView1.Size = new Size(900, 401);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Vehiculo";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Version";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Asientos";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "Combustible";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.HeaderText = "Cilindraje";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
             // 
             // panel1
             // 
@@ -163,7 +115,7 @@
             cbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFiltro.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbFiltro.FormattingEnabled = true;
-            cbFiltro.Items.AddRange(new object[] { "Todos", "idPedido", "Nombre", "Apellido Materno", "Apellido Paterno", "Proveedor", "Dia", "Mes", "Año", "Importe" });
+            cbFiltro.Items.AddRange(new object[] { "Todos", "IDVersion", "IDVehiculo", "IDModelo", "LLantas", "TipoAsientos", "CamaraTrasera", "Pantalla", "tipoCombustible", "Version", "Rines", "Cilindraje", "Costo", "Capacidadcajuela", "DistanciaEjes", "Anchura", "Altura", "AudioVelC", "TomaCorriente", "TipoTraccion", "NumPuertas", "Transmision", "FarosHal", "NumEngranajes", "ACAutom", "FarosLED", "RendimientoCombustible", "FrenosDelanteros", "FrenosTraseros", "SuspensionDelantera", "SuspensionTrasera", "EspejosLatDirC", "EspejosLatAE" });
             cbFiltro.Location = new Point(444, 19);
             cbFiltro.Name = "cbFiltro";
             cbFiltro.Size = new Size(121, 24);
@@ -271,12 +223,6 @@
         private Button btnAgregar;
         private Button btnImprimir;
         private Button btnBuscar;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column6;
         private TextBox txtBuscar;
         private ComboBox cbFiltro;
     }

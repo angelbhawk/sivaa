@@ -38,10 +38,7 @@ namespace SIVAA
             List<Entidades.Versiones> pro = vehiculo.ListadoTotal();
             listas = pro;
             dataGridView1.Rows.Clear();
-            foreach (Entidades.Versiones x in pro)
-            {
-                dataGridView1.Rows.Add(x.IDVersion, x.IDVehiculo, x.Version, x.TipoAsientos, x.TipoCombustible, x.Cilindraje);
-            }
+            dataGridView1.DataSource = listas;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -81,9 +78,9 @@ namespace SIVAA
             {
                 Mostrar();
             }
-            else if (cbFiltro.SelectedIndex == 1)
+            else
             {
-
+                MostrarEsp(txtBuscar.Text, cbFiltro.Text);
             }
         }
 
@@ -98,20 +95,14 @@ namespace SIVAA
 
         private void MostrarEsp(string busqueda, string filtro)
         {
-            dataGridView1.Rows.Clear();
             listas.Clear();
             List<Entidades.Versiones> pro = vehiculo.ListadoEsp(busqueda, filtro);
             listas = pro;
-            foreach (Entidades.Versiones x in pro)
-            {
-                dataGridView1.Rows.Add(x.IDVersion, x.IDVehiculo, x.Version, x.TipoAsientos, x.TipoCombustible, x.Cilindraje);
-            }
-
+            dataGridView1.DataSource = listas;
         }
 
         private void Mostrar()
         {
-            dataGridView1.Rows.Clear();
             listas.Clear();
             List<Entidades.Versiones> pro = vehiculo.ListadoTotal();
             listas = pro;

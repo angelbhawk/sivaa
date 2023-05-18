@@ -50,11 +50,6 @@ namespace SIVAA
             mainForm.cambiarPantalla(new Versiones(mainForm));
         }
 
-        private void EspVersion_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -74,14 +69,14 @@ namespace SIVAA
                     version.Altura = txtAltura.Text + "mm";
                     version.Anchura = txtAnchura.Text + "mm";
                     version.DistanciaEjes = txtDistanciaEjes.Text + "mm";
-                    version.RendimientoCombustible = txtCombustible.Text + "km/L";
+                    version.RendimientoCombustible = txtCombustible.Text + " km/L";
                     version.TipoAsientos = cbAsientos.Text;
                     version.CamaraTrasera = verificacion(chTrasera);
                     version.Pantalla = verificacion(chPantalla);
                     version.TipoCombustible = cbCombustibles.Text;
                     version.Version = txtVersion.Text;
                     version.Rines = cbRines.Text;
-                    version.CapacidadCajuela = txtCapacidadC.Text + "L";
+                    version.CapacidadCajuela = txtCapacidadC.Text + " L";
                     version.AudioVelC = verificacion(chAudio);
                     version.TomaCorriente = verificacion(chTomaC);
                     version.TipoTraccion = cbTipoTransmision.Text;
@@ -119,14 +114,14 @@ namespace SIVAA
                     version.Altura = txtAltura.Text + "mm";
                     version.Anchura = txtAnchura.Text + "mm";
                     version.DistanciaEjes = txtDistanciaEjes.Text + "mm";
-                    version.RendimientoCombustible = txtCombustible.Text + "km/L";
+                    version.RendimientoCombustible = txtCombustible.Text + " km/L";
                     version.TipoAsientos = cbAsientos.Text;
                     version.CamaraTrasera = verificacion(chTrasera);
                     version.Pantalla = verificacion(chPantalla);
                     version.TipoCombustible = cbCombustibles.Text;
                     version.Version = txtVersion.Text;
                     version.Rines = cbRines.Text;
-                    version.CapacidadCajuela = txtCapacidadC.Text + "L";
+                    version.CapacidadCajuela = txtCapacidadC.Text + " L";
                     version.AudioVelC = verificacion(chAudio);
                     version.TomaCorriente = verificacion(chTomaC);
                     version.TipoTraccion = cbTipoTransmision.Text;
@@ -238,7 +233,7 @@ namespace SIVAA
                 {
                     if (x.IDModelo.Trim() == id)
                     {
-                        return x.Año;
+                        return x.Año.Trim();
                     }
                 }
             }
@@ -274,6 +269,7 @@ namespace SIVAA
                     cbTipoTransmision.Text = x.TipoTraccion.ToString();
                     cbTransmision.Text = x.Transmision.ToString();
                     cbVehiculo.Text = Nombre(x.IDVehiculo.Trim(), 0);
+                    cbModelo.Text = Nombre(x.IDModelo.Trim(), 1);
                     asignar(chAuto, x.ACAutom);
                     asignar(chAudio, x.AudioVelC);
                     asignar(chTrasera, x.CamaraTrasera);
@@ -283,15 +279,7 @@ namespace SIVAA
                     asignar(cbLed, x.FarosLED);
                     asignar(chPantalla, x.Pantalla);
                     asignar(chTomaC, x.TomaCorriente);
-                    modelo = x.IDModelo;
-                }
-            }
-            List<Entidades.Modelo> modelos = ModeloLog.ListadoTotal();
-            foreach (Modelo x in modelos)
-            {
-                if (x.IDModelo == modelo)
-                {
-                    cbModelo.Text = x.Año;
+                    
                 }
             }
         }
