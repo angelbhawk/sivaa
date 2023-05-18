@@ -82,6 +82,13 @@ namespace Logicas
             return Pdto.ListadoTabla();
         }
 
+
+        public List<CotizacionNoUsar> Tablas(string texto, string filtro)
+        {
+            //Método que obtiene la lista dinámica de todos los registro que tiene mi tabla
+            return Pdto.Filtro(texto, filtro);
+        }
+
         public CotizacionUsar LeerPorClave(string ClPdto)
         {
             CotizacionUsar Pd = null;

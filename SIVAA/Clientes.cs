@@ -115,7 +115,9 @@ namespace SIVAA
         private void MostrarEsp(string busqueda, string filtro)
         {
             dataGridView1.Rows.Clear();
+            listas.Clear();
             List<Cliente> pro = cliente.ListadoEsp(busqueda, filtro);
+            listas = pro;
             foreach (Cliente x in pro)
             {
                 dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Colonia.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Estado.Trim());
@@ -125,7 +127,9 @@ namespace SIVAA
         private void Mostrar()
         {
             dataGridView1.Rows.Clear();
+            listas.Clear();
             List<Cliente> pro = cliente.ListadoAll();
+            listas = pro;
             foreach (Cliente x in pro)
             {
                 dataGridView1.Rows.Add(x.IDCliente.Trim(), x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.RFC.Trim(), x.Correo.Trim(), x.Telefono.Trim(), x.Colonia.Trim() + ", " + x.Ciudad.Trim() + ", " + x.Estado.Trim());

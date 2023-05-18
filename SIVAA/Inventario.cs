@@ -56,7 +56,9 @@ namespace SIVAA
         private void Mostrar()
         {
             unidades.Clear();
+            lista.Clear();
             unidades = unidadLog.Inventario();
+            lista = unidades;
             foreach (UnidadNoUsar x in unidades)
             {
                 dataGridView1.Rows.Add(x.NoSerie, x.Vehiculo, x.Version, x.Modelo, x.Color, x.Estatus);
@@ -66,7 +68,9 @@ namespace SIVAA
         private void Filtro(string filtro)
         {
             unidades.Clear();
+            lista.Clear();
             unidades = unidadLog.InventarioFiltro(filtro);
+            lista = unidades;
             foreach (UnidadNoUsar x in unidades)
             {
                 dataGridView1.Rows.Add(x.NoSerie, x.Vehiculo, x.Version, x.Modelo, x.Color, x.Estatus);

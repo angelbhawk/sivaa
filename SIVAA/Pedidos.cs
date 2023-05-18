@@ -137,7 +137,9 @@ namespace SIVAA
         private void MostrarEsp(string busqueda, string filtro)
         {
             dataGridView1.Rows.Clear();
+            lista.Clear();
             List<PedidoEs> list = PedidoD.ListadoEspecifico(busqueda, filtro);
+            lista = list;
             foreach (PedidoEs x in list)
             {
                 string fecha = x.Dia.ToString() + "/" + x.Mes.ToString() + "/" + x.Año.ToString();
@@ -149,7 +151,10 @@ namespace SIVAA
         {
             dataGridView1.Rows.Clear();
             pedidoEs.Clear();
+            lista.Clear();
             pedidoEs = PedidoD.ListaPedidos();
+            lista = pedidoEs;
+            
             foreach (PedidoEs x in pedidoEs)
             {
                 string fecha = x.Dia.ToString() + "/" + x.Mes.ToString() + "/" + x.Año.ToString();

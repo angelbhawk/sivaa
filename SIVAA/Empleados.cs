@@ -3,6 +3,7 @@ using Entidades;
 using iTextSharp.text;
 using Logicas;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -136,6 +137,8 @@ namespace SIVAA
         {
             dataGridView1.Rows.Clear();
             List<Empleado> em = empleado.ListadoEsp(busqueda, filtro);
+            lista.Clear();
+            lista = em;
             foreach (Empleado x in em)
             {
                 dataGridView1.Rows.Add(x.IDEmpleado, x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.Correo, x.Telefono, x.RFC, x.Tipo);
@@ -145,7 +148,9 @@ namespace SIVAA
         private void Mostrar()
         {
             dataGridView1.Rows.Clear();
+            lista.Clear();
             List<Empleado> em = empleado.ListadoAll();
+            lista = em;
             foreach (Empleado x in em)
             {
                 dataGridView1.Rows.Add(x.IDEmpleado, x.Nombre.Trim() + " " + x.ApellidoPat.Trim() + " " + x.ApellidoMat.Trim(), x.Correo, x.Telefono, x.RFC, x.Tipo);

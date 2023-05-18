@@ -67,9 +67,50 @@ namespace SIVAA
             if(cbFiltro.SelectedIndex == 0)
             {
                 Mostrar();
-            }else if(cbFiltro.SelectedIndex == 1)
+            }
+            else if(cbFiltro.SelectedIndex == 1)
+            { 
+                MostrarEsp(txtBuscar.Text, "ct.IDCotizacion");
+            }
+            else if (cbFiltro.SelectedIndex == 1)
             {
-
+                MostrarEsp(txtBuscar.Text, "c.Nombre");
+            }
+            else if (cbFiltro.SelectedIndex == 2)
+            {
+                MostrarEsp(txtBuscar.Text, "c.ApellidoPaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 3)
+            {
+                MostrarEsp(txtBuscar.Text, "c.ApellidoMaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 4)
+            {
+                MostrarEsp(txtBuscar.Text, "vh.Nombre");
+            }
+            else if (cbFiltro.SelectedIndex == 5)
+            {
+                MostrarEsp(txtBuscar.Text, "v.[Version]");
+            }
+            else if (cbFiltro.SelectedIndex == 6)
+            {
+                MostrarEsp(txtBuscar.Text, "e.Nombre");
+            }
+            else if (cbFiltro.SelectedIndex == 7)
+            {
+                MostrarEsp(txtBuscar.Text, "e.ApellidoPaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 8)
+            {
+                MostrarEsp(txtBuscar.Text, "e.ApellidoMaterno");
+            }
+            else if (cbFiltro.SelectedIndex == 9)
+            {
+                MostrarEsp(txtBuscar.Text, "ct.PrecioInicial");
+            }
+            else
+            {
+                MostrarEsp(txtBuscar.Text, "ct.TipoPago");
             }
         }
 
@@ -96,10 +137,23 @@ namespace SIVAA
             }
         }
 
+        private void MostrarEsp(string busqueda, string filtro)
+        {
+            dataGridView1.Rows.Clear();
+
+            List<CotizacionNoUsar> list = cotizacion.Tablas(busqueda, filtro);
+            foreach (CotizacionNoUsar x in list)
+            {
+                dataGridView1.Rows.Add(x.IDCotizacion, x.Cliente.Trim(), x.Vehiculo.Trim(), x.Empleado.Trim(), x.precioInicial, x.Tipo.Trim());
+            }
+        }
+
         private void Mostrar()
         {
             dataGridView1.Rows.Clear();
+            listas.Clear();
             List<CotizacionNoUsar> pro = cotizacion.Tabla();
+            listas = pro;
             foreach (CotizacionNoUsar x in pro)
             {
                 dataGridView1.Rows.Add(x.IDCotizacion, x.Cliente.Trim(), x.Vehiculo.Trim(), x.Empleado.Trim(), x.precioInicial, x.Tipo.Trim());

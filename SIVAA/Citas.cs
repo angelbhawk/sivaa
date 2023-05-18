@@ -136,7 +136,9 @@ namespace SIVAA
         private void MostrarEsp(string busqueda, string filtro)
         {
             dataGridView1.Rows.Clear();
+            lista.Clear();
             List<CitaM> list = citaD.ListadoEspecifico(busqueda, filtro);
+            lista = list;
             foreach (CitaM x in list)
             {
                 string i = x.Dia.ToString() + "/" + x.Mes + "/" + x.Año;
@@ -148,6 +150,8 @@ namespace SIVAA
         {
             dataGridView1.Rows.Clear();
             List<CitaM> citaMs = citaD.ListadoCitas();
+            lista.Clear();
+            lista = citaMs;
             foreach (CitaM x in citaMs)
             {
                 string i = x.Dia.ToString() + "/" + x.Mes + "/" + x.Año;

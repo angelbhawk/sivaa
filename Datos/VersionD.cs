@@ -83,7 +83,7 @@ namespace Datos
                         Versiones Pqte = new Versiones
                         {
                             IDVersion = Convert.ToString(Dr["IDVersion"]),
-                            IDVehiculo = Convert.ToString(Dr["IDvehiculo"]),
+                            IDVehiculo = Convert.ToString(Dr["IDVehiculo"]),
                             Llantas = Convert.ToString(Dr["LLantas"]),
                             TipoAsientos = Convert.ToString(Dr["TipoAsientos"]),
                             CamaraTrasera = Convert.ToString(Dr["CamaraTrasera"]),
@@ -147,7 +147,7 @@ namespace Datos
                         Versiones Pqte = new Versiones
                         {
                             IDVersion = Convert.ToString(Dr["IDVersion"]),
-                            IDVehiculo = Convert.ToString(Dr["IDvehiculo"]),
+                            IDVehiculo = Convert.ToString(Dr["IDVehiculo"]),
                             Llantas = Convert.ToString(Dr["LLantas"]),
                             TipoAsientos = Convert.ToString(Dr["TipoAsientos"]),
                             CamaraTrasera = Convert.ToString(Dr["CamaraTrasera"]),

@@ -113,6 +113,41 @@ namespace Datos
             return productos;
         }
 
+        public List<CotizacionNoUsar> Filtro(string CodPqt, string opcion)
+        {
+            List<CotizacionNoUsar> productos = new List<CotizacionNoUsar>();
+
+            //Vuelvo a crear la conexión
+            using (SqlConnection Cnx = new SqlConnection(CdCnx))
+            {
+                Cnx.Open();
+                //Creo el Query (todos los registros de la tabla Cotizacion
+                string CdSql = "SELECT ct.IDCotizacion, CONCAT(TRIM(c.Nombre),' ',TRIM(c.ApellidoPaterno),' ',TRIM(c.ApellidoMaterno)) as Cliente, CONCAT(TRIM(vh.Nombre),' ',TRIM(v.[Version])) as Vehiculo, CONCAT(TRIM(e.Nombre),' ',TRIM(e.ApellidoPaterno),' ',TRIM(e.ApellidoMaterno)) as Empleado, ct.PrecioInicial, ct.TipoPago\r\nFROM Cotizacion as ct\r\nINNER JOIN Cliente as c\r\nON c.IDCliente = ct.IDCliente\r\nINNER JOIN Empleado as e\r\nON e.IDEmpleado = ct.IDEmpleado\r\nINNER JOIN [Version] as v\r\nON v.IDVersion = ct.IDVersion\r\nINNER JOIN Vehiculo as vh\r\nON vh.IDVehiculo = v.IDVehiculo WHERE " + opcion + "=@Cl";
+                using (SqlCommand Cmd = new SqlCommand(CdSql, Cnx))
+                {
+                    SqlDataReader Dr = Cmd.ExecuteReader();
+                    Cmd.Parameters.AddWithValue("@Cl", CodPqt);
+                    //Leo registro por registro que tiene la tabla 
+                    while (Dr.Read())
+                    {
+                        //Cada vez que lo lea se crea un nuevo objeto
+                        CotizacionNoUsar Pqte = new CotizacionNoUsar
+                        {
+                            IDCotizacion = Convert.ToString(Dr["IDCotizacion"]),
+                            Cliente = Convert.ToString(Dr["Cliente"]),
+                            Vehiculo = Convert.ToString(Dr["Vehiculo"]),
+                            Empleado = Convert.ToString(Dr["Empleado"]),
+                            precioInicial = Convert.ToDouble(Dr["PrecioInicial"]),
+                            Tipo = Convert.ToString(Dr["TipoPago"]),
+                        };
+                        productos.Add(Pqte);
+                    }
+                }
+                Cnx.Close();
+            }
+            return productos;
+        }
+
         public CotizacionUsar ObtenerPdto(string CodPqt)
         {
             //Using que crea la conexión

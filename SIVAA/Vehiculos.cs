@@ -101,7 +101,9 @@ namespace SIVAA
         private void MostrarEsp(string busqueda, string filtro)
         {
             dataGridView1.Rows.Clear();
+            listas.Clear();
             List<Vehiculo> pro = vehiculo.ListadoEsp(busqueda, filtro);
+            listas = pro;
             foreach (Vehiculo x in pro)
             {
                 dataGridView1.Rows.Add(x.IDVehiculo, x.Nombre);
@@ -112,7 +114,9 @@ namespace SIVAA
         private void Mostrar()
         {
             dataGridView1.Rows.Clear();
+            listas.Clear();
             List<Vehiculo> pro = vehiculo.ListadoAll();
+            listas = pro;
             foreach (Vehiculo x in pro)
             {
                 dataGridView1.Rows.Add(x.IDVehiculo, x.Nombre);
